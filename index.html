@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GBÈZÉ JUNIOR HOUEGNON — Artiste Traditionnel du Bénin</title>
+  <meta name="description" content="GBÈZÉ JUNIOR HOUEGNON — Artiste chanteur, compositeur, danseur et percussionniste des rythmes traditionnels du Bénin. Tchingounmin & Tôba Hanyé." />
+  <meta property="og:title" content="GBÈZÉ JUNIOR HOUEGNON" />
+  <meta property="og:description" content="L'héritier vivant d'une tradition millénaire. 300 000+ abonnés TikTok." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===========================
+       CSS VARIABLES
+    =========================== */
+    :root {
+      --gold:        #C9A227;
+      --gold-light:  #E8C547;
+      --gold-pale:   #F5E09A;
+      --red-dark:    #7B1111;
+      --bg:          #080808;
+      --bg-mid:      #101010;
+      --bg-card:     #141414;
+      --bg-card2:    #1A1A1A;
+      --text:        #F0EBE0;
+      --text-muted:  #9A9080;
+      --border:      rgba(201,162,39,0.18);
+      --glow:        0 0 40px rgba(201,162,39,0.25);
+      --font-display: 'Cinzel Decorative', serif;
+      --font-title:   'Cinzel', serif;
+      --font-body:    'Raleway', sans-serif;
+    }
+
+    /* ===========================
+       RESET & BASE
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--gold-light); }
+    img { max-width: 100%; display: block; }
+
+    /* ===========================
+       SCROLLBAR
+    =========================== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ===========================
+       LOADER
+    =========================== */
+    #loader {
+      position: fixed; inset: 0; z-index: 9999;
+      background: var(--bg);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 24px;
+      transition: opacity .8s ease, visibility .8s ease;
+    }
+    #loader.hidden { opacity: 0; visibility: hidden; }
+    .loader-logo {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 5vw, 2.8rem);
+      color: var(--gold);
+      letter-spacing: .15em;
+      animation: pulse-gold 1.2s ease-in-out infinite alternate;
+    }
+    .loader-bar-wrap {
+      width: 200px; height: 2px;
+      background: rgba(255,255,255,.08);
+      border-radius: 2px; overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%; background: var(--gold);
+      border-radius: 2px;
+      animation: load-fill 1.8s ease forwards;
+    }
+    @keyframes load-fill { from { width:0 } to { width:100% } }
+    @keyframes pulse-gold {
+      from { text-shadow: 0 0 10px rgba(201,162,39,.4); }
+      to   { text-shadow: 0 0 40px rgba(201,162,39,.9), 0 0 60px rgba(201,162,39,.4); }
+    }
+
+    /* ===========================
+       NAVIGATION
+    =========================== */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%;
+      height: 72px;
+      background: rgba(8,8,8,.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow .3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.6); }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: .95rem;
+      letter-spacing: .12em;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex; gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-title);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-family: var(--font-title);
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      border-radius: 2px;
+      transition: background .2s, color .2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--bg); }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--gold); border-radius: 2px;
+      transition: all .3s;
+    }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(8,8,8,.97);
+      flex-direction: column; align-items: center; justify-content: center;
+      gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: var(--font-title);
+      font-size: 1.4rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--gold); }
+    .close-menu {
+      position: absolute; top: 22px; right: 5%;
+      background: none; border: none;
+      font-size: 2rem; color: var(--gold); cursor: pointer;
+    }
+
+    /* ===========================
+       HERO
+    =========================== */
+    #hero {
+      position: relative; min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      overflow: hidden;
+      padding: 120px 5% 80px;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        linear-gradient(to bottom, rgba(8,8,8,.55) 0%, rgba(8,8,8,.75) 60%, rgba(8,8,8,1) 100%),
+        radial-gradient(ellipse 80% 60% at 50% 30%, rgba(123,17,17,.45) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 70%, rgba(201,162,39,.15) 0%, transparent 60%);
+    }
+    .hero-bg-img {
+      position: absolute; inset: 0; z-index: -1;
+      background: url('pha.jpg') center center / cover no-repeat;
+      filter: brightness(.45) saturate(.7);
+    }
+
+    /* Hero portrait */
+    .hero-portrait-wrap {
+      position: absolute;
+      right: 6%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      width: min(320px, 30vw);
+      opacity: 0;
+      animation: fade-left .9s ease 1.4s forwards;
+    }
+    @media (max-width: 900px) { .hero-portrait-wrap { display: none; } }
+    @keyframes fade-left {
+      from { opacity:0; transform: translateY(-50%) translateX(30px); }
+      to   { opacity:1; transform: translateY(-50%) translateX(0); }
+    }
+    .hero-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,.7), 0 0 0 1px rgba(201,162,39,.12);
+    }
+    .hero-portrait-frame {
+      position: absolute;
+      inset: -8px;
+      border: 1px solid rgba(201,162,39,.25);
+      border-radius: 3px;
+      pointer-events: none;
+    }
+    .hero-portrait-label {
+      position: absolute;
+      bottom: -18px; left: 0; right: 0;
+      text-align: center;
+      font-family: var(--font-title);
+      font-size: .6rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    /* Animated gold particles */
+    .particles {
+      position: absolute; inset: 0; z-index: 0; pointer-events: none;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: float-particle linear infinite;
+      opacity: 0;
+    }
+    @keyframes float-particle {
+      0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+      10%  { opacity: .6; }
+      90%  { opacity: .3; }
+      100% { transform: translateY(-10vh) translateX(var(--dx, 30px)); opacity: 0; }
+    }
+
+    /* Decorative ring */
+    .hero-ring {
+      position: absolute;
+      width: min(600px, 90vw); height: min(600px, 90vw);
+      border: 1px solid rgba(201,162,39,.12);
+      border-radius: 50%;
+      animation: ring-spin 20s linear infinite;
+      pointer-events: none;
+    }
+    .hero-ring::before {
+      content: '';
+      position: absolute;
+      top: -4px; left: 50%; transform: translateX(-50%);
+      width: 8px; height: 8px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .hero-ring-2 {
+      width: min(400px, 70vw); height: min(400px, 70vw);
+      border-color: rgba(201,162,39,.08);
+      animation-duration: 14s;
+      animation-direction: reverse;
+    }
+    @keyframes ring-spin { to { transform: rotate(360deg); } }
+
+    .hero-content {
+      position: relative; z-index: 1;
+      text-align: center;
+      max-width: 900px;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-family: var(--font-title);
+      font-size: .65rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fade-up .8s ease .4s forwards;
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: .04em;
+      background: linear-gradient(135deg, var(--gold-pale) 0%, var(--gold) 40%, #A07010 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      animation: fade-up .9s ease .6s forwards;
+      text-shadow: none;
+    }
+    .hero-sub {
+      font-family: var(--font-title);
+      font-size: clamp(.75rem, 2vw, 1rem);
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 14px;
+      opacity: 0;
+      animation: fade-up .8s ease .8s forwards;
+    }
+    .hero-divider {
+      width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 28px auto;
+      opacity: 0;
+      animation: fade-up .8s ease 1s forwards;
+    }
+    .hero-desc {
+      font-size: clamp(.9rem, 2vw, 1.05rem);
+      color: var(--text-muted);
+      max-width: 620px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+      line-height: 1.9;
+      opacity: 0;
+      animation: fade-up .8s ease 1.1s forwards;
+    }
+    .hero-ctas {
+      display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+      opacity: 0;
+      animation: fade-up .8s ease 1.3s forwards;
+    }
+    .btn-primary {
+      font-family: var(--font-title);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      background: var(--gold);
+      color: var(--bg);
+      border: none; border-radius: 2px; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,162,39,.4);
+    }
+    .btn-secondary {
+      font-family: var(--font-title);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 2px; cursor: pointer;
+      transition: transform .2s, background .2s, color .2s;
+    }
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      background: rgba(201,162,39,.1);
+    }
+
+    /* Social hero strip */
+    .hero-socials {
+      display: flex; gap: 20px; justify-content: center;
+      margin-top: 52px;
+      opacity: 0;
+      animation: fade-up .8s ease 1.5s forwards;
+    }
+    .hero-social-item {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 6px;
+    }
+    .hs-count {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+    .hs-label {
+      font-size: .62rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .hs-sep {
+      width: 1px; height: 48px;
+      background: var(--border);
+      align-self: center;
+    }
+
+    .scroll-down {
+      position: absolute; bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; flex-direction: column;
+      align-items: center; gap: 8px;
+      opacity: 0;
+      animation: fade-up .8s ease 2s forwards;
+      cursor: pointer;
+    }
+    .scroll-down span {
+      font-size: .58rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .scroll-arrow {
+      width: 20px; height: 20px;
+      border-right: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+      transform: rotate(45deg);
+      animation: arrow-bounce .8s ease-in-out infinite alternate;
+    }
+    @keyframes arrow-bounce {
+      from { transform: rotate(45deg) translateY(-3px); opacity: .5; }
+      to   { transform: rotate(45deg) translateY(3px);  opacity: 1; }
+    }
+
+    /* ===========================
+       SECTION SHARED
+    =========================== */
+    section { padding: 100px 5%; }
+    .section-header {
+      text-align: center; margin-bottom: 70px;
+    }
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-title);
+      font-size: .62rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .section-title span { color: var(--gold); }
+    .section-line {
+      width: 60px; height: 2px;
+      background: var(--gold);
+      margin: 20px auto 0;
+    }
+
+    /* Reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @keyframes fade-up {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:none; }
+    }
+
+    /* ===========================
+       STATS BAND
+    =========================== */
+    #stats {
+      padding: 60px 5%;
+      background: var(--bg-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .stats-grid {
+      display: flex; flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .stat-item {
+      flex: 1 1 160px;
+      text-align: center;
+      padding: 32px 20px;
+      border-right: 1px solid var(--border);
+      position: relative;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--gold);
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* ===========================
+       ABOUT / BIOGRAPHY
+    =========================== */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+      max-width: 1300px; margin: 0 auto;
+    }
+    .about-text p {
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .about-text p strong { color: var(--gold); font-weight: 600; }
+    .about-tags {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-top: 32px;
+    }
+    .tag {
+      font-family: var(--font-title);
+      font-size: .62rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      border-radius: 2px;
+      transition: border-color .2s, color .2s;
+    }
+    .tag:hover { border-color: var(--gold); color: var(--gold); }
+    .about-info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .about-info-header {
+      padding: 22px 28px;
+      background: rgba(201,162,39,.06);
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-title);
+      font-size: .75rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .info-row {
+      display: flex;
+      padding: 16px 28px;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      gap: 20px;
+    }
+    .info-row:last-child { border-bottom: none; }
+    .info-key {
+      font-size: .7rem;
+      letter-spacing: .1em;
+      color: var(--text-muted);
+      min-width: 120px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+    .info-val {
+      font-size: .85rem;
+      color: var(--text);
+    }
+
+    /* ===========================
+       LINEAGE
+    =========================== */
+    #lineage {
+      background: var(--bg-mid);
+    }
+    .lineage-tree {
+      max-width: 900px; margin: 0 auto;
+      display: flex; flex-direction: column;
+      align-items: center; gap: 0;
+    }
+    .lineage-node {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 28px 32px;
+      text-align: center;
+    }
+    .lineage-node.featured {
+      border-color: var(--gold);
+      box-shadow: var(--glow);
+    }
+    .ln-role {
+      font-size: .6rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .ln-name {
+      font-family: var(--font-title);
+      font-size: 1.15rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .ln-desc {
+      font-size: .82rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .lineage-connector {
+      width: 2px; height: 40px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201,162,39,.2));
+      position: relative;
+    }
+    .lineage-connector::after {
+      content: '';
+      position: absolute; bottom: -6px; left: 50%;
+      transform: translateX(-50%);
+      width: 10px; height: 10px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+    .lineage-row {
+      display: flex; gap: 24px; width: 100%;
+      justify-content: center;
+    }
+    .lineage-row .lineage-node { max-width: 340px; }
+
+    /* ===========================
+       MUSIC / DISCOGRAPHIE
+    =========================== */
+    #musique { background: var(--bg); }
+
+    /* Video grid */
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 28px;
+      max-width: 1100px; margin: 0 auto 60px;
+    }
+    .video-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+    }
+    .video-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,.5), 0 0 0 1px var(--gold);
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-info {
+      padding: 18px 20px;
+    }
+    .video-info h4 {
+      font-family: var(--font-title);
+      font-size: .85rem;
+      letter-spacing: .1em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .video-info p {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    /* Album section */
+    .album-block {
+      max-width: 1100px; margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .album-header {
+      background: linear-gradient(135deg, rgba(123,17,17,.5) 0%, rgba(201,162,39,.15) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 36px 40px;
+      display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .album-art {
+      width: 100px; height: 100px;
+      background: linear-gradient(135deg, var(--red-dark), var(--gold));
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .album-art svg { width: 40px; height: 40px; fill: rgba(255,255,255,.8); }
+    .album-meta h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--gold);
+    }
+    .album-meta p {
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    .tracks-list {
+      padding: 0 40px 32px;
+    }
+    .tracks-section-label {
+      font-family: var(--font-title);
+      font-size: .62rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 24px 0 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0;
+    }
+    .track-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: background .2s;
+      cursor: default;
+    }
+    .track-item:last-child { border-bottom: none; }
+    .track-item:hover { background: rgba(201,162,39,.04); margin: 0 -20px; padding-left: 20px; padding-right: 20px; }
+    .track-num {
+      font-family: var(--font-title);
+      font-size: .75rem;
+      color: var(--text-muted);
+      min-width: 28px;
+      text-align: right;
+    }
+    .track-play {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: border-color .2s, background .2s;
+      cursor: pointer;
+    }
+    .track-play:hover { border-color: var(--gold); background: rgba(201,162,39,.1); }
+    .track-play svg { width: 12px; height: 12px; fill: var(--gold); margin-left: 2px; }
+    .track-name {
+      flex: 1;
+      font-size: .9rem;
+      color: var(--text);
+    }
+    .track-meta {
+      font-size: .72rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .track-link {
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 2px;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .track-link:hover { background: rgba(201,162,39,.1); }
+
+    /* ===========================
+       PERFORMANCES / AGENDA
+    =========================== */
+    #agenda { background: var(--bg-mid); }
+    .agenda-tabs {
+      display: flex; gap: 0;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      overflow: hidden;
+      max-width: 480px; margin: 0 auto 50px;
+    }
+    .agenda-tab {
+      flex: 1;
+      font-family: var(--font-title);
+      font-size: .68rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 12px;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .agenda-tab.active { background: var(--gold); color: var(--bg); }
+
+    .agenda-panel { display: none; max-width: 1100px; margin: 0 auto; }
+    .agenda-panel.active { display: block; }
+
+    .shows-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .show-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 20px 22px;
+      display: flex; align-items: center; gap: 18px;
+      transition: transform .2s, border-color .2s;
+    }
+    .show-card:hover { transform: translateY(-3px); border-color: rgba(201,162,39,.4); }
+    .show-num {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: rgba(201,162,39,.3);
+      min-width: 40px;
+      line-height: 1;
+    }
+    .show-details { flex: 1; }
+    .show-date {
+      font-family: var(--font-title);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      color: var(--gold);
+      margin-bottom: 4px;
+    }
+    .show-city {
+      font-size: .9rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+    .show-venue {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Key shows */
+    .key-shows {
+      max-width: 1100px; margin: 50px auto 0;
+    }
+    .key-shows-title {
+      font-family: var(--font-title);
+      font-size: .68rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .key-show-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .key-show-item {
+      background: var(--bg-card2);
+      border-left: 3px solid var(--gold);
+      padding: 16px 20px;
+      border-radius: 0 3px 3px 0;
+    }
+    .key-show-item strong {
+      display: block;
+      font-family: var(--font-title);
+      font-size: .85rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .key-show-item span {
+      font-size: .75rem;
+      color: var(--text-muted);
+    }
+
+    /* ===========================
+       TIMELINE
+    =========================== */
+    #parcours { background: var(--bg); }
+    .timeline {
+      position: relative;
+      max-width: 800px; margin: 0 auto;
+      padding-left: 40px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 14px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), rgba(201,162,39,.1));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 44px;
+      padding-left: 24px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -33px; top: 6px;
+      width: 12px; height: 12px;
+      background: var(--bg);
+      border: 2px solid var(--gold);
+      border-radius: 50%;
+    }
+    .tl-year {
+      font-family: var(--font-display);
+      font-size: .85rem;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .tl-text {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .tl-text strong { color: var(--text); }
+
+    /* ===========================
+       CONTACT
+    =========================== */
+    #contact { background: var(--bg-mid); }
+    .contact-wrap {
+      max-width: 800px; margin: 0 auto; text-align: center;
+    }
+    .contact-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      line-height: 1.9;
+      margin-bottom: 50px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+    }
+    .contact-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 30px 24px;
+      text-align: center;
+      transition: border-color .2s, transform .2s;
+    }
+    .contact-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .contact-icon {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: rgba(201,162,39,.1);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .contact-icon svg { width: 20px; height: 20px; fill: var(--gold); }
+    .contact-card h4 {
+      font-family: var(--font-title);
+      font-size: .7rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .contact-card p, .contact-card a {
+      font-size: .9rem;
+      color: var(--text);
+    }
+
+    .social-links {
+      display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+    }
+    .social-btn {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 22px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-family: var(--font-title);
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: border-color .2s, color .2s, transform .2s;
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .social-btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 40px 5%;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .footer-tagline {
+      font-size: .75rem;
+      color: var(--text-muted);
+      letter-spacing: .1em;
+      margin-bottom: 28px;
+    }
+    .footer-nav {
+      display: flex; gap: 24px; justify-content: center; flex-wrap: wrap;
+      list-style: none;
+      margin-bottom: 28px;
+    }
+    .footer-nav a {
+      font-family: var(--font-title);
+      font-size: .65rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color .2s;
+    }
+    .footer-nav a:hover { color: var(--gold); }
+    .footer-credit {
+      font-size: .7rem;
+      color: rgba(154,144,128,.4);
+    }
+
+    /* ===========================
+       ABOUT PHOTO
+    =========================== */
+    .about-photo-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 60px rgba(0,0,0,.6);
+    }
+    .about-photo-accent {
+      position: absolute;
+      bottom: -12px; right: -12px;
+      width: 60%; height: 60%;
+      border: 2px solid var(--gold);
+      border-radius: 3px;
+      z-index: -1;
+      opacity: .35;
+    }
+
+    /* ===========================
+       GALLERY
+    =========================== */
+    #galerie { background: var(--bg-mid); }
+
+    /* Horizontal strip auto-scroll */
+    .gallery-strip-wrap {
+      overflow: hidden;
+      margin: 0 -5%;
+      position: relative;
+    }
+    .gallery-strip-wrap::before,
+    .gallery-strip-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .gallery-strip-wrap::before { left: 0;  background: linear-gradient(to right, var(--bg-mid), transparent); }
+    .gallery-strip-wrap::after  { right: 0; background: linear-gradient(to left, var(--bg-mid), transparent); }
+
+    .gallery-strip {
+      display: flex;
+      gap: 14px;
+      padding: 0 5% 14px;
+      animation: strip-scroll 40s linear infinite;
+      width: max-content;
+    }
+    .gallery-strip:hover { animation-play-state: paused; }
+    @keyframes strip-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .gallery-strip-img {
+      width: 260px;
+      height: 320px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      filter: brightness(.85) saturate(.85);
+    }
+    .gallery-strip-img:hover {
+      transform: scale(1.03);
+      border-color: var(--gold);
+      box-shadow: 0 10px 40px rgba(0,0,0,.5);
+      filter: brightness(1) saturate(1);
+    }
+
+    /* Masonry grid */
+    .gallery-grid {
+      max-width: 1200px; margin: 50px auto 0;
+      columns: 4 240px;
+      gap: 12px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform .4s, filter .4s;
+      filter: brightness(.8) saturate(.8);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(1) saturate(1);
+    }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,8,8,.8) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+      display: flex; align-items: flex-end;
+      padding: 16px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-overlay-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-left: auto;
+    }
+    .gallery-overlay-icon svg { width: 16px; height: 16px; fill: white; }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 9000;
+      background: rgba(0,0,0,.95);
+      align-items: center; justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    #lightbox.open { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: 90vw;
+      max-height: 80vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #lb-img {
+      max-width: 90vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.8);
+    }
+    .lb-close {
+      position: fixed; top: 20px; right: 24px;
+      background: none; border: none;
+      font-size: 2.4rem; color: var(--gold);
+      cursor: pointer; line-height: 1; z-index: 9001;
+    }
+    .lb-nav {
+      position: fixed;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(201,162,39,.15);
+      border: 1px solid var(--border);
+      color: var(--gold);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 9001;
+      font-size: 1.4rem;
+      transition: background .2s;
+    }
+    .lb-nav:hover { background: rgba(201,162,39,.35); }
+    .lb-prev { left: 16px; }
+    .lb-next { right: 16px; }
+    .lb-counter {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-title);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      color: var(--text-muted);
+    }
+    .lb-dots {
+      display: flex; gap: 6px; justify-content: center;
+      margin-top: 16px; flex-wrap: wrap;
+      max-width: 300px;
+    }
+    .lb-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .lb-dot.active { background: var(--gold); transform: scale(1.4); }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-photo-wrap { max-width: 320px; }
+      .lineage-row { flex-direction: column; align-items: center; }
+      .gallery-grid { columns: 2 160px; }
+    }
+    @media (max-width: 700px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .hero-socials { gap: 0; }
+      .hero-socials .hs-sep { display: none; }
+      .hero-socials { gap: 24px; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .stat-item:last-child { border-bottom: none; }
+      section { padding: 70px 5%; }
+      .album-header { padding: 24px; }
+      .tracks-list { padding: 0 20px 24px; }
+      .timeline { padding-left: 24px; }
+      .timeline::before { left: 8px; }
+      .timeline-item::before { left: -27px; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ========================
+       LOADER
+  ========================= -->
+  <div id="loader">
+    <div class="loader-logo">GBÈZÉ JUNIOR</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  </div>
+
+  <!-- ========================
+       NAVIGATION
+  ========================= -->
+  <nav id="navbar">
+    <div class="nav-logo">GBÈZÉ JUNIOR</div>
+    <ul class="nav-links">
+      <li><a href="#about">Biographie</a></li>
+      <li><a href="#lineage">Lignée</a></li>
+      <li><a href="#musique">Musique</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Réserver</a>
+    <button class="hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">×</button>
+    <a href="#about"   onclick="closeMob()">Biographie</a>
+    <a href="#lineage" onclick="closeMob()">Lignée</a>
+    <a href="#musique" onclick="closeMob()">Musique</a>
+    <a href="#agenda"  onclick="closeMob()">Agenda</a>
+    <a href="#parcours" onclick="closeMob()">Parcours</a>
+    <a href="#contact" onclick="closeMob()">Contact</a>
+  </div>
+
+  <!-- ========================
+       HERO
+  ========================= -->
+  <section id="hero">
+    <div class="hero-bg"><div class="hero-bg-img"></div></div>
+    <div class="particles" id="particles"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring hero-ring-2"></div>
+
+    <!-- Portrait artiste (photo phb.jpg) -->
+    <div class="hero-portrait-wrap">
+      <div class="hero-portrait-frame"></div>
+      <img src="phb.jpg" alt="GBÈZÉ JUNIOR HOUEGNON" class="hero-portrait" />
+      <span class="hero-portrait-label">GBÈZÉ JUNIOR HOUEGNON</span>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-tag">🇧🇯 &nbsp; Artiste Traditionnel du Bénin</div>
+      <h1 class="hero-name">GBÈZÉ JUNIOR<br/>HOUEGNON</h1>
+      <p class="hero-sub">Chanteur · Compositeur · Danseur · Percussionniste</p>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        Héritier d'une lignée artistique millénaire, maître des rythmes
+        <strong style="color:var(--gold)">Tchingounmin</strong> et
+        <strong style="color:var(--gold)">Tôba Hanyé</strong> —
+        l'ambassadeur dynamique de la culture béninoise qui conquiert le monde
+        numérique avec plus de <strong style="color:var(--gold)">465 000 abonnés</strong> cumulés.
+      </p>
+      <div class="hero-ctas">
+        <a href="#musique" class="btn-primary">Découvrir la Musique</a>
+        <a href="#agenda"  class="btn-secondary">Voir l'Agenda</a>
+      </div>
+
+      <div class="hero-socials">
+        <div class="hero-social-item">
+          <span class="hs-count">300K+</span>
+          <span class="hs-label">TikTok</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-social-item">
+          <span class="hs-count">121K</span>
+          <span class="hs-label">Facebook</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-social-item">
+          <span class="hs-count">44K+</span>
+          <span class="hs-label">YouTube</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hero-social-item">
+          <span class="hs-count">21</span>
+          <span class="hs-label">Titres</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-down" onclick="document.getElementById('stats').scrollIntoView({behavior:'smooth'})">
+      <span>Découvrir</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========================
+       STATS BAND
+  ========================= -->
+  <div id="stats">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="300000">0</span>
+        <span class="stat-label">Abonnés TikTok</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="121000">0</span>
+        <span class="stat-label">Abonnés Facebook</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="44000">0</span>
+        <span class="stat-label">Abonnés YouTube</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="21">0</span>
+        <span class="stat-label">Titres Enregistrés</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="14">0</span>
+        <span class="stat-label">Clips Vidéo</span>
+      </div>
+      <div class="stat-item reveal">
+        <span class="stat-num" data-target="60">0</span>
+        <span class="stat-label">Animations+</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================
+       ABOUT / BIOGRAPHY
+  ========================= -->
+  <section id="about">
+    <div class="section-header reveal">
+      <span class="section-tag">Biographie</span>
+      <h2 class="section-title">L'Artiste & <span>Sa Vision</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="about-grid">
+      <!-- Photo artiste -->
+      <div class="about-photo-wrap reveal">
+        <div class="about-photo-accent"></div>
+        <img src="phc.jpg" alt="GBÈZÉ JUNIOR — Portrait" class="about-photo" />
+      </div>
+
+      <div class="about-text reveal">
+        <p>
+          <strong>TOKPONHO Manhouhignan Jean-Baptist</strong>, connu sous le nom de scène
+          <strong>GBÈZÉ JUNIOR HOUEGNON</strong>, est né le 22 juillet 1999 à Aklampa,
+          au Bénin. Fils aîné du maître <strong>GBEZE ZEGUE-ZOUGOU</strong>, il incarne
+          la continuité vivante d'un héritage artistique exceptionnel.
+        </p>
+        <p>
+          Formé dès l'âge de <strong>13 ans</strong> par son père aux rythmes
+          <strong>Tchingounmin</strong> et <strong>Tôba Hanyé</strong>, il ne s'est pas
+          contenté de reproduire — il a créé, innové et porté cette tradition millénaire
+          vers de nouveaux horizons, notamment numériques.
+        </p>
+        <p>
+          En <strong>juillet 2024</strong>, il réalise sa première prestation live officielle
+          à Cana — le début d'une ascension fulgurante. En moins de deux ans, il cumule
+          plus de <strong>60 animations</strong> à travers tout le Bénin, participe au
+          Ballet National lors des <em>Vodoun Days</em>, et développe une présence sociale
+          de plus de <strong>465 000 abonnés</strong> cumulés.
+        </p>
+        <p>
+          Polyglotte, il chante en <strong>Mahi, Fon, Nago et Bariba</strong> — une
+          richesse linguistique qui lui permet de toucher des audiences de tout le Bénin
+          et au-delà.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Tchingounmin</span>
+          <span class="tag">Tôba Hanyé</span>
+          <span class="tag">Danse Traditionnelle</span>
+          <span class="tag">Percussion</span>
+          <span class="tag">Composition</span>
+          <span class="tag">Piano</span>
+          <span class="tag">Batterie</span>
+          <span class="tag">Chorégraphie</span>
+        </div>
+      </div><!-- end about-text -->
+
+      <div class="about-info-card reveal">
+        <div class="about-info-header">Fiche Artiste</div>
+        <div class="info-row">
+          <span class="info-key">Nom de scène</span>
+          <span class="info-val">GBÈZÉ JUNIOR HOUEGNON</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Nom civil</span>
+          <span class="info-val">TOKPONHO Manhouhignan Jean-Baptist</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Naissance</span>
+          <span class="info-val">22 juillet 1999 · Aklampa</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Nationalité</span>
+          <span class="info-val">Béninoise</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Résidence</span>
+          <span class="info-val">Akassato (Abomey-Calavi)</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Disciplines</span>
+          <span class="info-val">Chant · Composition · Danse · Percussion</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Rythmes</span>
+          <span class="info-val">Tchingounmin · Tôba Hanyé</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Formation</span>
+          <span class="info-val">Dès 2012 par son père · EACE UAC 2021+</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Langues</span>
+          <span class="info-val">Français · Mahi · Fon · Nago · Bariba</span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Téléphone</span>
+          <span class="info-val"><a href="tel:+22998610608">+229 98 61 06 08</a></span>
+        </div>
+        <div class="info-row">
+          <span class="info-key">Email</span>
+          <span class="info-val"><a href="mailto:tokponhojean@gmail.com">tokponhojean@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       GALERIE PHOTOS
+  ========================= -->
+  <section id="galerie">
+    <div class="section-header reveal">
+      <span class="section-tag">Photos</span>
+      <h2 class="section-title">Galerie <span>Artistique</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Strip défilant (phd → phz, dupliqué pour l'infini) -->
+    <div class="gallery-strip-wrap reveal">
+      <div class="gallery-strip" id="galleryStrip">
+        <img src="phd.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(3)" />
+        <img src="phe.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(4)" />
+        <img src="phf.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(5)" />
+        <img src="phg.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(6)" />
+        <img src="phh.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(7)" />
+        <img src="phi.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(8)" />
+        <img src="phj.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(9)" />
+        <img src="phk.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(10)" />
+        <img src="phl.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(11)" />
+        <img src="phm.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(12)" />
+        <img src="phn.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(13)" />
+        <img src="pho.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(14)" />
+        <img src="php.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(15)" />
+        <img src="phq.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(16)" />
+        <img src="phr.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(17)" />
+        <img src="phs.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(18)" />
+        <img src="pht.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(19)" />
+        <img src="phu.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(20)" />
+        <img src="phv.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(21)" />
+        <img src="phw.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(22)" />
+        <img src="phx.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(23)" />
+        <img src="phy.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(24)" />
+        <img src="phz.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(25)" />
+        <!-- Duplicate pour boucle infinie -->
+        <img src="phd.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(3)" />
+        <img src="phe.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(4)" />
+        <img src="phf.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(5)" />
+        <img src="phg.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(6)" />
+        <img src="phh.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(7)" />
+        <img src="phi.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(8)" />
+        <img src="phj.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(9)" />
+        <img src="phk.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(10)" />
+        <img src="phl.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(11)" />
+        <img src="phm.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(12)" />
+        <img src="phn.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(13)" />
+      </div>
+    </div>
+
+    <!-- Grille masonry complète (toutes les 26 photos) -->
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" onclick="openLb(0)">
+        <img src="pha.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(1)">
+        <img src="phb.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(2)">
+        <img src="phc.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(3)">
+        <img src="phd.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(4)">
+        <img src="phe.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(5)">
+        <img src="phf.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(6)">
+        <img src="phg.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(7)">
+        <img src="phh.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(8)">
+        <img src="phi.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(9)">
+        <img src="phj.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(10)">
+        <img src="phk.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(11)">
+        <img src="phl.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(12)">
+        <img src="phm.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(13)">
+        <img src="phn.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(14)">
+        <img src="pho.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(15)">
+        <img src="php.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(16)">
+        <img src="phq.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(17)">
+        <img src="phr.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(18)">
+        <img src="phs.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(19)">
+        <img src="pht.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(20)">
+        <img src="phu.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(21)">
+        <img src="phv.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(22)">
+        <img src="phw.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(23)">
+        <img src="phx.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(24)">
+        <img src="phy.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(25)">
+        <img src="phz.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button class="lb-close" onclick="closeLb()">×</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="GBÈZÉ JUNIOR" />
+    </div>
+    <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+    <span class="lb-counter" id="lb-counter"></span>
+    <div class="lb-dots" id="lb-dots"></div>
+  </div>
+
+  <!-- ========================
+       LIGNÉE ARTISTIQUE
+  ========================= -->
+  <section id="lineage">
+    <div class="section-header reveal">
+      <span class="section-tag">Héritage</span>
+      <h2 class="section-title">Une Lignée, <span>Un Flambeau</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="lineage-tree">
+      <!-- Grand-uncle -->
+      <div class="lineage-row reveal">
+        <div class="lineage-node">
+          <div class="ln-role">GBÈZÉ N°1 — Grand-Oncle (même père, même mère)</div>
+          <div class="ln-name">Justin ABOULLÔTONDJI</div>
+          <div class="ln-desc">Le fondateur. L'artiste qui a porté le nom GBÈZÉ au sommet et forgé la légende de cette famille artistique d'exception.</div>
+        </div>
+        <div class="lineage-node">
+          <div class="ln-role">L'Artiste LOUHA — Oncle Paternel</div>
+          <div class="ln-name">Maître du Tôba Hanyé</div>
+          <div class="ln-desc">Même sang, même vocation. Grand maître du rythme <em>Tôba Hanyé</em>, pilier de la tradition familiale.</div>
+        </div>
+      </div>
+
+      <div class="lineage-connector"></div>
+
+      <!-- Father -->
+      <div class="lineage-node reveal">
+        <div class="ln-role">Le Père — GBEZE ZEGUE-ZOUGOU Actuel</div>
+        <div class="ln-name">TOKPONHO Gbèfognon Modeste</div>
+        <div class="ln-desc">
+          Formateur de son fils dès l'âge de 13 ans. Maître des rythmes Tchingounmin et Tôba —
+          un héritage transmis de vivant à vivant, de cœur à cœur.
+          <br/><em style="color:var(--text-muted);font-size:.78rem;">Origine : Aklampa</em>
+        </div>
+      </div>
+
+      <div class="lineage-connector"></div>
+
+      <!-- GBÈZÉ JUNIOR -->
+      <div class="lineage-node featured reveal">
+        <div class="ln-role">✦ L'Héritier — Fils Aîné</div>
+        <div class="ln-name" style="font-size:1.4rem;color:var(--gold)">GBÈZÉ JUNIOR HOUEGNON</div>
+        <div class="ln-desc">
+          Il n'a pas simplement repris un nom — il a reçu un flambeau, et il le porte avec
+          <strong style="color:var(--gold)">300 000 abonnés TikTok</strong>,
+          21 titres, 14 clips, et une énergie scénique qui transcende les frontières.
+          L'ambassadeur vivant d'une tradition millénaire.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       MUSIQUE
+  ========================= -->
+  <section id="musique">
+    <div class="section-header reveal">
+      <span class="section-tag">Discographie</span>
+      <h2 class="section-title">Musique & <span>Clips</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- YouTube Videos -->
+    <div class="videos-grid reveal">
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/PjtOSlBw804"
+            title="GBEZE JUNIOR — VODOUN HÔNON (Clip Officiel)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <h4>VODOUN HÔNON</h4>
+          <p>Clip Officiel · Novembre 2024</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/xNQ6_MTXzEE"
+            title="GBEZE JUNIOR — SI L'AMOUR EST FOLIE (Clip Officiel)"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="video-info">
+          <h4>SI L'AMOUR EST FOLIE</h4>
+          <p>Clip Officiel · Février 2025</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Album ASSIA-YETON -->
+    <div class="album-block reveal">
+      <div class="album-header">
+        <div class="album-art">
+          <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        </div>
+        <div class="album-meta">
+          <h3>ASSIA-YETON</h3>
+          <p>Album · 2024 · Rythmes Traditionnels du Bénin</p>
+          <p style="margin-top:8px;font-size:.75rem;color:var(--gold)">
+            Production : ATM Studio
+          </p>
+        </div>
+      </div>
+
+      <div class="tracks-list">
+        <div class="tracks-section-label">Titres de l'Album</div>
+
+        <!-- Tracks from WhatsApp screenshot + known titles -->
+        <div class="track-item">
+          <span class="track-num">01</span>
+          <div class="track-play" title="Écouter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Nouwanou Gbètô</span>
+          <span class="track-meta">Tchingounmin</span>
+          <!-- Ajouter lien ici : -->
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">02</span>
+          <div class="track-play" title="Écouter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Ya Man Ké Noumi</span>
+          <span class="track-meta">Tchingounmin</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">03</span>
+          <div class="track-play" title="Écouter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Gota-Piano</span>
+          <span class="track-meta">Fusion</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">04</span>
+          <div class="track-play" title="Écouter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Yôkpô Vôvô Elô</span>
+          <span class="track-meta">Tchingounmin</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">05</span>
+          <div class="track-play" title="Écouter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Gbè Non Ylè Nou Gbètô</span>
+          <span class="track-meta">Tchingounmin</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">06</span>
+          <div class="track-play" title="Écouter"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">O Kou Do Wê</span>
+          <span class="track-meta">Tchingounmin</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+
+        <div class="tracks-section-label" style="margin-top:8px">Autres Singles & Titres</div>
+
+        <div class="track-item">
+          <span class="track-num">07</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Vodoun Hônon</span>
+          <span class="track-meta">Clip Officiel · 2024</span>
+          <a href="https://www.youtube.com/watch?v=PjtOSlBw804" target="_blank" class="track-link">YouTube</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">08</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Si l'Amour est Folie</span>
+          <span class="track-meta">Clip Officiel · Fév. 2025</span>
+          <a href="https://www.youtube.com/watch?v=xNQ6_MTXzEE" target="_blank" class="track-link">YouTube</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">09</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Gbemeho</span>
+          <span class="track-meta">Officiel Musique · Juin 2025</span>
+          <a href="https://www.youtube.com/watch?v=7ZoSePX0_fE" target="_blank" class="track-link">YouTube</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">10</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Bénin Tovi Le Mi</span>
+          <span class="track-meta">Officiel Musique</span>
+          <a href="https://www.youtube.com/watch?v=QR0usQvTBVw" target="_blank" class="track-link">YouTube</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">11</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Toba Hanyé</span>
+          <span class="track-meta">Single · Avr. 2024</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">12</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">I Love You</span>
+          <span class="track-meta">Audio Officiel · 2024</span>
+          <a href="https://www.youtube.com/watch?v=r0gXanLjPLk" target="_blank" class="track-link">YouTube</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">13</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Kpétovi Yalénou Tché</span>
+          <span class="track-meta">Audio Officiel · 2024</span>
+          <a href="https://www.youtube.com/watch?v=a3akQ5AZAiY" target="_blank" class="track-link">YouTube</a>
+        </div>
+        <div class="track-item">
+          <span class="track-num">14</span>
+          <div class="track-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="track-name">Hommage à l'EACE</span>
+          <span class="track-meta">Premier Single · ORTB 5/7 · 2023</span>
+          <a href="#" class="track-link">Écouter</a>
+        </div>
+
+        <p style="font-size:.72rem;color:var(--text-muted);padding-top:20px;text-align:center;font-style:italic">
+          21 titres au total — liens à compléter selon les plateformes disponibles (Google Drive, Spotify, Boomplay…)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       AGENDA
+  ========================= -->
+  <section id="agenda">
+    <div class="section-header reveal">
+      <span class="section-tag">Animations</span>
+      <h2 class="section-title">Agenda & <span>Performances</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="agenda-tabs reveal">
+      <button class="agenda-tab active" onclick="switchTab('2026')">2026</button>
+      <button class="agenda-tab" onclick="switchTab('2025')">2025</button>
+      <button class="agenda-tab" onclick="switchTab('2024')">2024</button>
+    </div>
+
+    <!-- 2026 -->
+    <div class="agenda-panel active" id="panel-2026">
+      <div class="shows-grid">
+        <div class="show-card reveal"><span class="show-num">01</span><div class="show-details"><div class="show-date">02 Jan. 2026</div><div class="show-city">Massi</div></div></div>
+        <div class="show-card reveal"><span class="show-num">02</span><div class="show-details"><div class="show-date">03 Jan. 2026</div><div class="show-city">Bonou</div></div></div>
+        <div class="show-card reveal"><span class="show-num">03</span><div class="show-details"><div class="show-date">03 Jan. 2026</div><div class="show-city">Lissègazoun</div><div class="show-venue">Agnangô</div></div></div>
+        <div class="show-card reveal"><span class="show-num">04</span><div class="show-details"><div class="show-date">04 Jan. 2026</div><div class="show-city">Lalo Tchitô</div><div class="show-venue">Quartier Zountôkpa · 14h</div></div></div>
+        <div class="show-card reveal"><span class="show-num">05</span><div class="show-details"><div class="show-date">05 Jan. 2026</div><div class="show-city">Ouinhi</div><div class="show-venue">Fête de l'Ibilè</div></div></div>
+        <div class="show-card reveal"><span class="show-num">06</span><div class="show-details"><div class="show-date">09 Jan. 2026</div><div class="show-city">Agbangnizoun</div><div class="show-venue">Gboli · Maison TAKPESSE</div></div></div>
+        <div class="show-card reveal"><span class="show-num">07</span><div class="show-details"><div class="show-date">21 Jan. 2026</div><div class="show-city">Ouidah</div><div class="show-venue">Kpomassè</div></div></div>
+        <div class="show-card reveal"><span class="show-num">08</span><div class="show-details"><div class="show-date">29 Jan. 2026</div><div class="show-city">Abomey</div><div class="show-venue">Maison TAMADAHO</div></div></div>
+        <div class="show-card reveal"><span class="show-num">09</span><div class="show-details"><div class="show-date">1er Fév. 2026</div><div class="show-city">Zè Dodji-Bata</div></div></div>
+      </div>
+    </div>
+
+    <!-- 2025 -->
+    <div class="agenda-panel" id="panel-2025">
+      <div class="shows-grid">
+        <div class="show-card"><span class="show-num">01</span><div class="show-details"><div class="show-date">12 Jan. 2025</div><div class="show-city">Lokossa</div></div></div>
+        <div class="show-card"><span class="show-num">02</span><div class="show-details"><div class="show-date">08 Fév. 2025</div><div class="show-city">Kétou</div><div class="show-venue">Ewè</div></div></div>
+        <div class="show-card"><span class="show-num">03</span><div class="show-details"><div class="show-date">15 Fév. 2025</div><div class="show-city">Cotonou</div><div class="show-venue">Sainte Rita</div></div></div>
+        <div class="show-card"><span class="show-num">04</span><div class="show-details"><div class="show-date">22 Fév. 2025</div><div class="show-city">Abomey</div></div></div>
+        <div class="show-card"><span class="show-num">05</span><div class="show-details"><div class="show-date">20 Mars 2025</div><div class="show-city">Toffô</div></div></div>
+        <div class="show-card"><span class="show-num">06</span><div class="show-details"><div class="show-date">25 Mars 2025</div><div class="show-city">Sodohomey</div></div></div>
+        <div class="show-card"><span class="show-num">07</span><div class="show-details"><div class="show-date">11 Avr. 2025</div><div class="show-city">Zogbadjè</div></div></div>
+        <div class="show-card"><span class="show-num">08</span><div class="show-details"><div class="show-date">20 Avr. 2025</div><div class="show-city">Ouèssè</div><div class="show-venue">Wogoudo</div></div></div>
+        <div class="show-card"><span class="show-num">09</span><div class="show-details"><div class="show-date">1er Mai 2025</div><div class="show-city">Ouinhi</div></div></div>
+        <div class="show-card"><span class="show-num">10</span><div class="show-details"><div class="show-date">06 Juin 2025</div><div class="show-city">Tori</div></div></div>
+        <div class="show-card"><span class="show-num">11</span><div class="show-details"><div class="show-date">19 Juin 2025</div><div class="show-city">Abomey</div></div></div>
+        <div class="show-card"><span class="show-num">12</span><div class="show-details"><div class="show-date">22 Juin 2025</div><div class="show-city">Porto-Novo</div></div></div>
+        <div class="show-card"><span class="show-num">13</span><div class="show-details"><div class="show-date">19 Juil. 2025</div><div class="show-city">Ouèdo</div></div></div>
+        <div class="show-card"><span class="show-num">14</span><div class="show-details"><div class="show-date">15 Août 2025</div><div class="show-city">Allada</div></div></div>
+        <div class="show-card"><span class="show-num">15</span><div class="show-details"><div class="show-date">16 Août 2025</div><div class="show-city">Ouèdo</div></div></div>
+        <div class="show-card"><span class="show-num">16</span><div class="show-details"><div class="show-date">17 Août 2025</div><div class="show-city">Avagbodji</div></div></div>
+        <div class="show-card"><span class="show-num">17</span><div class="show-details"><div class="show-date">24 Août 2025</div><div class="show-city">Lissègazoun</div></div></div>
+        <div class="show-card"><span class="show-num">18</span><div class="show-details"><div class="show-date">31 Août 2025</div><div class="show-city">Ouidah</div><div class="show-venue">Fort Français</div></div></div>
+        <div class="show-card"><span class="show-num">19</span><div class="show-details"><div class="show-date">31 Août 2025</div><div class="show-city">Lissèzoun</div></div></div>
+        <div class="show-card"><span class="show-num">20</span><div class="show-details"><div class="show-date">05 Sep. 2025</div><div class="show-city">Sékou</div></div></div>
+        <div class="show-card"><span class="show-num">21</span><div class="show-details"><div class="show-date">13 Déc. 2025</div><div class="show-city">Sékou</div></div></div>
+        <div class="show-card"><span class="show-num">22</span><div class="show-details"><div class="show-date">20 Déc. 2025</div><div class="show-city">Calavi</div></div></div>
+        <div class="show-card"><span class="show-num">23</span><div class="show-details"><div class="show-date">20 Déc. 2025</div><div class="show-city">Akpakpa</div><div class="show-venue">Chez Xavier</div></div></div>
+        <div class="show-card"><span class="show-num">24</span><div class="show-details"><div class="show-date">21 Déc. 2025</div><div class="show-city">Lissazounmey</div></div></div>
+        <div class="show-card"><span class="show-num">25</span><div class="show-details"><div class="show-date">22 Déc. 2025</div><div class="show-city">Toffô</div></div></div>
+        <div class="show-card"><span class="show-num">26</span><div class="show-details"><div class="show-date">25 Déc. 2025</div><div class="show-city">Yovocodji</div></div></div>
+        <div class="show-card"><span class="show-num">27</span><div class="show-details"><div class="show-date">26 Déc. 2025</div><div class="show-city">Togba</div><div class="show-venue">Bar Le Lotus</div></div></div>
+      </div>
+    </div>
+
+    <!-- 2024 -->
+    <div class="agenda-panel" id="panel-2024">
+      <div class="shows-grid">
+        <div class="show-card"><span class="show-num">01</span><div class="show-details"><div class="show-date">19 Juil. 2024 ★</div><div class="show-city">Cana</div><div class="show-venue">Première Animation Officielle</div></div></div>
+        <div class="show-card"><span class="show-num">02</span><div class="show-details"><div class="show-date">31 Juil. 2024</div><div class="show-city">Abomey</div></div></div>
+        <div class="show-card"><span class="show-num">03</span><div class="show-details"><div class="show-date">4 Août 2024</div><div class="show-city">Kpanwignan</div></div></div>
+        <div class="show-card"><span class="show-num">04</span><div class="show-details"><div class="show-date">15 Août 2024</div><div class="show-city">Ouidah</div></div></div>
+        <div class="show-card"><span class="show-num">05</span><div class="show-details"><div class="show-date">23 Août 2024</div><div class="show-city">Hèvié</div></div></div>
+        <div class="show-card"><span class="show-num">06</span><div class="show-details"><div class="show-date">24 Août 2024</div><div class="show-city">Allada</div></div></div>
+        <div class="show-card"><span class="show-num">07</span><div class="show-details"><div class="show-date">31 Août 2024</div><div class="show-city">Agonlin</div></div></div>
+        <div class="show-card"><span class="show-num">08</span><div class="show-details"><div class="show-date">1er Sep. 2024</div><div class="show-city">Toffo Ague</div></div></div>
+        <div class="show-card"><span class="show-num">09</span><div class="show-details"><div class="show-date">29 Sep. 2024</div><div class="show-city">Mougnon</div></div></div>
+        <div class="show-card"><span class="show-num">10</span><div class="show-details"><div class="show-date">7 Oct. 2024</div><div class="show-city">Tori Cada</div></div></div>
+        <div class="show-card"><span class="show-num">11</span><div class="show-details"><div class="show-date">8 Oct. 2024</div><div class="show-city">Espace Maython</div></div></div>
+        <div class="show-card"><span class="show-num">12</span><div class="show-details"><div class="show-date">15 Oct. 2024</div><div class="show-city">Tindji</div></div></div>
+        <div class="show-card"><span class="show-num">13</span><div class="show-details"><div class="show-date">22 Oct. 2024</div><div class="show-city">Zogbodomey</div></div></div>
+        <div class="show-card"><span class="show-num">14</span><div class="show-details"><div class="show-date">27 Oct. 2024</div><div class="show-city">Agonlin</div></div></div>
+        <div class="show-card"><span class="show-num">15</span><div class="show-details"><div class="show-date">1er Nov. 2024</div><div class="show-city">Boulevard</div></div></div>
+        <div class="show-card"><span class="show-num">16</span><div class="show-details"><div class="show-date">9 Nov. 2024</div><div class="show-city">Gbodjè</div></div></div>
+        <div class="show-card"><span class="show-num">17</span><div class="show-details"><div class="show-date">7 Déc. 2024</div><div class="show-city">Kétou</div></div></div>
+        <div class="show-card"><span class="show-num">18</span><div class="show-details"><div class="show-date">13 Déc. 2024</div><div class="show-city">Allada</div><div class="show-venue">Lon Agonmin</div></div></div>
+        <div class="show-card"><span class="show-num">19</span><div class="show-details"><div class="show-date">15 Déc. 2024</div><div class="show-city">Bonou</div></div></div>
+        <div class="show-card"><span class="show-num">20</span><div class="show-details"><div class="show-date">21 Déc. 2024</div><div class="show-city">Agonssoudja</div></div></div>
+        <div class="show-card"><span class="show-num">21</span><div class="show-details"><div class="show-date">28 Déc. 2024</div><div class="show-city">Hèvié</div></div></div>
+        <div class="show-card"><span class="show-num">22</span><div class="show-details"><div class="show-date">30 Déc. 2024</div><div class="show-city">Togba Calavi</div></div></div>
+      </div>
+    </div>
+
+    <!-- Key performances -->
+    <div class="key-shows reveal" style="margin-top:60px">
+      <div class="key-shows-title">✦ Prestations de prestige</div>
+      <div class="key-show-list">
+        <div class="key-show-item">
+          <strong>Étoile du Ballet National</strong>
+          <span>Vodoun Days 2024 · Ballet National du Bénin</span>
+        </div>
+        <div class="key-show-item">
+          <strong>Scène avec le Roi Allekpéhanhou</strong>
+          <span>Événement National · Bénin</span>
+        </div>
+        <div class="key-show-item">
+          <strong>Fête de la Musique · Porto-Novo</strong>
+          <span>Plateau Traditionnel Gouvernemental</span>
+        </div>
+        <div class="key-show-item">
+          <strong>Nuit de l'Indépendance</strong>
+          <span>Ouidah · Événement National</span>
+        </div>
+        <div class="key-show-item">
+          <strong>FSCUAO Togo</strong>
+          <span>Festival Scientifique & Culturel UNESCO · Août 2022</span>
+        </div>
+        <div class="key-show-item">
+          <strong>FInAB 2023</strong>
+          <span>Festival International des Arts du Bénin</span>
+        </div>
+        <div class="key-show-item">
+          <strong>Festival Int. de Danse AGOGO</strong>
+          <span>2023 & Janvier 2024</span>
+        </div>
+        <div class="key-show-item">
+          <strong>ORTB 5/7 Matin</strong>
+          <span>Présentation du 1er single · 2023</span>
+        </div>
+        <div class="key-show-item">
+          <strong>FRSCUAO 2024 — UAC Bénin</strong>
+          <span>Festival Régional des Clubs UNESCO · Août 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       PARCOURS / TIMELINE
+  ========================= -->
+  <section id="parcours">
+    <div class="section-header reveal">
+      <span class="section-tag">Chronologie</span>
+      <h2 class="section-title">Son <span>Parcours</span></h2>
+      <div class="section-line"></div>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="tl-year">2012</div>
+        <div class="tl-text">Début de la formation : rythmes <strong>Tchingounmin & Tôba</strong> avec son père le Maître GBEZE ZEGUE-ZOUGOU. L'héritage se transmet de vivant à vivant, dès l'âge de 13 ans.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2014 — 2022</div>
+        <div class="tl-text">Prestations live des rythmes Tchingounmin et Toba avec son père <strong>GBEZE</strong> dans plusieurs localités du Bénin et du Togo.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2019</div>
+        <div class="tl-text">Obtention du <strong>Baccalauréat série B</strong>. Confirmation de la double vocation : études académiques et vie artistique.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2021</div>
+        <div class="tl-text">Intégration de l'<strong>EACE (Ensemble Artistique et Culturel des Étudiants)</strong> de l'UAC — formation en Danses Nationales.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">Août 2022</div>
+        <div class="tl-text">Participation au <strong>FSCUAO Togo</strong> (Festival Scientifique et Culturel des Clubs UNESCO Universitaires de l'Afrique de l'Ouest). Plus de <strong>51 000 abonnés</strong> Facebook — visibilité nationale confirmée.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2023</div>
+        <div class="tl-text"><strong>Premier single</strong> présenté sur ORTB 5/7 Matin — hommage à l'EACE. Participation au <strong>FInAB</strong> et au <strong>Festival International de Danse AGOGO</strong>. Responsable organisateur de la section Danses Nationales de l'EACE.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">Juil. 2024 ★</div>
+        <div class="tl-text"><strong>Première prestation live officielle</strong> à Cana — le point de départ d'une ascension fulgurante. Sélectionné pour <strong>l'Étoile du Ballet National</strong> (Vodoun Days). Album <strong>ASSIA-YETON</strong> sorti. 25 animations dans l'année.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2025</div>
+        <div class="tl-text"><strong>27 animations</strong> à travers tout le Bénin. <strong>300 000 abonnés TikTok</strong>. 14 clips vidéo. Présences dans les grandes villes : Cotonou, Porto-Novo, Ouidah, Abomey, Allada…</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-year">2026 →</div>
+        <div class="tl-text">9 animations dès janvier. <strong>Site web professionnel</strong> lancé. Expansion continue vers de nouveaux publics et de nouvelles scènes. Le flambeau brûle plus fort que jamais.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       CONTACT
+  ========================= -->
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="section-header reveal">
+        <span class="section-tag">Contact</span>
+        <h2 class="section-title">Réserver & <span>Contacter</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <p class="contact-subtitle reveal">
+        Pour toute réservation de prestation, collaboration artistique ou demande d'information,
+        n'hésitez pas à prendre contact. GBÈZÉ JUNIOR HOUEGNON et son équipe vous répondront
+        dans les meilleurs délais.
+      </p>
+
+      <div class="contact-grid reveal">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </div>
+          <h4>Téléphone</h4>
+          <a href="tel:+22998610608">+229 98 61 06 08</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </div>
+          <h4>Email</h4>
+          <a href="mailto:tokponhojean@gmail.com">tokponhojean@gmail.com</a>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </div>
+          <h4>Adresse</h4>
+          <p>Akassato, Abomey-Calavi · Bénin</p>
+        </div>
+      </div>
+
+      <div class="social-links reveal">
+        <a href="https://www.facebook.com" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          Facebook · 121K
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.73a8.16 8.16 0 004.77 1.52V6.79a4.85 4.85 0 01-1-.1z"/></svg>
+          TikTok · 300K+
+        </a>
+        <a href="https://www.youtube.com/@Gbezejunioralliashouegnon" target="_blank" class="social-btn">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          YouTube · 44K+
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================
+       FOOTER
+  ========================= -->
+  <footer>
+    <div class="footer-logo">GBÈZÉ JUNIOR HOUEGNON</div>
+    <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
+    <ul class="footer-nav">
+      <li><a href="#about">Biographie</a></li>
+      <li><a href="#lineage">Lignée</a></li>
+      <li><a href="#musique">Musique</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-credit">
+      © 2026 GBÈZÉ JUNIOR HOUEGNON · Site développé par Équipe Novasoir
+    </p>
+  </footer>
+
+  <!-- ========================
+       JAVASCRIPT
+  ========================= -->
+  <script>
+    // ===== LOADER =====
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 2000);
+    });
+
+    // ===== NAVBAR scroll =====
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ===== HAMBURGER =====
+    const menuBtn   = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    function closeMob() { mobileMenu.classList.remove('open'); }
+
+    // ===== PARTICLES =====
+    const pContainer = document.getElementById('particles');
+    for (let i = 0; i < 30; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 3 + 1;
+      p.style.cssText = `
+        left: ${Math.random() * 100}%;
+        width: ${size}px;
+        height: ${size}px;
+        animation-duration: ${Math.random() * 12 + 8}s;
+        animation-delay: ${Math.random() * 10}s;
+        --dx: ${(Math.random() - 0.5) * 80}px;
+        opacity: 0;
+      `;
+      pContainer.appendChild(p);
+    }
+
+    // ===== INTERSECTION OBSERVER (reveal) =====
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ===== COUNTER ANIMATION =====
+    function formatNum(n) {
+      if (n >= 1000) return (n / 1000).toFixed(0) + 'K+';
+      return n.toString();
+    }
+    const counters = document.querySelectorAll('.stat-num[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = parseInt(el.dataset.target);
+          let start = 0;
+          const duration = 1800;
+          const step = target / (duration / 16);
+          const timer = setInterval(() => {
+            start += step;
+            if (start >= target) {
+              el.textContent = formatNum(target);
+              clearInterval(timer);
+            } else {
+              el.textContent = formatNum(Math.floor(start));
+            }
+          }, 16);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(c => counterObserver.observe(c));
+
+    // ===== AGENDA TABS =====
+    function switchTab(year) {
+      document.querySelectorAll('.agenda-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.agenda-panel').forEach(p => p.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('panel-' + year).classList.add('active');
+    }
+
+    // ===== STAGGER show cards =====
+    document.querySelectorAll('.show-card').forEach((card, i) => {
+      card.style.transitionDelay = `${(i % 8) * 50}ms`;
+    });
+
+    // ===== LIGHTBOX =====
+    const photos = [
+      'pha.jpg','phb.jpg','phc.jpg','phd.jpg','phe.jpg','phf.jpg',
+      'phg.jpg','phh.jpg','phi.jpg','phj.jpg','phk.jpg','phl.jpg',
+      'phm.jpg','phn.jpg','pho.jpg','php.jpg','phq.jpg','phr.jpg',
+      'phs.jpg','pht.jpg','phu.jpg','phv.jpg','phw.jpg','phx.jpg',
+      'phy.jpg','phz.jpg'
+    ];
+    let lbIndex = 0;
+
+    function openLb(i) {
+      lbIndex = i;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      updateLb();
+    }
+
+    function closeLb() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbNav(dir) {
+      lbIndex = (lbIndex + dir + photos.length) % photos.length;
+      updateLb();
+    }
+
+    function updateLb() {
+      const img = document.getElementById('lb-img');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = photos[lbIndex];
+        img.style.opacity = '1';
+        img.style.transition = 'opacity .25s';
+      }, 150);
+      document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + photos.length;
+      const dots = document.getElementById('lb-dots');
+      dots.innerHTML = '';
+      photos.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'lb-dot' + (i === lbIndex ? ' active' : '');
+        d.onclick = () => { lbIndex = i; updateLb(); };
+        dots.appendChild(d);
+      });
+    }
+
+    // Keyboard nav for lightbox
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+      if (e.key === 'Escape')     closeLb();
+    });
+
+    // Click outside image to close
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLb();
+    });
+  </script>
+
+</body>
+</html>
