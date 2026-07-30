@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie – GBÈZÉ JUNIOR HOUEGNON | Photos et moments forts</title>
+  <meta name="description" content="Galerie photos de GBÈZÉ JUNIOR HOUEGNON : scènes de spectacle, cérémonies, portraits, moments forts de sa carrière.">
+  <link rel="canonical" href="https://www.gbezejuniorhouegnon.com/galerie.html">
+  <meta property="og:title" content="Galerie – GBÈZÉ JUNIOR HOUEGNON">
+  <meta property="og:description" content="Parcourez les images de l'artiste traditionnel béninois.">
+  <meta property="og:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bleu-fonce: #0B1D3A;
+      --bleu-mid: #1E3A5F;
+      --bleu-clair: #E8F0FE;
+      --marron: #8B5A2B;
+      --marron-clair: #C69C6D;
+      --blanc: #FFFFFF;
+      --blanc-casse: #F5F0E8;
+      --gris-clair: #EAEAEA;
+      --texte: #0B1D3A;
+      --texte-muted: #5A6268;
+      --border: rgba(11,29,58,0.15);
+      --font-display: 'Cinzel Decorative', serif;
+      --font-title: 'Cinzel', serif;
+      --font-body: 'Raleway', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--blanc-casse);
+      color: var(--texte);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: var(--marron); text-decoration: none; transition: color .2s; }
+    a:hover { color: var(--bleu-mid); }
+    img { max-width: 100%; display: block; }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--blanc-casse); }
+    ::-webkit-scrollbar-thumb { background: var(--marron); border-radius: 3px; }
+
+    /* Navigation */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 5%; height: 72px;
+      background: var(--bleu-fonce);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.2); }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: .95rem; letter-spacing: .12em; color: var(--blanc); white-space: nowrap;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-title); font-size: .72rem; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,0.8);
+    }
+    .nav-links a:hover { color: var(--marron-clair); }
+    .nav-cta {
+      font-family: var(--font-title); font-size: .7rem; letter-spacing: .15em;
+      text-transform: uppercase; padding: 9px 20px;
+      border: 1px solid var(--marron-clair); color: var(--marron-clair);
+      border-radius: 2px; transition: background .2s, color .2s;
+    }
+    .nav-cta:hover { background: var(--marron-clair); color: var(--bleu-fonce); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--blanc); border-radius: 2px; }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 999;
+      background: rgba(11,29,58,.98); flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+    .mobile-menu a:hover { color: var(--marron-clair); }
+    .close-menu { position: absolute; top: 22px; right: 5%; background: none; border: none; font-size: 2rem; color: var(--blanc); cursor: pointer; }
+
+    /* Section */
+    section { padding: 120px 5% 100px; background: var(--blanc); }
+    .section-header { text-align: center; margin-bottom: 70px; }
+    .section-tag { display: inline-block; font-family: var(--font-title); font-size: .62rem; letter-spacing: .35em; text-transform: uppercase; color: var(--marron); margin-bottom: 16px; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); color: var(--bleu-fonce); line-height: 1.2; }
+    .section-title span { color: var(--marron); }
+    .section-line { width: 60px; height: 2px; background: var(--marron); margin: 20px auto 0; }
+    .reveal { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* Galerie strip */
+    .gallery-strip-wrap {
+      overflow: hidden;
+      margin: 0 -5%;
+      position: relative;
+    }
+    .gallery-strip-wrap::before,
+    .gallery-strip-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .gallery-strip-wrap::before { left: 0;  background: linear-gradient(to right, var(--blanc), transparent); }
+    .gallery-strip-wrap::after  { right: 0; background: linear-gradient(to left, var(--blanc), transparent); }
+
+    .gallery-strip {
+      display: flex;
+      gap: 14px;
+      padding: 0 5% 14px;
+      animation: strip-scroll 40s linear infinite;
+      width: max-content;
+    }
+    .gallery-strip:hover { animation-play-state: paused; }
+    @keyframes strip-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .gallery-strip-img {
+      width: 260px;
+      height: 320px;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: transform .3s, border-color .3s, box-shadow .3s;
+      filter: brightness(.95) saturate(.9);
+    }
+    .gallery-strip-img:hover {
+      transform: scale(1.03);
+      border-color: var(--marron);
+      box-shadow: 0 10px 40px rgba(0,0,0,.1);
+      filter: brightness(1) saturate(1);
+    }
+
+    /* Grille masonry */
+    .gallery-grid {
+      max-width: 1200px; margin: 50px auto 0;
+      columns: 4 240px;
+      gap: 12px;
+    }
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 12px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .gallery-item img {
+      width: 100%;
+      display: block;
+      transition: transform .4s, filter .4s;
+      filter: brightness(.95) saturate(.9);
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(1) saturate(1);
+    }
+    .gallery-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(11,29,58,.7) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .3s;
+      display: flex; align-items: flex-end;
+      padding: 16px;
+    }
+    .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+    .gallery-overlay-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-left: auto;
+    }
+    .gallery-overlay-icon svg { width: 16px; height: 16px; fill: white; }
+
+    /* Lightbox */
+    #lightbox {
+      display: none;
+      position: fixed; inset: 0; z-index: 9000;
+      background: rgba(0,0,0,.95);
+      align-items: center; justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    #lightbox.open { display: flex; }
+    .lb-img-wrap {
+      position: relative;
+      max-width: 90vw;
+      max-height: 80vh;
+      display: flex; align-items: center; justify-content: center;
+    }
+    #lb-img {
+      max-width: 90vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 3px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.5);
+    }
+    .lb-close {
+      position: fixed; top: 20px; right: 24px;
+      background: none; border: none;
+      font-size: 2.4rem; color: var(--marron-clair);
+      cursor: pointer; line-height: 1; z-index: 9001;
+    }
+    .lb-nav {
+      position: fixed;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--marron-clair);
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; z-index: 9001;
+      font-size: 1.4rem;
+      transition: background .2s;
+    }
+    .lb-nav:hover { background: rgba(255,255,255,0.2); }
+    .lb-prev { left: 16px; }
+    .lb-next { right: 16px; }
+    .lb-counter {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-title);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      color: rgba(255,255,255,0.7);
+    }
+    .lb-dots {
+      display: flex; gap: 6px; justify-content: center;
+      margin-top: 16px; flex-wrap: wrap;
+      max-width: 300px;
+    }
+    .lb-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .lb-dot.active { background: var(--marron-clair); transform: scale(1.4); }
+
+    /* Footer */
+    footer {
+      background: var(--bleu-fonce); border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 40px 5%; text-align: center; color: white;
+    }
+    .footer-logo { font-family: var(--font-display); font-size: 1.1rem; color: var(--marron-clair); margin-bottom: 14px; }
+    .footer-tagline { font-size: .75rem; color: rgba(255,255,255,0.7); letter-spacing: .1em; margin-bottom: 28px; }
+    .footer-nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; list-style: none; margin-bottom: 28px; }
+    .footer-nav a { font-family: var(--font-title); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+    .footer-nav a:hover { color: var(--marron-clair); }
+    .footer-credit { font-size: .7rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 15px; }
+    .footer-credit strong { color: var(--marron-clair); }
+    .footer-novasavoir {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.1); padding: 10px 20px;
+      border-radius: 30px; margin-top: 10px; font-size: .75rem;
+      color: white; transition: background .2s;
+    }
+    .footer-novasavoir:hover { background: rgba(255,255,255,0.2); }
+    .footer-novasavoir svg { width: 18px; height: 18px; fill: white; }
+
+    /* WhatsApp flottant */
+    .whatsapp-float {
+      position: fixed; bottom: 20px; right: 20px;
+      width: 60px; height: 60px; background-color: #25D366;
+      border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 999; transition: transform .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+    @media (max-width: 900px) {
+      .gallery-grid { columns: 2 160px; }
+    }
+    @media (max-width: 700px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 100px 5% 70px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">GBÈZÉ JUNIOR</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="lignee.html">Lignée</a></li>
+      <li><a href="musique.html">Musique</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="galerie.html" style="color:var(--marron-clair)">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Réserver</a>
+    <button class="hamburger" id="menuBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu">×</button>
+    <a href="index.html">Accueil</a>
+    <a href="biographie.html">Biographie</a>
+    <a href="lignee.html">Lignée</a>
+    <a href="musique.html">Musique</a>
+    <a href="agenda.html">Agenda</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Contenu Galerie -->
+  <section id="galerie">
+    <div class="section-header reveal">
+      <span class="section-tag">Photos</span>
+      <h1 class="section-title">Galerie <span>Artistique</span></h1>
+      <div class="section-line"></div>
+    </div>
+
+    <!-- Strip défilant -->
+    <div class="gallery-strip-wrap reveal">
+      <div class="gallery-strip" id="galleryStrip">
+        <!-- Les 26 images (pha à phz) -->
+        <img src="phd.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(3)" />
+        <img src="phe.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(4)" />
+        <img src="phf.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(5)" />
+        <img src="phg.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(6)" />
+        <img src="phh.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(7)" />
+        <img src="phi.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(8)" />
+        <img src="phj.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(9)" />
+        <img src="phk.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(10)" />
+        <img src="phl.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(11)" />
+        <img src="phm.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(12)" />
+        <img src="phn.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(13)" />
+        <img src="pho.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(14)" />
+        <img src="php.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(15)" />
+        <img src="phq.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(16)" />
+        <img src="phr.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(17)" />
+        <img src="phs.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(18)" />
+        <img src="pht.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(19)" />
+        <img src="phu.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(20)" />
+        <img src="phv.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(21)" />
+        <img src="phw.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(22)" />
+        <img src="phx.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(23)" />
+        <img src="phy.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(24)" />
+        <img src="phz.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(25)" />
+        <!-- Duplication pour boucle infinie -->
+        <img src="phd.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(3)" />
+        <img src="phe.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(4)" />
+        <img src="phf.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(5)" />
+        <img src="phg.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(6)" />
+        <img src="phh.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(7)" />
+        <img src="phi.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(8)" />
+        <img src="phj.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(9)" />
+        <img src="phk.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(10)" />
+        <img src="phl.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(11)" />
+        <img src="phm.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(12)" />
+        <img src="phn.jpg" class="gallery-strip-img" alt="GBÈZÉ JUNIOR" onclick="openLb(13)" />
+      </div>
+    </div>
+
+    <!-- Grille masonry -->
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" onclick="openLb(0)">
+        <img src="pha.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <div class="gallery-item" onclick="openLb(1)">
+        <img src="phb.jpg" alt="GBÈZÉ JUNIOR" />
+        <div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div>
+      </div>
+      <!-- Les 24 autres photos (phc.jpg à phz.jpg) avec la même structure -->
+      <div class="gallery-item" onclick="openLb(2)"><img src="phc.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(3)"><img src="phd.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(4)"><img src="phe.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(5)"><img src="phf.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(6)"><img src="phg.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(7)"><img src="phh.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(8)"><img src="phi.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(9)"><img src="phj.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(10)"><img src="phk.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(11)"><img src="phl.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(12)"><img src="phm.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(13)"><img src="phn.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(14)"><img src="pho.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(15)"><img src="php.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(16)"><img src="phq.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(17)"><img src="phr.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(18)"><img src="phs.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(19)"><img src="pht.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(20)"><img src="phu.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(21)"><img src="phv.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(22)"><img src="phw.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(23)"><img src="phx.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(24)"><img src="phy.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+      <div class="gallery-item" onclick="openLb(25)"><img src="phz.jpg" alt="GBÈZÉ JUNIOR" /><div class="gallery-item-overlay"><div class="gallery-overlay-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div></div></div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox">
+    <button class="lb-close" onclick="closeLb()">×</button>
+    <button class="lb-nav lb-prev" onclick="lbNav(-1)">‹</button>
+    <div class="lb-img-wrap">
+      <img id="lb-img" src="" alt="GBÈZÉ JUNIOR" />
+    </div>
+    <button class="lb-nav lb-next" onclick="lbNav(1)">›</button>
+    <span class="lb-counter" id="lb-counter"></span>
+    <div class="lb-dots" id="lb-dots"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-logo">GBÈZÉ JUNIOR HOUEGNON</div>
+    <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
+    <ul class="footer-nav">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="biographie.html">Biographie</a></li>
+      <li><a href="lignee.html">Lignée</a></li>
+      <li><a href="musique.html">Musique</a></li>
+      <li><a href="agenda.html">Agenda</a></li>
+      <li><a href="galerie.html">Galerie</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <p class="footer-credit">
+      © 2026 GBÈZÉ JUNIOR HOUEGNON — Développé par <strong>Novasavoir</strong><br>
+      Directeur : Amoussou Frédy
+    </p>
+    <a href="https://wa.me/2290152552106" target="_blank" class="footer-novasavoir" aria-label="Contacter Novasavoir sur WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Contacter Novasavoir
+    </a>
+  </footer>
+
+  <!-- WhatsApp flottant (Client) -->
+  <a href="https://wa.me/2290152557034" target="_blank" class="whatsapp-float" aria-label="Contacter GBÈZÉ JUNIOR sur WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    // Lightbox
+    const photos = [
+      'pha.jpg','phb.jpg','phc.jpg','phd.jpg','phe.jpg','phf.jpg',
+      'phg.jpg','phh.jpg','phi.jpg','phj.jpg','phk.jpg','phl.jpg',
+      'phm.jpg','phn.jpg','pho.jpg','php.jpg','phq.jpg','phr.jpg',
+      'phs.jpg','pht.jpg','phu.jpg','phv.jpg','phw.jpg','phx.jpg',
+      'phy.jpg','phz.jpg'
+    ];
+    let lbIndex = 0;
+
+    function openLb(i) {
+      lbIndex = i;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+      updateLb();
+    }
+
+    function closeLb() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbNav(dir) {
+      lbIndex = (lbIndex + dir + photos.length) % photos.length;
+      updateLb();
+    }
+
+    function updateLb() {
+      const img = document.getElementById('lb-img');
+      img.style.opacity = '0';
+      setTimeout(() => {
+        img.src = photos[lbIndex];
+        img.style.opacity = '1';
+        img.style.transition = 'opacity .25s';
+      }, 150);
+      document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + photos.length;
+      const dots = document.getElementById('lb-dots');
+      dots.innerHTML = '';
+      photos.forEach((_, i) => {
+        const d = document.createElement('div');
+        d.className = 'lb-dot' + (i === lbIndex ? ' active' : '');
+        d.onclick = () => { lbIndex = i; updateLb(); };
+        dots.appendChild(d);
+      });
+    }
+
+    document.addEventListener('keydown', e => {
+      const lb = document.getElementById('lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'ArrowRight') lbNav(1);
+      if (e.key === 'ArrowLeft')  lbNav(-1);
+      if (e.key === 'Escape')     closeLb();
+    });
+
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLb();
+    });
+
+    // Reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
