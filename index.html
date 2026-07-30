@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GBÈZÉ JUNIOR HOUEGNON — Artiste Traditionnel du Bénin</title>
+  <title>GBÈZÉ JUNIOR HOUEGNON — Artiste Traditionnel du Bénin | Accueil</title>
   <meta name="description" content="Bienvenue sur le site officiel de GBÈZÉ JUNIOR HOUEGNON, héritier des rythmes Tchingounmin et Tôba Hanyé. Découvrez sa musique, ses clips, son agenda et son univers culturel.">
   <link rel="canonical" href="https://www.gbezejuniorhouegnon.com/">
   <meta property="og:title" content="GBÈZÉ JUNIOR HOUEGNON">
@@ -11,6 +11,7 @@
   <meta property="og:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
   <meta property="og:type" content="website">
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
@@ -128,6 +129,8 @@
     .scroll-down span { font-size: .58rem; letter-spacing: .25em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
     .scroll-arrow { width: 20px; height: 20px; border-right: 1px solid var(--marron-clair); border-bottom: 1px solid var(--marron-clair); transform: rotate(45deg); animation: arrow-bounce .8s ease-in-out infinite alternate; }
     @keyframes arrow-bounce { from { transform: rotate(45deg) translateY(-3px); opacity: .5; } to { transform: rotate(45deg) translateY(3px); opacity: 1; } }
+
+    /* Sections communes */
     section { padding: 100px 5%; background: var(--blanc); }
     .section-header { text-align: center; margin-bottom: 70px; }
     .section-tag { display: inline-block; font-family: var(--font-title); font-size: .62rem; letter-spacing: .35em; text-transform: uppercase; color: var(--marron); margin-bottom: 16px; }
@@ -137,13 +140,19 @@
     .reveal { opacity: 0; transform: translateY(36px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     @keyframes fade-up { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:none; } }
+
+    /* Stats */
     #stats { padding: 60px 5%; background: var(--bleu-clair); border-top: 1px solid rgba(11,29,58,0.1); border-bottom: 1px solid rgba(11,29,58,0.1); }
     .stats-grid { display: flex; flex-wrap: wrap; justify-content: center; max-width: 1100px; margin: 0 auto; }
     .stat-item { flex: 1 1 160px; text-align: center; padding: 32px 20px; border-right: 1px solid rgba(11,29,58,0.1); }
     .stat-item:last-child { border-right: none; }
     .stat-num { font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--bleu-fonce); display: block; }
     .stat-label { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--texte-muted); margin-top: 8px; }
+
+    /* Bio extrait */
     .bio-extrait { max-width: 800px; margin: 0 auto; text-align: center; }
+
+    /* Clips */
     .clips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; }
     .clip-card { background: var(--blanc); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; transition: transform .3s, box-shadow .3s; }
     .clip-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.1), 0 0 0 1px var(--marron); }
@@ -152,32 +161,72 @@
     .clip-info { padding: 18px 20px; }
     .clip-info h4 { font-family: var(--font-title); font-size: .85rem; letter-spacing: .1em; color: var(--bleu-fonce); margin-bottom: 6px; }
     .clip-info p { font-size: .75rem; color: var(--texte-muted); }
+
+    /* Dernières prestations */
     .quick-dates { max-width: 800px; margin: 0 auto; }
     .quick-date-item { display: flex; align-items: center; gap: 20px; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.04); font-size: .9rem; }
     .quick-date-day { font-family: var(--font-title); color: var(--marron); min-width: 100px; letter-spacing: .1em; }
     .quick-date-city { flex: 1; }
     .quick-date-link { font-family: var(--font-title); font-size: .7rem; letter-spacing: .15em; text-transform: uppercase; color: var(--marron); border: 1px solid var(--marron); padding: 6px 14px; border-radius: 3px; transition: background .2s, color .2s; }
     .quick-date-link:hover { background: var(--marron); color: white; }
+
+    /* Aperçu galerie */
     .apercu-gallery { max-width: 1000px; margin: 0 auto; }
     .apercu-gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
     .apercu-item { aspect-ratio: 3/4; overflow: hidden; border-radius: 3px; border: 1px solid var(--border); cursor: pointer; transition: border-color .3s; }
     .apercu-item:hover { border-color: var(--marron); }
     .apercu-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Footer */
     footer {
-      background: var(--bleu-fonce); border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 40px 5%; text-align: center; color: white;
+      background: var(--bleu-fonce);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 40px 5%;
+      text-align: center;
+      color: white;
     }
     .footer-logo { font-family: var(--font-display); font-size: 1.1rem; color: var(--marron-clair); margin-bottom: 14px; }
     .footer-tagline { font-size: .75rem; color: rgba(255,255,255,0.7); letter-spacing: .1em; margin-bottom: 28px; }
     .footer-nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; list-style: none; margin-bottom: 28px; }
     .footer-nav a { font-family: var(--font-title); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
     .footer-nav a:hover { color: var(--marron-clair); }
-    .footer-credit { font-size: .7rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+    .footer-credit { font-size: .7rem; color: rgba(255,255,255,0.5); line-height: 1.6; margin-bottom: 15px; }
     .footer-credit strong { color: var(--marron-clair); }
-    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; width: 56px; height: 56px; background-color: #25D366; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; z-index: 999; transition: transform .2s; }
-    .whatsapp-float:hover { transform: scale(1.1); }
-    .whatsapp-float svg { width: 30px; height: 30px; fill: white; }
+    .footer-novasavoir {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-top: 10px;
+      font-size: .75rem;
+      color: white;
+      transition: background .2s;
+    }
+    .footer-novasavoir:hover { background: rgba(255,255,255,0.2); }
+    .footer-novasavoir svg { width: 18px; height: 18px; fill: white; }
 
+    /* WhatsApp flottant */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25D366;
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      transition: transform .2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+
+    /* Responsive */
     @media (max-width: 700px) {
       .nav-links, .nav-cta { display: none; }
       .hamburger { display: flex; }
@@ -191,10 +240,11 @@
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav id="navbar">
     <div class="nav-logo">GBÈZÉ JUNIOR</div>
     <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
+      <li><a href="index.html" style="color:var(--marron-clair)">Accueil</a></li>
       <li><a href="biographie.html">Biographie</a></li>
       <li><a href="lignee.html">Lignée</a></li>
       <li><a href="musique.html">Musique</a></li>
@@ -218,6 +268,7 @@
     <a href="contact.html">Contact</a>
   </div>
 
+  <!-- Hero -->
   <section id="hero">
     <div class="hero-bg"><div class="hero-bg-img"></div></div>
     <div class="particles" id="particles"></div>
@@ -342,10 +393,10 @@
     </div>
     <div class="apercu-gallery reveal">
       <div class="apercu-gallery-grid">
-        <div class="apercu-item"><img src="pha.jpg" alt="GBÈZÉ JUNIOR" loading="lazy"></div>
-        <div class="apercu-item"><img src="phb.jpg" alt="GBÈZÉ JUNIOR" loading="lazy"></div>
-        <div class="apercu-item"><img src="phc.jpg" alt="GBÈZÉ JUNIOR" loading="lazy"></div>
-        <div class="apercu-item"><img src="phd.jpg" alt="GBÈZÉ JUNIOR" loading="lazy"></div>
+        <div class="apercu-item"><img src="pha.jpg" alt="GBÈZÉ JUNIOR HOUEGNON en costume traditionnel" loading="lazy"></div>
+        <div class="apercu-item"><img src="phb.jpg" alt="GBÈZÉ JUNIOR lors d'une performance scénique" loading="lazy"></div>
+        <div class="apercu-item"><img src="phc.jpg" alt="Portrait officiel de GBÈZÉ JUNIOR HOUEGNON" loading="lazy"></div>
+        <div class="apercu-item"><img src="phd.jpg" alt="GBÈZÉ JUNIOR dansant le Tôba Hanyé" loading="lazy"></div>
       </div>
       <div style="text-align:center; margin-top:30px;">
         <a href="galerie.html" class="btn-secondary">Voir la galerie complète</a>
@@ -353,6 +404,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="footer-logo">GBÈZÉ JUNIOR HOUEGNON</div>
     <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
@@ -369,14 +421,21 @@
       © 2026 GBÈZÉ JUNIOR HOUEGNON — Développé par <strong>Novasavoir</strong><br>
       Directeur : Amoussou Frédy
     </p>
+    <!-- Bouton WhatsApp Novasavoir -->
+    <a href="https://wa.me/2290152552106" target="_blank" class="footer-novasavoir" aria-label="Contacter Novasavoir sur WhatsApp">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Contacter Novasavoir
+    </a>
   </footer>
 
-  <a href="https://wa.me/2290152552106" target="_blank" class="whatsapp-float" aria-label="Contactez-nous sur WhatsApp">
+  <!-- WhatsApp flottant (Client) -->
+  <a href="https://wa.me/2290152557034" target="_blank" class="whatsapp-float" aria-label="Contacter GBÈZÉ JUNIOR sur WhatsApp">
     <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
+  <!-- JavaScript -->
   <script>
-    window.addEventListener('load', () => { /* pas de loader */ });
+    window.addEventListener('load', () => {});
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
     const menuBtn = document.getElementById('menuBtn');
