@@ -1,90 +1,74 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article – GBÈZÉ JUNIOR HOUEGNON</title>
-    <style>
-        :root {
-            --bleu: #0B1D3A;
-            --marron: #8B5A2B;
-            --blanc: #FFFFFF;
-            --fond: #F5F0E8;
-            --texte: #0B1D3A;
-        }
-        body { font-family: Raleway, sans-serif; background: var(--fond); color: var(--texte); margin: 0; padding: 20px; }
-        nav { background: var(--bleu); color: white; padding: 15px; text-align: center; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
-        .container { max-width: 800px; margin: 30px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { color: var(--bleu); }
-        .meta { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
-        .tag { display: inline-block; padding: 4px 10px; background: var(--marron); color: white; border-radius: 12px; font-size: 0.8rem; }
-        footer { text-align: center; margin-top: 40px; color: #888; }
-        a { color: var(--marron); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article – GBÈZÉ JUNIOR HOUEGNON</title>
+  <link rel="canonical" href="https://www.gbezejuniorhouegnon.com/article.html">
+  <!-- Mêmes polices et style que précédemment -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bleu-fonce: #0B1D3A; --bleu-mid: #1E3A5F; --marron: #8B5A2B; --marron-clair: #C69C6D;
+      --blanc: #FFFFFF; --blanc-casse: #F5F0E8; --texte: #0B1D3A; --texte-muted: #5A6268;
+      --border: rgba(11,29,58,0.15);
+      --font-display: 'Cinzel Decorative', serif; --font-title: 'Cinzel', serif; --font-body: 'Raleway', sans-serif;
+    }
+    body { background: var(--blanc-casse); font-family: var(--font-body); color: var(--texte); line-height: 1.7; margin:0; padding:0; }
+    nav { position:fixed; top:0; left:0; right:0; background: var(--bleu-fonce); display:flex; align-items:center; justify-content:space-between; padding:0 5%; height:72px; z-index:1000; border-bottom:1px solid rgba(255,255,255,0.1); }
+    .nav-logo { font-family: var(--font-display); font-size:.95rem; color:white; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { color:rgba(255,255,255,0.8); font-family:var(--font-title); font-size:.72rem; text-transform:uppercase; letter-spacing:.18em; }
+    .nav-links a:hover { color:var(--marron-clair); }
+    .container { max-width:800px; margin:100px auto 40px; background:var(--blanc); padding:30px; border-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,0.03); }
+    h1 { font-family: var(--font-display); color: var(--bleu-fonce); }
+    .meta { color: var(--texte-muted); margin-bottom:20px; }
+    footer { background: var(--bleu-fonce); color:white; text-align:center; padding:30px; margin-top:50px; }
+  </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="actualites.html">Actualités</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+  <nav>
+    <div class="nav-logo">GBÈZÉ JUNIOR</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="articleContainer" class="container">Chargement...</div>
+  <footer>© 2026 GBÈZÉ JUNIOR HOUEGNON – Développé par Novasavoir</footer>
 
-    <div id="articleContainer" class="container">
-        <p>Chargement...</p>
-    </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyBkibp1JxO5TsFPddIPYekZTt7qH0GcjSQ",
+      authDomain: "gbeze-junior.firebaseapp.com",
+      projectId: "gbeze-junior",
+      storageBucket: "gbeze-junior.firebasestorage.app",
+      messagingSenderId: "651737929168",
+      appId: "1:651737929168:web:cddc3fac5b7ef6c906d5d5"
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
-    <footer>
-        © 2026 GBÈZÉ JUNIOR HOUEGNON – Développé par Novasavoir
-    </footer>
-
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBkibp1JxO5TsFPddIPYekZTt7qH0GcjSQ",
-            authDomain: "gbeze-junior.firebaseapp.com",
-            projectId: "gbeze-junior",
-            storageBucket: "gbeze-junior.firebasestorage.app",
-            messagingSenderId: "651737929168",
-            appId: "1:651737929168:web:cddc3fac5b7ef6c906d5d5"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        async function loadArticle() {
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get("id");
-            const container = document.getElementById("articleContainer");
-
-            if (!id) {
-                container.innerHTML = "<p>Article introuvable.</p>";
-                return;
-            }
-
-            const docRef = doc(db, "articles", id);
-            const docSnap = await getDoc(docRef);
-
-            if (!docSnap.exists()) {
-                container.innerHTML = "<p>Article introuvable.</p>";
-                return;
-            }
-
-            const article = docSnap.data();
-            const dateStr = article.date ? new Date(article.date.seconds * 1000).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" }) : "";
-            container.innerHTML = `
-                <h1>${article.titre}</h1>
-                <div class="meta">
-                    <span class="tag">${article.type || "annonce"}</span> &nbsp; ${dateStr}
-                </div>
-                <p>${article.contenu.replace(/\n/g, "<br>")}</p>
-                ${article.lienVideo ? `<p><a href="${article.lienVideo}" target="_blank">Voir la vidéo</a></p>` : ""}
-            `;
-        }
-
-        loadArticle();
-    </script>
+    async function load() {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const container = document.getElementById("articleContainer");
+      if (!id) { container.innerHTML = "<p>Article introuvable.</p>"; return; }
+      const snap = await getDoc(doc(db, "articles", id));
+      if (!snap.exists()) { container.innerHTML = "<p>Article introuvable.</p>"; return; }
+      const data = snap.data();
+      const date = data.date ? new Date(data.date.seconds * 1000).toLocaleDateString("fr-FR") : "";
+      container.innerHTML = `<h1>${data.titre}</h1>
+        <div class="meta"><span class="tag">${data.type}</span> ${date}</div>
+        <p>${data.contenu.replace(/\n/g, "<br>")}</p>
+        ${data.lienVideo ? `<p><a href="${data.lienVideo}" target="_blank">Voir la vidéo</a></p>` : ""}`;
+    }
+    load();
+  </script>
 </body>
 </html>
