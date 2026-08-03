@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Actualités – GBÈZÉ JUNIOR HOUEGNON</title>
-  <meta name="description" content="Toute l'actualité de GBÈZÉ JUNIOR HOUEGNON : prochaines prestations, vidéos, annonces.">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Actualités — GBÈZÉ JUNIOR HOUEGNON</title>
+  <meta name="description" content="Toute l'actualité de GBÈZÉ JUNIOR HOUEGNON : prochaines prestations, nouvelles vidéos, annonces officielles."/>
   <link rel="canonical" href="https://www.gbezejuniorhouegnon.com/actualites.html">
-  <!-- Polices et styles identiques à ceux du site -->
+  <meta property="og:title" content="Actualités — GBÈZÉ JUNIOR HOUEGNON">
+  <meta property="og:description" content="Retrouvez toutes les informations récentes de l'artiste.">
+  <meta property="og:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
+  <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
   <style>
     :root {
       --bleu-fonce: #0B1D3A;
       --bleu-mid: #1E3A5F;
+      --bleu-clair: #E8F0FE;
       --marron: #8B5A2B;
       --marron-clair: #C69C6D;
       --blanc: #FFFFFF;
@@ -24,92 +30,332 @@
       --font-display: 'Cinzel Decorative', serif;
       --font-title: 'Cinzel', serif;
       --font-body: 'Raleway', sans-serif;
+      --nav-h: 72px;
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--blanc-casse); font-family: var(--font-body); color: var(--texte); line-height: 1.7; }
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { background:var(--blanc-casse); font-family:var(--font-body); color:var(--texte); overflow-x:hidden; line-height:1.7; }
+    a { text-decoration:none; color:var(--marron); transition:color .2s; }
+    a:hover { color:var(--bleu-mid); }
+    img { max-width:100%; display:block; }
+
+    /* Navigation */
     nav {
-      position: fixed; top:0; left:0; right:0; z-index:1000; background: var(--bleu-fonce);
-      display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height:72px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      position:fixed; top:0; left:0; right:0; z-index:1000;
+      height:var(--nav-h); padding:0 5%;
+      display:flex; align-items:center; justify-content:space-between;
+      background:var(--bleu-fonce);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.1);
     }
-    .nav-logo { font-family: var(--font-display); font-size:.95rem; letter-spacing:.12em; color: white; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-family: var(--font-title); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color: rgba(255,255,255,0.8); }
-    .nav-links a:hover { color: var(--marron-clair); }
-    .container { max-width: 1000px; margin: 100px auto 40px; }
-    h1 { font-family: var(--font-display); color: var(--bleu-fonce); text-align: center; margin-bottom: 30px; }
-    .article-card { background: var(--blanc); padding: 20px; margin-bottom: 20px; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border: 1px solid var(--border); }
-    .article-card h2 { color: var(--marron); font-family: var(--font-title); }
-    .article-card p { color: var(--texte-muted); margin: 10px 0; }
-    .tag { display: inline-block; background: var(--marron); color: white; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
-    small { color: var(--texte-muted); }
-    footer { background: var(--bleu-fonce); color: white; text-align: center; padding: 30px 5%; margin-top: 50px; }
-    .footer-nav { display: flex; gap: 20px; justify-content: center; list-style: none; margin-bottom: 15px; }
-    .footer-nav a { color: rgba(255,255,255,0.7); font-size: .7rem; text-transform: uppercase; }
-    .whatsapp-float { position: fixed; bottom:20px; right:20px; width:56px; height:56px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; z-index:999; }
+    nav.scrolled { box-shadow:0 4px 30px rgba(0,0,0,.2); }
+    .nav-logo { font-family:var(--font-display); font-size:.95rem; letter-spacing:.12em; color:var(--blanc); white-space:nowrap; }
+    .nav-links { display:flex; gap:28px; list-style:none; }
+    .nav-links a { font-family:var(--font-title); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,0.8); transition:color .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--marron-clair); }
+    .nav-cta { font-family:var(--font-title); font-size:.7rem; letter-spacing:.15em; text-transform:uppercase; padding:9px 20px; border:1px solid var(--marron-clair); color:var(--marron-clair); border-radius:2px; transition:background .2s,color .2s; }
+    .nav-cta:hover { background:var(--marron-clair); color:var(--bleu-fonce); }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
+    .hamburger span { width:24px; height:2px; background:var(--blanc); border-radius:2px; transition:.3s; }
+    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity:0; }
+    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0; background:rgba(11,29,58,.98); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
+    .mobile-menu.open { display:flex; }
+    .mobile-menu a { font-family:var(--font-title); font-size:1.4rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,0.8); }
+    .mobile-menu a:hover { color:var(--marron-clair); }
+
+    /* Hero */
+    #blog-hero { background:var(--bleu-fonce); padding-top:var(--nav-h); position:relative; overflow:hidden; }
+    .hero-glow { position:absolute; border-radius:50%; filter:blur(90px); pointer-events:none; }
+    .g1 { width:clamp(240px,38vw,480px); height:clamp(240px,38vw,480px); background:rgba(198,156,109,.1); top:-15%; right:-8%; animation:gfloat 9s ease-in-out infinite; }
+    .g2 { width:clamp(180px,28vw,360px); height:clamp(180px,28vw,360px); background:rgba(30,58,95,.28); bottom:-10%; left:-6%; animation:gfloat 12s ease-in-out infinite reverse; }
+    @keyframes gfloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-34px)} }
+    .hero-inner { position:relative; z-index:2; max-width:800px; margin:0 auto; padding:5rem 5% 4rem; text-align:center; }
+    .eyebrow { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.32em; text-transform:uppercase; color:var(--marron-clair); margin-bottom:.9rem; }
+    .hero-title { font-family:var(--font-display); font-size:clamp(2.4rem,5vw,4rem); font-weight:900; color:var(--blanc); line-height:1.15; }
+    .hero-title span { color:var(--marron-clair); }
+    .hero-desc { font-size:clamp(.82rem,1.5vw,.9rem); color:rgba(255,255,255,.55); line-height:1.9; margin-top:1rem; }
+
+    /* Filtres */
+    .filters-bar { background:var(--blanc); padding:1.2rem 5%; display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; border-bottom:1px solid var(--border); position:sticky; top:var(--nav-h); z-index:50; }
+    .filter-btn { padding:.45rem 1.1rem; font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; border:1.5px solid var(--border); background:var(--blanc); color:var(--texte-muted); cursor:pointer; transition:all .25s; font-family:var(--font-title); }
+    .filter-btn:hover, .filter-btn.active { background:var(--bleu-fonce); color:var(--blanc); border-color:var(--bleu-fonce); }
+
+    #blog-main { padding:3.5rem 5%; }
+    .container  { max-width:1200px; margin:0 auto; width:100%; }
+
+    .spinner { width:38px; height:38px; margin:0 auto 1.2rem; border:3px solid var(--border); border-top-color:var(--bleu-fonce); border-radius:50%; animation:spin .8s linear infinite; }
+    @keyframes spin { to{transform:rotate(360deg)} }
+    .state-msg { text-align:center; padding:5rem 2rem; color:var(--texte-muted); }
+
+    .articles-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; }
+
+    .art-card {
+      background:var(--blanc); border:1px solid var(--border);
+      overflow:hidden; transition:all .32s ease; cursor:pointer;
+      display:flex; flex-direction:column;
+      box-shadow:0 2px 12px rgba(11,29,58,.05);
+    }
+    .art-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(11,29,58,.12); border-color:var(--marron); }
+
+    .art-card.featured { grid-column:1 / -1; flex-direction:row; }
+    .art-card.featured .card-img-wrap { width:45%; flex-shrink:0; }
+    .art-card.featured .card-img { height:100%; min-height:280px; }
+    .art-card.featured .card-body { padding:2.2rem; }
+    .art-card.featured .card-title { font-size:1.7rem; }
+
+    .card-img-wrap { overflow:hidden; position:relative; }
+    .card-img { width:100%; height:200px; object-fit:cover; object-position:top; background:var(--bleu-clair); transition:transform .5s; display:block; }
+    .art-card:hover .card-img { transform:scale(1.04); }
+    .card-img-placeholder { width:100%; height:200px; background:var(--bleu-clair); display:flex; align-items:center; justify-content:center; font-size:3rem; color:var(--texte-muted); }
+    .art-card.featured .card-img-placeholder { height:100%; min-height:280px; }
+
+    .card-cat-badge {
+      position:absolute; top:.8rem; left:.8rem;
+      padding:.22rem .7rem; font-size:.6rem; font-weight:700;
+      letter-spacing:.15em; text-transform:uppercase; color:var(--blanc);
+    }
+    .cat-prestation { background:var(--bleu-fonce); }
+    .cat-video      { background:var(--marron); }
+    .cat-annonce    { background:#2a8060; }
+
+    .card-body { padding:1.4rem; flex:1; display:flex; flex-direction:column; }
+    .card-date { font-size:.66rem; color:var(--texte-muted); margin-bottom:.7rem; letter-spacing:.06em; }
+    .card-title { font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--bleu-fonce); line-height:1.35; margin-bottom:.7rem; }
+    .card-excerpt { font-size:.78rem; line-height:1.8; color:var(--texte-muted); flex:1; }
+    .card-footer { padding:.9rem 1.4rem; border-top:1px solid var(--border); font-size:.66rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--bleu-fonce); display:flex; align-items:center; justify-content:space-between; transition:color .3s; }
+    .art-card:hover .card-footer { color:var(--marron); }
+
+    .pagination { display:flex; justify-content:center; gap:.5rem; margin-top:3rem; flex-wrap:wrap; }
+    .page-btn { width:40px; height:40px; display:flex; align-items:center; justify-content:center; border:1.5px solid var(--border); cursor:pointer; font-size:.8rem; font-weight:700; color:var(--texte); transition:all .25s; background:var(--blanc); font-family:var(--font-title); }
+    .page-btn:hover, .page-btn.active { background:var(--bleu-fonce); color:var(--blanc); border-color:var(--bleu-fonce); }
+
+    /* Footer */
+    footer {
+      background:var(--bleu-fonce); padding:3.5rem 5% 2rem; text-align:center; color:var(--blanc);
+      border-top:1px solid rgba(255,255,255,0.1);
+    }
+    .footer-logo { font-family:var(--font-display); font-size:1.9rem; font-weight:700; color:var(--blanc); }
+    .footer-logo span { color:var(--marron-clair); }
+    .footer-tagline { font-size:.75rem; color:rgba(255,255,255,0.7); letter-spacing:.1em; margin-top:.4rem; margin-bottom:1.5rem; }
+    .footer-nav { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; list-style:none; margin-bottom:1.6rem; }
+    .footer-nav a { font-family:var(--font-title); font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,0.6); transition:color .2s; }
+    .footer-nav a:hover { color:var(--marron-clair); }
+    .footer-credit { font-size:.7rem; color:rgba(255,255,255,0.5); line-height:1.6; margin-bottom:15px; }
+    .footer-credit strong { color:var(--marron-clair); }
+    .footer-novasavoir { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:30px; margin-top:10px; font-size:.75rem; color:var(--blanc); transition:background .2s; }
+    .footer-novasavoir:hover { background:rgba(255,255,255,0.2); }
+    .footer-novasavoir svg { width:18px; height:18px; fill:white; }
+
+    .whatsapp-float { position:fixed; bottom:22px; right:22px; width:56px; height:56px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; z-index:998; box-shadow:0 5px 20px rgba(0,0,0,.22); transition:transform .3s; animation:waPulse 2.5s infinite; }
+    .whatsapp-float:hover { transform:scale(1.1); }
+    @keyframes waPulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)} 70%{box-shadow:0 0 0 13px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+
+    @media (max-width:1024px) { .articles-grid { grid-template-columns:repeat(2,1fr); } .art-card.featured { flex-direction:column; grid-column:auto; } .art-card.featured .card-img-wrap { width:100%; } .art-card.featured .card-img { height:220px; min-height:unset; } }
+    @media (max-width:700px) {
+      :root { --nav-h:62px; }
+      .nav-links, .nav-cta { display:none; }
+      .hamburger { display:flex; }
+      .articles-grid { grid-template-columns:1fr; }
+      #blog-main { padding:2.5rem 4%; }
+      .filters-bar { padding:1rem 4%; gap:.5rem; }
+    }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-logo">GBÈZÉ JUNIOR</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="biographie.html">Biographie</a></li>
-      <li><a href="lignee.html">Lignée</a></li>
-      <li><a href="musique.html">Musique</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="actualites.html" style="color:var(--marron-clair);">Actualités</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <div class="container">
-    <h1>Actualités</h1>
-    <div id="articlesContainer">Chargement...</div>
+<a class="whatsapp-float" href="https://wa.me/2290152557034" target="_blank" aria-label="WhatsApp">
+  <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">GBÈZÉ JUNIOR</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="biographie.html">Biographie</a></li>
+    <li><a href="lignee.html">Lignée</a></li>
+    <li><a href="musique.html">Musique</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="actualites.html" class="active">Actualités</a></li>
+    <li><a href="contact.html" class="nav-cta">Réserver</a></li>
+  </ul>
+  <div class="hamburger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMenu()">Accueil</a>
+  <a href="biographie.html" onclick="closeMenu()">Biographie</a>
+  <a href="lignee.html" onclick="closeMenu()">Lignée</a>
+  <a href="musique.html" onclick="closeMenu()">Musique</a>
+  <a href="agenda.html" onclick="closeMenu()">Agenda</a>
+  <a href="galerie.html" onclick="closeMenu()">Galerie</a>
+  <a href="actualites.html" onclick="closeMenu()">Actualités</a>
+  <a href="contact.html" onclick="closeMenu()">Contact</a>
+</div>
+
+<section id="blog-hero">
+  <div class="hero-glow g1"></div>
+  <div class="hero-glow g2"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Restez informé</span>
+    <h1 class="hero-title">Actualités <span>& Articles</span></h1>
+    <p class="hero-desc">Prestations, vidéos et annonces de GBÈZÉ JUNIOR HOUEGNON.</p>
   </div>
+</section>
 
-  <footer>
-    <p>© 2026 GBÈZÉ JUNIOR HOUEGNON – Développé par Novasavoir</p>
-    <p>Directeur : Amoussou Frédy</p>
-  </footer>
+<div class="filters-bar">
+  <button class="filter-btn active" onclick="filterType('tous',this)">Tous</button>
+  <button class="filter-btn" onclick="filterType('prestation',this)">Prestations</button>
+  <button class="filter-btn" onclick="filterType('video',this)">Vidéos</button>
+  <button class="filter-btn" onclick="filterType('annonce',this)">Annonces</button>
+</div>
 
-  <a href="https://wa.me/2290152557034" class="whatsapp-float" target="_blank"><svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M17.472..."/></svg></a>
+<section id="blog-main">
+  <div class="container">
+    <div id="loadingState" class="state-msg"><div class="spinner"></div><p>Chargement des actualités…</p></div>
+    <div id="emptyState" class="state-msg" style="display:none;"><p style="font-size:2rem;">📭</p><p>Aucune actualité pour le moment.</p></div>
+    <div id="articlesGrid" class="articles-grid" style="display:none;"></div>
+    <div id="pagination" class="pagination"></div>
+  </div>
+</section>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-    const firebaseConfig = {
-      apiKey: "AIzaSyBkibp1JxO5TsFPddIPYekZTt7qH0GcjSQ",
-      authDomain: "gbeze-junior.firebaseapp.com",
-      projectId: "gbeze-junior",
-      storageBucket: "gbeze-junior.firebasestorage.app",
-      messagingSenderId: "651737929168",
-      appId: "1:651737929168:web:cddc3fac5b7ef6c906d5d5"
-    };
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+<footer>
+  <div class="footer-logo">GBÈZÉ <span>JUNIOR</span></div>
+  <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
+  <ul class="footer-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="biographie.html">Biographie</a></li>
+    <li><a href="lignee.html">Lignée</a></li>
+    <li><a href="musique.html">Musique</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="actualites.html">Actualités</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="footer-credit">
+    © 2026 GBÈZÉ JUNIOR HOUEGNON — Développé par <strong>Novasavoir</strong><br>
+    Directeur : Amoussou Frédy
+  </p>
+  <a href="https://wa.me/2290152552106" target="_blank" class="footer-novasavoir">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Contacter Novasavoir
+  </a>
+</footer>
 
-    async function load() {
-      const container = document.getElementById("articlesContainer");
-      container.innerHTML = "Chargement...";
-      const q = query(collection(db, "articles"), orderBy("date", "desc"));
-      const snap = await getDocs(q);
-      container.innerHTML = "";
-      snap.forEach(doc => {
-        const data = doc.data();
-        const date = data.date ? new Date(data.date.seconds * 1000).toLocaleDateString("fr-FR") : "";
-        container.innerHTML += `<div class="article-card">
-          <span class="tag">${data.type || "annonce"}</span>
-          <h2><a href="article.html?id=${doc.id}">${data.titre}</a></h2>
-          <p>${data.contenu.substring(0, 200)}…</p>
-          ${data.lienVideo ? `<a href="${data.lienVideo}" target="_blank">Voir la vidéo</a>` : ""}
-          <small>${date}</small>
-        </div>`;
-      });
-      if (container.innerHTML === "") container.innerHTML = "<p>Aucune actualité pour le moment.</p>";
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, query, where, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBkibp1JxO5TsFPddIPYekZTt7qH0GcjSQ",
+    authDomain: "gbeze-junior.firebaseapp.com",
+    projectId: "gbeze-junior",
+    storageBucket: "gbeze-junior.firebasestorage.app",
+    messagingSenderId: "651737929168",
+    appId: "1:651737929168:web:cddc3fac5b7ef6c906d5d5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db  = getFirestore(app);
+
+  const PER_PAGE = 6;
+  let all = [], filtered = [], currentPage = 1, currentType = 'tous';
+
+  const TYPE_CLASS = { prestation:'cat-prestation', video:'cat-video', annonce:'cat-annonce' };
+  function typeClass(t) { return TYPE_CLASS[t] || 'cat-annonce'; }
+  function fmtDate(ts) {
+    if (!ts) return '';
+    const d = ts.toDate ? ts.toDate() : new Date(ts);
+    return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'});
+  }
+  function excerpt(txt,len=130) {
+    const p = (txt||'').replace(/<[^>]+>/g,'');
+    return p.length>len ? p.slice(0,len)+'…' : p;
+  }
+  function getFirstImage(art) {
+    if (art.images && art.images.length > 0) return art.images[0];
+    return null;
+  }
+
+  function cardHTML(art, featured=false) {
+    const firstImg = getFirstImage(art);
+    const img = firstImg
+      ? `<img class="card-img" src="${firstImg}" alt="${art.titre}" loading="lazy"/>`
+      : `<div class="card-img-placeholder">📰</div>`;
+    return `
+    <div class="art-card${featured?' featured':''}" onclick="location.href='article.html?id=${art.id}'">
+      <div class="card-img-wrap">
+        ${img}
+        <span class="card-cat-badge ${typeClass(art.type)}">${art.type||'Annonce'}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-date">📅 ${fmtDate(art.date)}</div>
+        <h2 class="card-title">${art.titre}</h2>
+        <p class="card-excerpt">${excerpt(art.contenu, featured?200:130)}</p>
+      </div>
+      <div class="card-footer">
+        <span>Lire l'article</span><span>→</span>
+      </div>
+    </div>`;
+  }
+
+  function render() {
+    const grid = document.getElementById('articlesGrid');
+    const start = (currentPage-1)*PER_PAGE;
+    const slice = filtered.slice(start, start+PER_PAGE);
+    if (filtered.length===0) {
+      grid.style.display='none';
+      document.getElementById('emptyState').style.display='block';
+      document.getElementById('pagination').innerHTML='';
+      return;
     }
-    load();
-  </script>
+    document.getElementById('emptyState').style.display='none';
+    grid.style.display='grid';
+    grid.innerHTML = slice.map((a,i)=>cardHTML(a, i===0&&start===0&&currentType==='tous')).join('');
+    renderPag();
+  }
+
+  function renderPag() {
+    const total = Math.ceil(filtered.length/PER_PAGE);
+    const pag   = document.getElementById('pagination');
+    if (total<=1){pag.innerHTML='';return;}
+    pag.innerHTML = Array.from({length:total},(_,i)=>
+      `<div class="page-btn${i+1===currentPage?' active':''}" onclick="goPage(${i+1})">${i+1}</div>`
+    ).join('');
+  }
+
+  window.goPage = (p) => { currentPage=p; render(); window.scrollTo({top:400,behavior:'smooth'}); };
+
+  window.filterType = (type, btn) => {
+    currentType=type; currentPage=1;
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    filtered = type==='tous' ? [...all] : all.filter(a=>a.type===type);
+    render();
+  };
+
+  async function load() {
+    try {
+      const q = query(collection(db,'articles'), where('publie','==',true), orderBy('date','desc'));
+      const snap = await getDocs(q);
+      all = snap.docs.map(d=>({id:d.id,...d.data()}));
+      filtered = [...all];
+      document.getElementById('loadingState').style.display='none';
+      render();
+    } catch(e) {
+      document.getElementById('loadingState').innerHTML='<p style="color:#b91c1c">⚠️ Erreur de connexion.</p>';
+      console.error(e);
+    }
+  }
+  load();
+</script>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{ navbar.classList.toggle('scrolled',window.scrollY>60); },{passive:true});
+  function toggleMenu(){document.getElementById('burger').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';}
+  function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
+</script>
 </body>
 </html>
