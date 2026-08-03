@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
   <style>
+    /* --- IDENTIQUE À VOTRE DESIGN (bleu/blanc/marron) --- */
     :root {
       --bleu-fonce: #0B1D3A;
       --bleu-mid: #1E3A5F;
@@ -245,7 +246,7 @@
 
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-  import { getFirestore, collection, query, where, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  import { getFirestore, collection, query, orderBy, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyBkibp1JxO5TsFPddIPYekZTt7qH0GcjSQ",
@@ -260,7 +261,7 @@
   const db  = getFirestore(app);
 
   const PER_PAGE = 6;
-  let all = [], filtered = [], currentPage = 1, currentType = 'tous';
+  let allArticles = [], filtered = [], currentPage = 1, currentType = 'tous';
 
   const TYPE_CLASS = { prestation:'cat-prestation', video:'cat-video', annonce:'cat-annonce' };
   function typeClass(t) { return TYPE_CLASS[t] || 'cat-annonce'; }
@@ -275,6 +276,7 @@
   }
   function getFirstImage(art) {
     if (art.images && art.images.length > 0) return art.images[0];
+    if (art.imageUrl) return art.imageUrl;
     return null;
   }
 
@@ -331,20 +333,26 @@
     currentType=type; currentPage=1;
     document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    filtered = type==='tous' ? [...all] : all.filter(a=>a.type===type);
+    if (type==='tous') {
+      filtered = allArticles.filter(a => a.publie === true);
+    } else {
+      filtered = allArticles.filter(a => a.publie === true && a.type === type);
+    }
     render();
   };
 
   async function load() {
     try {
-      const q = query(collection(db,'articles'), where('publie','==',true), orderBy('date','desc'));
+      // REQUÊTE SIMPLE SANS WHERE + ORDERBY (pas d'index requis)
+      const q = query(collection(db,'articles'), orderBy('date','desc'));
       const snap = await getDocs(q);
-      all = snap.docs.map(d=>({id:d.id,...d.data()}));
-      filtered = [...all];
+      allArticles = snap.docs.map(d=>({id:d.id,...d.data()}));
+      // Filtrer uniquement les publiés
+      filtered = allArticles.filter(a => a.publie === true);
       document.getElementById('loadingState').style.display='none';
       render();
     } catch(e) {
-      document.getElementById('loadingState').innerHTML='<p style="color:#b91c1c">⚠️ Erreur de connexion.</p>';
+      document.getElementById('loadingState').innerHTML = `<p style="color:#b91c1c">⚠️ Erreur : ${e.message}</p>`;
       console.error(e);
     }
   }
