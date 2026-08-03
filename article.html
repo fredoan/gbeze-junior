@@ -21,6 +21,7 @@
     :root {
       --bleu-fonce: #0B1D3A;
       --bleu-mid: #1E3A5F;
+      --bleu-clair: #E8F0FE;
       --marron: #8B5A2B;
       --marron-clair: #C69C6D;
       --blanc: #FFFFFF;
@@ -95,9 +96,39 @@
     .art-content h2 { font-family:var(--font-display); font-size:1.8rem; color:var(--bleu-fonce); margin:2.2rem 0 .8rem; }
     .art-content h3 { font-family:var(--font-display); font-size:1.4rem; color:var(--bleu-fonce); margin:1.8rem 0 .6rem; }
     .art-content p  { margin-bottom:1.3rem; }
-    .art-content img { max-width:100%; margin:1.5rem 0; border:1px solid var(--border); border-radius:4px; }
+    .art-content img { max-width:100%; height:auto; margin:1.5rem 0; border:1px solid var(--border); border-radius:4px; }
     .art-content strong { color:var(--bleu-fonce); font-weight:700; }
     .art-content a { color:var(--marron); text-decoration:underline; }
+
+    /* Galerie d'images responsive */
+    .art-gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
+      gap:0.8rem;
+      margin-top:2rem;
+    }
+    .art-gallery img {
+      width:100%;
+      aspect-ratio:4/3;
+      object-fit:cover;
+      border-radius:4px;
+      border:1px solid var(--border);
+      cursor:pointer;
+      transition:transform .3s;
+    }
+    .art-gallery img:hover {
+      transform:scale(1.03);
+    }
+    @media (max-width:680px) {
+      .art-gallery {
+        grid-template-columns:repeat(2, 1fr);
+      }
+    }
+    @media (max-width:480px) {
+      .art-gallery {
+        grid-template-columns:1fr;
+      }
+    }
 
     .share-bar { max-width:820px; margin:0 auto; padding:1.8rem 5%; border-top:1px solid var(--border); display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; }
     .share-label { font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--texte-muted); }
@@ -256,6 +287,12 @@
     return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'});
   }
 
+  // ✅ Corrige les URLs commençant par //
+  function fixUrl(url) {
+    if (!url) return url;
+    return url.startsWith('//') ? 'https:' + url : url;
+  }
+
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');
   if (!id) { window.location.href = 'actualites.html'; }
@@ -280,7 +317,7 @@
   function render(art) {
     const articleUrl = `https://www.gbezejuniorhouegnon.com/article.html?id=${art.id}`;
     const excerpt = (art.contenu||'').replace(/<[^>]+>/g,'').substring(0,155)+'…';
-    const allImages = art.images || [];
+    const allImages = (art.images || []).map(fixUrl);
     const coverImage = allImages.length > 0 ? allImages[0] : null;
     const allVideos = art.videos || [];
     const imageUrl = coverImage || 'https://www.gbezejuniorhouegnon.com/pha.jpg';
@@ -291,12 +328,12 @@
     document.getElementById('canonicalLink').setAttribute('href', articleUrl);
     document.getElementById('ogTitle').setAttribute('content', `${art.titre} — GBÈZÉ JUNIOR HOUEGNON`);
     document.getElementById('ogDescription').setAttribute('content', excerpt);
-    document.getElementById('ogImage').setAttribute('content', imageUrl);
+    document.getElementById('ogImage').setAttribute('content', fixUrl(imageUrl));
     document.getElementById('ogUrl').setAttribute('content', articleUrl);
 
     const cw = document.getElementById('coverWrap');
     cw.innerHTML = coverImage
-      ? `<img class="art-cover" src="${coverImage}" alt="${art.titre}" loading="lazy"/>`
+      ? `<img class="art-cover" src="${fixUrl(coverImage)}" alt="${art.titre}" loading="lazy"/>`
       : `<div class="cover-placeholder">📰</div>`;
 
     document.getElementById('breadType').textContent = art.type || 'Actualité';
@@ -327,8 +364,8 @@
     inner += art.contenu || '';
 
     if (allImages.length > 1) {
-      inner += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;margin-top:2rem;">
-        ${allImages.slice(1).map(img => `<img src="${img}" alt="${art.titre}" loading="lazy"/>`).join('')}
+      inner += `<div class="art-gallery">
+        ${allImages.slice(1).map(img => `<img src="${fixUrl(img)}" alt="${art.titre}" loading="lazy"/>`).join('')}
       </div>`;
     }
 
