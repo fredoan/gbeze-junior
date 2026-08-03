@@ -106,7 +106,6 @@
   .form-group textarea:focus { border-color:var(--bleu-fonce); }
   .form-group select { cursor:pointer; }
 
-  /* Blocs dynamiques */
   .dynamic-block { margin-bottom:1.2rem; }
   .dynamic-block .block-label { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-body); margin-bottom:.4rem; }
   .url-hint {
@@ -126,7 +125,6 @@
   .btn-add { background:var(--marron); color:white; font-weight:700; padding:0.6rem 1.2rem; border:none; border-radius:4px; cursor:pointer; font-size:0.75rem; margin-top:0.3rem; font-family:var(--font-body); }
   .btn-add:hover { background:var(--marron-clair); color:var(--bleu-fonce); }
 
-  /* Éditeur */
   .tabs { display:flex; }
   .tab-btn { padding:.52rem 1.1rem; border:1.5px solid var(--border); border-bottom:none; background:var(--off-white); cursor:pointer; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); font-family:var(--font-title); transition:all .2s; }
   .tab-btn.active { background:var(--blanc); color:var(--bleu-fonce); }
@@ -393,9 +391,13 @@
     document.getElementById('videosContainer').appendChild(row);
   }
 
+  // ✅ CORRIGÉ : accepte les URLs débutant par http:// ou //
   function getArrayFromContainer(containerSelector, inputClass) {
     const inputs = document.querySelectorAll(`${containerSelector} .${inputClass}`);
-    return Array.from(inputs).map(inp => inp.value.trim()).filter(v => v && v.startsWith('http'));
+    return Array.from(inputs)
+      .map(inp => inp.value.trim())
+      .filter(v => v && (v.startsWith('http') || v.startsWith('//')))
+      .map(url => url.startsWith('//') ? 'https:' + url : url);
   }
 
   function clearAndFill(containerId, urls, createFn) {
@@ -520,7 +522,8 @@
       }
 
       wrap.innerHTML = '<div class="art-list">' + arts.map(a=>{
-        const firstImg = (a.images && a.images.length > 0) ? a.images[0] : (a.imageUrl || null);
+        let firstImg = (a.images && a.images.length > 0) ? a.images[0] : (a.imageUrl || null);
+        if (firstImg && firstImg.startsWith('//')) firstImg = 'https:' + firstImg;
         const date = a.date?.toDate ? a.date.toDate().toLocaleDateString('fr-FR') : '';
         return `
         <div class="art-item">
