@@ -275,9 +275,11 @@
     return p.length>len ? p.slice(0,len)+'…' : p;
   }
   function getFirstImage(art) {
-    if (art.images && art.images.length > 0) return art.images[0];
-    if (art.imageUrl) return art.imageUrl;
-    return null;
+    let url = null;
+    if (art.images && art.images.length > 0) url = art.images[0];
+    else if (art.imageUrl) url = art.imageUrl;
+    if (url && url.startsWith('//')) url = 'https:' + url;
+    return url;
   }
 
   function cardHTML(art, featured=false) {
@@ -343,11 +345,9 @@
 
   async function load() {
     try {
-      // REQUÊTE SIMPLE SANS WHERE + ORDERBY (pas d'index requis)
       const q = query(collection(db,'articles'), orderBy('date','desc'));
       const snap = await getDocs(q);
       allArticles = snap.docs.map(d=>({id:d.id,...d.data()}));
-      // Filtrer uniquement les publiés
       filtered = allArticles.filter(a => a.publie === true);
       document.getElementById('loadingState').style.display='none';
       render();
