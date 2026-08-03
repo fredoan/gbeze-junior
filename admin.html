@@ -12,6 +12,7 @@
   :root {
     --bleu-fonce: #0B1D3A;
     --bleu-mid: #1E3A5F;
+    --bleu-clair: #E8F0FE;
     --marron: #8B5A2B;
     --marron-clair: #C69C6D;
     --blanc: #ffffff;
@@ -86,8 +87,9 @@
   .stat-num  { font-family:var(--font-display); font-size:2rem; font-weight:700; color:var(--bleu-fonce); display:block; }
   .stat-lbl  { font-size:.6rem; letter-spacing:.15em; text-transform:uppercase; color:var(--text-muted); }
 
+  .form-row   { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
   .form-group { margin-bottom:1rem; }
-  .form-group label { display:block; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-body); margin-bottom:.4rem; font-family:var(--font-title); }
+  .form-group label { display:block; font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-body); margin-bottom:.4rem; }
   .req { color:var(--danger); }
   .form-group input,
   .form-group select,
@@ -104,6 +106,7 @@
   .form-group textarea:focus { border-color:var(--bleu-fonce); }
   .form-group select { cursor:pointer; }
 
+  /* Blocs dynamiques */
   .dynamic-block { margin-bottom:1.2rem; }
   .dynamic-block .block-label { font-size:.68rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--text-body); margin-bottom:.4rem; }
   .url-hint {
@@ -123,6 +126,7 @@
   .btn-add { background:var(--marron); color:white; font-weight:700; padding:0.6rem 1.2rem; border:none; border-radius:4px; cursor:pointer; font-size:0.75rem; margin-top:0.3rem; font-family:var(--font-body); }
   .btn-add:hover { background:var(--marron-clair); color:var(--bleu-fonce); }
 
+  /* Éditeur */
   .tabs { display:flex; }
   .tab-btn { padding:.52rem 1.1rem; border:1.5px solid var(--border); border-bottom:none; background:var(--off-white); cursor:pointer; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-muted); font-family:var(--font-title); transition:all .2s; }
   .tab-btn.active { background:var(--blanc); color:var(--bleu-fonce); }
@@ -234,24 +238,31 @@
         </div>
         <div class="card-body">
 
-          <div class="form-group">
-            <label>Titre <span class="req">*</span></label>
-            <input type="text" id="fTitre" placeholder="Titre de l'actualité…"/>
-          </div>
-
-          <div class="form-group">
-            <label>Type <span class="req">*</span></label>
-            <select id="fType">
-              <option value="">— Choisir —</option>
-              <option value="prestation">Prestation</option>
-              <option value="video">Vidéo</option>
-              <option value="annonce">Annonce</option>
-            </select>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Titre <span class="req">*</span></label>
+              <input type="text" id="fTitre" placeholder="Titre de l'actualité…"/>
+            </div>
+            <div class="form-group">
+              <label>Type <span class="req">*</span></label>
+              <select id="fType">
+                <option value="">— Choisir —</option>
+                <option value="prestation">Prestation</option>
+                <option value="video">Vidéo</option>
+                <option value="annonce">Annonce</option>
+              </select>
+            </div>
           </div>
 
           <!-- PHOTOS -->
           <div class="dynamic-block">
             <div class="block-label">🖼️ Photos (URL) — optionnel</div>
+            <div class="url-hint">
+              💡 <strong>Comment obtenir un lien image ?</strong><br/>
+              • <strong>Facebook :</strong> ouvrez la photo → clic droit → Copier l'adresse de l'image<br/>
+              • <strong>Imgur :</strong> allez sur imgur.com → uploadez → copiez le lien direct<br/>
+              • <strong>WhatsApp Web :</strong> envoyez la photo → clic droit → Copier l'adresse
+            </div>
             <div id="imagesContainer"></div>
             <button type="button" class="btn-add" id="btnAddImage">➕ Ajouter une photo</button>
           </div>
@@ -259,6 +270,9 @@
           <!-- VIDÉOS -->
           <div class="dynamic-block">
             <div class="block-label">🎬 Vidéos (URL) — optionnel</div>
+            <div class="url-hint">
+              💡 <strong>Liens acceptés :</strong> YouTube (watch ou youtu.be), Facebook, lien direct .mp4
+            </div>
             <div id="videosContainer"></div>
             <button type="button" class="btn-add" id="btnAddVideo">➕ Ajouter une vidéo</button>
           </div>
@@ -360,8 +374,10 @@
     row.className = 'item-row';
     row.innerHTML = `
       <input type="text" class="image-input" value="${url}" placeholder="https://..." />
+      <button type="button" class="btn-postimage">📸</button>
       <button type="button" class="btn-remove">🗑️</button>
     `;
+    row.querySelector('.btn-postimage').addEventListener('click', () => window.open('https://postimages.org/fr/', '_blank'));
     row.querySelector('.btn-remove').addEventListener('click', () => row.remove());
     document.getElementById('imagesContainer').appendChild(row);
   }
@@ -452,11 +468,16 @@
     try {
       const images = getArrayFromContainer('#imagesContainer', 'image-input');
       const videos = getArrayFromContainer('#videosContainer', 'video-input');
+      const imageUrl = images.length > 0 ? images[0] : null;
+      const videoUrl = videos.length > 0 ? videos[0] : null;
 
       const data = {
         titre, type, contenu, publie,
+        auteur:   'GBÈZÉ JUNIOR HOUEGNON',
         images,
+        imageUrl: imageUrl || null,
         videos,
+        videoUrl: videoUrl || null,
         date:     Timestamp.now(),
         updatedAt:Timestamp.now()
       };
@@ -499,7 +520,7 @@
       }
 
       wrap.innerHTML = '<div class="art-list">' + arts.map(a=>{
-        const firstImg = (a.images && a.images.length > 0) ? a.images[0] : null;
+        const firstImg = (a.images && a.images.length > 0) ? a.images[0] : (a.imageUrl || null);
         const date = a.date?.toDate ? a.date.toDate().toLocaleDateString('fr-FR') : '';
         return `
         <div class="art-item">
@@ -538,10 +559,10 @@
       document.getElementById('fType').value        = a.type      || '';
       document.getElementById('editorArea').innerHTML = a.contenu  || '';
 
-      const urlsImg = a.images || [];
+      const urlsImg = (a.images && a.images.length > 0) ? a.images : (a.imageUrl ? [a.imageUrl] : []);
       clearAndFill('imagesContainer', urlsImg, createImageRow);
 
-      const urlsVid = a.videos || [];
+      const urlsVid = (a.videos && a.videos.length > 0) ? a.videos : (a.videoUrl ? [a.videoUrl] : []);
       clearAndFill('videosContainer', urlsVid, createVideoRow);
 
       document.getElementById('formTitle').textContent = '✏️ Modifier l\'article';
