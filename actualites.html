@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration – GBÈZÉ JUNIOR HOUEGNON</title>
+    <style>
+        :root {
+            --bleu: #0B1D3A;
+            --marron: #8B5A2B;
+            --blanc: #FFFFFF;
+            --fond: #F5F0E8;
+            --texte: #0B1D3A;
+        }
+        body { font-family: Raleway, sans-serif; background: var(--fond); color: var(--texte); margin: 0; padding: 20px; }
+        nav { background: var(--bleu); color: white; padding: 15px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        h1, h2 { color: var(--bleu); }
+        .container { max-width: 1000px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: 600; }
+        input, textarea, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; }
+        button { background: var(--marron); color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+        button:hover { background: #6b431f; }
+        .article-card { border: 1px solid #ddd; padding: 15px; margin-bottom: 15px; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+        .article-card button { margin-left: 10px; }
+        .hidden { display: none; }
+        .logout { float: right; background: #444; }
+        .error { color: red; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="actualites.html">Actualités</a>
+        <a href="admin.html" style="color: #C69C6D;">Admin</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div id="loginSection" class="container">
+        <h1>Connexion administrateur</h1>
+        <div class="form-group">
+            <label>Nom d'utilisateur</label>
+            <input type="text" id="username" value="admin">
+        </div>
+        <div class="form-group">
+            <label>Mot de passe</label>
+            <input type="password" id="password">
+        </div>
+        <button onclick="login()">Se connecter</button>
+        <p id="loginError" class="error"></p>
+    </div>
+
+    <div id="adminPanel" class="container hidden">
+        <button class="logout" onclick="logout()">Déconnexion</button>
+        <h1>Gestion des articles</h1>
+        <button onclick="showAddForm()">+ Nouvel article</button>
+
+        <div id="articleForm" class="hidden" style="margin-top:20px;">
+            <h2 id="formTitle">Ajouter un article</h2>
+            <input type="hidden" id="docId">
+            <div class="form-group">
+                <label>Titre</label>
+                <input type="text" id="titre" required>
+            </div>
+            <div class="form-group">
+                <label>Contenu</label>
+                <textarea id="contenu" rows="5" required></textarea>
+            </div>
+            <div class="form-group">
+                <label>Lien vidéo (optionnel)</label>
+                <input type="text" id="lienVideo">
+            </div>
+            <div class="form-group">
+                <label>Type</label>
+                <select id="type">
+                    <option value="prestation">Prestation</option>
+                    <option value="video">Vidéo</option>
+                    <option value="annonce">Annonce</option>
+                </select>
+            </div>
+            <button onclick="saveArticle()">Enregistrer</button>
+            <button onclick="cancelEdit()" style="background:#888;">Annuler</button>
+        </div>
+
+        <hr>
+        <h2>Articles existants</h2>
+        <div id="articlesList"></div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getFirestore, collection, doc, getDoc, getDocs, addDoc, updateDoc, deleteDoc, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBkibp1JxO5TsFPddIPYekZTt7qH0GcjSQ",
+            authDomain: "gbeze-junior.firebaseapp.com",
+            projectId: "gbeze-junior",
+            storageBucket: "gbeze-junior.firebasestorage.app",
+            messagingSenderId: "651737929168",
+            appId: "1:651737929168:web:cddc3fac5b7ef6c906d5d5"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const articlesCol = collection(db, "articles");
+
+        window.login = async function() {
+            const username = document.getElementById("username").value.trim();
+            const password = document.getElementById("password").value;
+            const errorEl = document.getElementById("loginError");
+
+            if (username !== "admin") {
+                errorEl.textContent = "Nom d'utilisateur incorrect.";
+                return;
+            }
+
+            try {
+                const adminDoc = await getDoc(doc(db, "articles", "admin"));
+                if (adminDoc.exists() && adminDoc.data().motDePasse === password) {
+                    sessionStorage.setItem("adminAuth", "true");
+                    document.getElementById("loginSection").classList.add("hidden");
+                    document.getElementById("adminPanel").classList.remove("hidden");
+                    loadArticles();
+                } else {
+                    errorEl.textContent = "Mot de passe incorrect.";
+                }
+            } catch (e) {
+                errorEl.textContent = "Erreur de connexion à la base de données.";
+            }
+        };
+
+        window.logout = function() {
+            sessionStorage.removeItem("adminAuth");
+            document.getElementById("loginSection").classList.remove("hidden");
+            document.getElementById("adminPanel").classList.add("hidden");
+        };
+
+        window.showAddForm = function() {
+            document.getElementById("articleForm").classList.remove("hidden");
+            document.getElementById("formTitle").textContent = "Ajouter un article";
+            document.getElementById("docId").value = "";
+            document.getElementById("titre").value = "";
+            document.getElementById("contenu").value = "";
+            document.getElementById("lienVideo").value = "";
+            document.getElementById("type").value = "annonce";
+        };
+
+        window.cancelEdit = function() {
+            document.getElementById("articleForm").classList.add("hidden");
+        };
+
+        window.saveArticle = async function() {
+            const docId = document.getElementById("docId").value;
+            const titre = document.getElementById("titre").value.trim();
+            const contenu = document.getElementById("contenu").value.trim();
+            const lienVideo = document.getElementById("lienVideo").value.trim();
+            const type = document.getElementById("type").value;
+
+            if (!titre || !contenu) return alert("Titre et contenu sont obligatoires.");
+
+            const data = {
+                titre,
+                contenu,
+                lienVideo,
+                type,
+                date: serverTimestamp()
+            };
+
+            try {
+                if (docId) {
+                    await updateDoc(doc(db, "articles", docId), data);
+                } else {
+                    await addDoc(articlesCol, data);
+                }
+                cancelEdit();
+                loadArticles();
+            } catch (e) {
+                alert("Erreur lors de l'enregistrement.");
+            }
+        };
+
+        window.editArticle = function(id, articleData) {
+            document.getElementById("articleForm").classList.remove("hidden");
+            document.getElementById("formTitle").textContent = "Modifier l'article";
+            document.getElementById("docId").value = id;
+            document.getElementById("titre").value = articleData.titre || "";
+            document.getElementById("contenu").value = articleData.contenu || "";
+            document.getElementById("lienVideo").value = articleData.lienVideo || "";
+            document.getElementById("type").value = articleData.type || "annonce";
+        };
+
+        window.deleteArticle = async function(id) {
+            if (confirm("Supprimer cet article ?")) {
+                await deleteDoc(doc(db, "articles", id));
+                loadArticles();
+            }
+        };
+
+        async function loadArticles() {
+            const listEl = document.getElementById("articlesList");
+            listEl.innerHTML = "<p>Chargement...</p>";
+            const q = query(articlesCol, orderBy("date", "desc"));
+            const snapshot = await getDocs(q);
+            listEl.innerHTML = "";
+            snapshot.forEach((docSnap) => {
+                if (docSnap.id === "admin") return; // ne pas afficher le document admin
+                const article = docSnap.data();
+                const card = document.createElement("div");
+                card.className = "article-card";
+                card.innerHTML = `
+                    <div>
+                        <strong>${article.titre}</strong> (${article.type || "annonce"})<br>
+                        <small>${article.date ? new Date(article.date.seconds * 1000).toLocaleDateString() : ""}</small>
+                    </div>
+                    <div>
+                        <button onclick='editArticle("${docSnap.id}", ${JSON.stringify(article)})'>Modifier</button>
+                        <button onclick='deleteArticle("${docSnap.id}")' style="background:#a00;">Supprimer</button>
+                    </div>
+                `;
+                listEl.appendChild(card);
+            });
+        }
+
+        // Vérifier l'authentification au chargement
+        if (sessionStorage.getItem("adminAuth") === "true") {
+            document.getElementById("loginSection").classList.add("hidden");
+            document.getElementById("adminPanel").classList.remove("hidden");
+            loadArticles();
+        }
+    </script>
+</body>
+</html>
