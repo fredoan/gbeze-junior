@@ -1,295 +1,428 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agenda – GBÈZÉ JUNIOR HOUEGNON | Prestations et performances</title>
-  <meta name="description" content="Agenda des prestations de GBÈZÉ JUNIOR HOUEGNON : retrouvez toutes ses animations passées et à venir au Bénin, classées par année.">
-  <link rel="canonical" href="https://www.gbezejuniorhouegnon.com/agenda.html">
-  <meta property="og:title" content="Agenda – GBÈZÉ JUNIOR HOUEGNON">
-  <meta property="og:description" content="Toutes les dates de spectacle de l'artiste traditionnel béninois.">
-  <meta property="og:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
-  <meta property="og:type" content="website">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<title>Agenda – GBÈZÉ JUNIOR HOUEGNON | Prestations, performances et dates au Bénin</title>
+<meta name="description" content="Agenda complet des prestations de GBÈZÉ JUNIOR HOUEGNON : 58 dates de spectacle au Bénin (2024, 2025, 2026), prestations de prestige (Vodoun Days, Ballet National, Roi Allekpéhanhou, FInAB, AGOGO, FSCUAO). Artiste traditionnel béninois — 26 titres, 14 clips, ≈593 000 abonnés.">
+<meta name="keywords" content="agenda GBÈZÉ JUNIOR, prestations Gbezé Junior, concerts Bénin, Vodoun Days, Ballet National, Roi Allekpéhanhou, FInAB, AGOGO, FSCUAO, Tchingounmin, Tôba Hanyé, KALAMOULAÏ, artiste traditionnel béninois, 26 titres, 14 clips">
+<meta name="author" content="GBÈZÉ JUNIOR HOUEGNON">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="content-language" content="fr-BJ">
+<meta name="geo.region" content="BJ">
+<meta name="geo.placename" content="Bénin">
 
-  <style>
-    :root {
-      --bleu-fonce: #0B1D3A;
-      --bleu-mid: #1E3A5F;
-      --marron: #8B5A2B;
-      --marron-fonce: #5C3A1E;
-      --marron-clair: #C69C6D;
-      --blanc: #FFFFFF;
-      --noir: #0A0A0A;
-      --texte: #FFFFFF;
-      --texte-muted: #B7AFA3;
-      --border: rgba(198,156,109,0.25);
-      --font-display: 'Cinzel Decorative', serif;
-      --font-title: 'Cinzel', serif;
-      --font-body: 'Raleway', sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--noir);
-      color: var(--texte);
-      font-family: var(--font-body);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    a { color: var(--marron-clair); text-decoration: none; transition: color .2s; }
-    a:hover { color: var(--blanc); }
-    img { max-width: 100%; display: block; }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--noir); }
-    ::-webkit-scrollbar-thumb { background: var(--marron); border-radius: 3px; }
+<link rel="canonical" href="https://www.gbezejuniorhouegnon.com/agenda.html">
+<link rel="alternate" hreflang="fr" href="https://www.gbezejuniorhouegnon.com/agenda.html">
+<link rel="alternate" hreflang="x-default" href="https://www.gbezejuniorhouegnon.com/agenda.html">
 
-    /* Navigation */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 5%; height: 72px;
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,.6); }
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: .95rem; letter-spacing: .12em; color: var(--marron-clair); white-space: nowrap;
-    }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a {
-      font-family: var(--font-title); font-size: .72rem; letter-spacing: .18em;
-      text-transform: uppercase; color: rgba(255,255,255,0.7);
-    }
-    .nav-links a:hover, .nav-links a.active { color: var(--marron-clair); }
-    .nav-cta {
-      font-family: var(--font-title); font-size: .7rem; letter-spacing: .15em;
-      text-transform: uppercase; padding: 9px 20px;
-      border: 1px solid var(--marron-clair); color: var(--marron-clair);
-      border-radius: 2px; transition: background .2s, color .2s;
-    }
-    .nav-cta:hover { background: var(--marron-clair); color: var(--noir); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-    .hamburger span { display: block; width: 24px; height: 2px; background: var(--marron-clair); border-radius: 2px; }
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; z-index: 999;
-      background: rgba(10,10,10,.98); flex-direction: column; align-items: center; justify-content: center; gap: 32px;
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-family: var(--font-title); font-size: 1.4rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
-    .mobile-menu a:hover { color: var(--marron-clair); }
-    .close-menu { position: absolute; top: 22px; right: 5%; background: none; border: none; font-size: 2rem; color: var(--marron-clair); cursor: pointer; }
+<link rel="icon" type="image/jpeg" href="pha.jpg">
+<link rel="apple-touch-icon" href="pha.jpg">
+<meta name="theme-color" content="#3d0000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GBÈZÉ JUNIOR">
 
-    /* Hero */
-    #page-hero {
-      background: radial-gradient(ellipse 80% 60% at 50% 30%, rgba(139,90,43,0.25) 0%, transparent 70%),
-                  linear-gradient(135deg, var(--noir) 0%, var(--marron-fonce) 100%);
-      padding: 120px 5% 80px;
-      text-align: center;
-    }
-    .hero-tag { display: inline-block; font-family: var(--font-title); font-size: .65rem; letter-spacing: .35em; text-transform: uppercase; color: var(--marron-clair); border: 1px solid rgba(198,156,109,0.3); padding: 6px 18px; border-radius: 100px; margin-bottom: 20px; }
-    .hero-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: var(--blanc); }
-    .hero-title span { color: var(--marron-clair); }
-    .section-line { width: 60px; height: 2px; background: var(--marron-clair); margin: 20px auto 0; }
+<meta property="og:title" content="Agenda – GBÈZÉ JUNIOR HOUEGNON">
+<meta property="og:description" content="58 dates de spectacle au Bénin + prestations de prestige. Artiste traditionnel béninois, 26 titres, 14 clips.">
+<meta property="og:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
+<meta property="og:image:alt" content="GBÈZÉ JUNIOR HOUEGNON — agenda des prestations">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.gbezejuniorhouegnon.com/agenda.html">
+<meta property="og:site_name" content="GBÈZÉ JUNIOR HOUEGNON">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agenda – GBÈZÉ JUNIOR HOUEGNON">
+<meta name="twitter:description" content="58 dates de spectacle au Bénin + prestations de prestige.">
+<meta name="twitter:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
 
-    /* Contenu */
-    .container { max-width: 1100px; margin: 0 auto; padding: 80px 5%; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="pha.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    /* Agenda tabs */
-    .agenda-tabs {
-      display: flex; gap: 0;
-      justify-content: center;
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      overflow: hidden;
-      max-width: 480px; margin: 0 auto 50px;
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.gbezejuniorhouegnon.com/#person",
+      "name": "GBÈZÉ JUNIOR HOUEGNON",
+      "alternateName": ["Gbezé Junior Houègnon", "Gbèzé Junior Houegnon", "GBÈZÉ JUNIOR"],
+      "jobTitle": "Artiste traditionnel béninois : chanteur, compositeur, danseur et percussionniste",
+      "description": "Artiste traditionnel béninois, auteur de 26 titres et 14 clips, maître des rythmes Tchingounmin et Tôba Hanyé. ≈593 000 abonnés cumulés.",
+      "url": "https://www.gbezejuniorhouegnon.com/",
+      "image": "https://www.gbezejuniorhouegnon.com/pha.jpg",
+      "birthDate": "1999-07-22",
+      "birthPlace": { "@type": "Place", "name": "Aklampa, Bénin" },
+      "nationality": { "@type": "Country", "name": "Bénin" },
+      "parent": { "@type": "Person", "name": "GBEZE ZEGUE-ZOUGOU" },
+      "knowsLanguage": ["Mahi", "Fon", "Nago", "Bariba"],
+      "knowsAbout": ["Tchingounmin", "Tôba Hanyé", "Musique traditionnelle béninoise", "Danse traditionnelle béninoise", "Percussions"],
+      "sameAs": [
+        "https://www.tiktok.com/@gbeze_junior",
+        "https://www.facebook.com/gbezejunioraliashouegnon",
+        "https://www.youtube.com/@Gbezejunioralliashouegnon"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.gbezejuniorhouegnon.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Agenda", "item": "https://www.gbezejuniorhouegnon.com/agenda.html" }
+      ]
+    },
+    {
+      "@type": "EventSeries",
+      "name": "Prestations de GBÈZÉ JUNIOR HOUEGNON",
+      "description": "Agenda des prestations de GBÈZÉ JUNIOR HOUEGNON au Bénin : animations, festivals et événements nationaux.",
+      "performer": { "@id": "https://www.gbezejuniorhouegnon.com/#person" },
+      "location": { "@type": "Country", "name": "Bénin" }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://www.gbezejuniorhouegnon.com/agenda.html#webpage",
+      "url": "https://www.gbezejuniorhouegnon.com/agenda.html",
+      "name": "Agenda – GBÈZÉ JUNIOR HOUEGNON",
+      "isPartOf": { "@id": "https://www.gbezejuniorhouegnon.com/#website" },
+      "about": { "@id": "https://www.gbezejuniorhouegnon.com/#person" },
+      "primaryImageOfPage": { "@type": "ImageObject", "contentUrl": "https://www.gbezejuniorhouegnon.com/pha.jpg" },
+      "inLanguage": "fr-BJ"
     }
-    .agenda-tab {
-      flex: 1;
-      font-family: var(--font-title);
-      font-size: .68rem;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      padding: 12px;
-      background: transparent;
-      border: none;
-      color: var(--texte-muted);
-      cursor: pointer;
-      transition: background .2s, color .2s;
-    }
-    .agenda-tab.active { background: var(--marron-clair); color: var(--noir); font-weight: 700; }
+  ]
+}
+</script>
 
-    .agenda-panel { display: none; }
-    .agenda-panel.active { display: block; }
+<style>
+/* ===================================================================
+   SYSTÈME — Rouge profond + damier bogolan or
+   =================================================================== */
+:root{
+  --fond:#3d0000; --fond-2:#4a0505; --fond-3:#560a0a; --fond-4:#2b0000; --fond-5:#1a0000;
+  --or:#b8922e; --or-clair:#d4af5a; --or-vif:#e8c869; --or-fonce:#8a6a1f;
+  --rouge:#8b0000; --rouge-vif:#c0392b;
+  --texte:#f7f2e9; --texte-2:#e6dccb; --texte-3:#b8a691;
+  --border-or:rgba(212,175,90,.24); --border-or-fort:rgba(212,175,90,.5); --border-subtil:rgba(212,175,90,.10);
+  --damier:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af5a'%3E%3Crect x='0' y='0' width='20' height='20'/%3E%3Crect x='40' y='0' width='20' height='20'/%3E%3Crect x='20' y='20' width='20' height='20'/%3E%3Crect x='60' y='20' width='20' height='20'/%3E%3Crect x='0' y='40' width='20' height='20'/%3E%3Crect x='40' y='40' width='20' height='20'/%3E%3Crect x='20' y='60' width='20' height='20'/%3E%3Crect x='60' y='60' width='20' height='20'/%3E%3C/g%3E%3C/svg%3E");
+  --f-display:'Cinzel',Georgia,serif; --f-serif:'Cormorant Garamond',Georgia,serif; --f-sans:'Lato',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+  --sp-1:.5rem; --sp-2:1rem; --sp-3:1.5rem; --sp-4:2rem; --sp-5:3rem; --sp-6:5rem;
+  --max:1240px; --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --nav-h:76px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav-h) + 10px)}
+body{
+  background-color:var(--fond);
+  background-image:radial-gradient(ellipse 120% 80% at 50% -10%,#610c0c 0%,var(--fond) 45%,var(--fond-4) 100%);
+  background-attachment:fixed;
+  color:var(--texte-2);font-family:var(--f-sans);font-size:1rem;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:var(--or-clair);color:var(--fond-5)}
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:var(--fond-5)}::-webkit-scrollbar-thumb{background:var(--or-fonce);border-radius:4px}
+:focus-visible{outline:2px solid var(--or-vif);outline-offset:3px;border-radius:2px}
 
-    .shows-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 16px;
-    }
-    .show-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 20px 22px;
-      display: flex; align-items: center; gap: 18px;
-      transition: transform .2s, border-color .2s;
-    }
-    .show-card:hover { transform: translateY(-3px); border-color: var(--marron-clair); }
-    .show-num {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: rgba(198,156,109,0.3);
-      min-width: 40px;
-      line-height: 1;
-    }
-    .show-details { flex: 1; }
-    .show-date {
-      font-family: var(--font-title);
-      font-size: .68rem;
-      letter-spacing: .12em;
-      color: var(--marron-clair);
-      margin-bottom: 4px;
-    }
-    .show-city {
-      font-size: .9rem;
-      color: var(--blanc);
-      font-weight: 500;
-    }
-    .show-venue {
-      font-size: .75rem;
-      color: var(--texte-muted);
-      margin-top: 2px;
-    }
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.075;background-image:var(--damier);background-size:80px 80px;animation:derive 120s linear infinite}
+@keyframes derive{to{background-position:160px 80px}}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.045;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+main,footer{position:relative;z-index:2}
 
-    /* Key shows */
-    .key-shows { margin-top: 50px; }
-    .key-shows-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--marron-clair);
-      margin-bottom: 20px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    .key-show-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 14px;
-    }
-    .key-show-item {
-      background: rgba(255,255,255,0.03);
-      border-left: 3px solid var(--marron-clair);
-      padding: 16px 20px;
-      border-radius: 0 3px 3px 0;
-    }
-    .key-show-item strong {
-      display: block;
-      font-family: var(--font-title);
-      font-size: .85rem;
-      color: var(--blanc);
-      margin-bottom: 4px;
-    }
-    .key-show-item span {
-      font-size: .75rem;
-      color: var(--texte-muted);
-    }
+h1,h2,h3{font-family:var(--f-display);font-weight:700;color:var(--texte);line-height:1.15}
+p{color:var(--texte-2);line-height:1.75}
+strong{color:var(--or-clair)}
 
-    /* Footer */
-    footer {
-      background: var(--noir);
-      border-top: 1px solid var(--border);
-      padding: 40px 5%;
-      text-align: center;
-      color: white;
-    }
-    .footer-logo { font-family: var(--font-display); font-size: 1.1rem; color: var(--marron-clair); margin-bottom: 14px; }
-    .footer-tagline { font-size: .75rem; color: rgba(255,255,255,0.5); letter-spacing: .1em; margin-bottom: 28px; }
-    .footer-nav { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; list-style: none; margin-bottom: 28px; }
-    .footer-nav a { font-family: var(--font-title); font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-    .footer-nav a:hover { color: var(--marron-clair); }
-    .footer-credit { font-size: .7rem; color: rgba(255,255,255,0.35); line-height: 1.6; margin-bottom: 15px; }
-    .footer-credit strong { color: var(--marron-clair); }
-    .footer-novasavoir {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,0.05); padding: 10px 20px;
-      border-radius: 30px; margin-top: 10px; font-size: .75rem;
-      color: rgba(255,255,255,0.6); transition: background .2s;
-    }
-    .footer-novasavoir:hover { background: rgba(255,255,255,0.12); color: var(--marron-clair); }
-    .footer-novasavoir svg { width: 18px; height: 18px; fill: currentColor; }
+.skip-link{position:absolute;top:-100px;left:20px;background:var(--or-clair);color:var(--fond-5);padding:12px 20px;z-index:99999;font-weight:700;font-size:.85rem;transition:top .3s}
+.skip-link:focus{top:20px}
 
-    .whatsapp-float {
-      position: fixed; bottom: 20px; right: 20px;
-      width: 60px; height: 60px; background-color: #25D366;
-      border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      display: flex; align-items: center; justify-content: center;
-      z-index: 999; transition: transform .2s;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); }
-    .whatsapp-float svg { width: 32px; height: 32px; fill: white; }
+/* Curseur */
+.curseur,.curseur-point{position:fixed;top:0;left:0;pointer-events:none;z-index:99998;border-radius:50%;transform:translate(-50%,-50%)}
+.curseur{width:34px;height:34px;border:1px solid var(--or-clair);transition:width .35s var(--ease),height .35s var(--ease),background .35s var(--ease)}
+.curseur-point{width:4px;height:4px;background:var(--or-clair);z-index:99999}
+.curseur.hover{width:68px;height:68px;background:rgba(212,175,90,.12);border-color:var(--or-vif)}
+@media (max-width:1024px),(hover:none){.curseur,.curseur-point{display:none!important}}
 
-    @media (max-width: 700px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-    }
-  </style>
+.barre-lecture{position:fixed;top:0;left:0;right:0;height:3px;z-index:9997;pointer-events:none}
+.barre-lecture-fill{height:100%;width:0;background:linear-gradient(90deg,var(--or),var(--or-vif));box-shadow:0 0 12px rgba(212,175,90,.6)}
+
+/* Loader */
+.loader{position:fixed;inset:0;z-index:99999;background:var(--fond-4);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;transition:opacity 1s var(--ease-out),visibility 1s var(--ease-out)}
+.loader.cache{opacity:0;visibility:hidden;pointer-events:none}
+.loader::before{content:'';position:absolute;inset:0;opacity:.08;background-image:var(--damier);background-size:80px 80px}
+.loader-cadre{position:relative;width:180px;height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp-3)}
+.loader-monogramme{font-family:var(--f-display);font-weight:900;font-size:76px;color:var(--or-clair);letter-spacing:-.04em;line-height:1;text-shadow:0 0 40px rgba(212,175,90,.5),3px 3px 0 var(--rouge),6px 6px 0 var(--rouge-vif);animation:pulseM 2.4s ease-in-out infinite}
+@keyframes pulseM{0%,100%{transform:scale(.98);opacity:.85}50%{transform:scale(1.04);opacity:1}}
+.loader-cercle{position:absolute;inset:0;border:1.5px solid rgba(212,175,90,.4);border-radius:50%;animation:tourne 8s linear infinite}
+.loader-cercle::before{content:'';position:absolute;width:6px;height:6px;background:var(--or-vif);border-radius:50%;top:-3px;left:50%;transform:translateX(-50%);box-shadow:0 0 12px var(--or-vif)}
+@keyframes tourne{to{transform:rotate(360deg)}}
+.loader-titre{font-family:var(--f-display);font-size:clamp(.7rem,2.6vw,.95rem);color:var(--or-clair);letter-spacing:.3em;text-transform:uppercase;margin-bottom:2rem;text-align:center;min-height:1.4em;padding-inline:14px}
+.loader-titre span{display:inline-block;opacity:0;transform:translateY(12px);animation:lettre .6s var(--ease-out) forwards}
+@keyframes lettre{to{opacity:1;transform:none}}
+.loader-jauge{width:min(200px,60vw);height:1px;background:rgba(212,175,90,.15);position:relative;overflow:hidden}
+.loader-jauge-fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--rouge-vif),var(--or-clair));animation:charge 1.6s var(--ease-out) forwards}
+@keyframes charge{to{width:100%}}
+
+/* Navigation */
+nav#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(16px,4vw,48px);height:var(--nav-h);background:rgba(61,0,0,0);border-bottom:1px solid transparent;transition:transform .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease)}
+nav#navbar.scrolled{background:rgba(26,0,0,.93);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom-color:var(--border-or);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+nav#navbar.cache{transform:translateY(-100%)}
+.nav-logo{display:flex;align-items:center;gap:12px;font-family:var(--f-display);font-size:.9rem;font-weight:700;letter-spacing:.14em;color:var(--or-clair);white-space:nowrap}
+.nav-logo-img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:top center;border:1.5px solid var(--or-clair);box-shadow:0 0 0 3px rgba(212,175,90,.12)}
+.nav-links{display:flex;align-items:center;gap:clamp(8px,1.4vw,22px)}
+.nav-links a{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--texte-3);padding:8px 4px;position:relative;white-space:nowrap;transition:color .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--or-clair)}
+.nav-links a.active::after{content:'';position:absolute;bottom:2px;left:4px;right:4px;height:2px;background:var(--or-clair)}
+.nav-links a.nav-cta{font-family:var(--f-display);padding:11px 20px;background:var(--or-clair);color:var(--fond-5);border-radius:3px;box-shadow:0 4px 15px rgba(212,175,90,.25);transition:transform .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease)}
+.nav-links a.nav-cta:hover{background:var(--or-vif);transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,175,90,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;width:40px;padding:10px 6px}
+.hamburger span{display:block;height:2px;background:var(--or-clair);border-radius:1px}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:1100;background:rgba(26,0,0,.985);flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3.4vh,28px);padding:90px 20px 40px;overflow-y:auto}
+.mobile-menu::before{content:'';position:absolute;inset:0;opacity:.07;background-image:var(--damier);background-size:60px 60px;pointer-events:none}
+.mobile-menu.open{display:flex}
+.mobile-menu a{position:relative;font-family:var(--f-display);font-size:clamp(1.05rem,4.6vw,1.4rem);letter-spacing:.2em;text-transform:uppercase;color:var(--texte-2);transition:color .3s}
+.mobile-menu a:hover,.mobile-menu a.current{color:var(--or-clair)}
+.close-menu{position:absolute;top:18px;right:5%;font-size:2.4rem;line-height:1;color:var(--or-clair);width:48px;height:48px;z-index:2}
+@media (max-width:1080px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* Boutons flottants */
+.whatsapp-float{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:calc(24px + env(safe-area-inset-right));z-index:998;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 4px rgba(37,211,102,.2);transition:transform .4s var(--ease);animation:pulseWa 2.8s ease-in-out infinite}
+.whatsapp-float:hover{transform:scale(1.08) translateY(-2px)}
+.whatsapp-float svg{width:32px;height:32px;fill:#fff}
+@keyframes pulseWa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 4px rgba(37,211,102,.2)}50%{box-shadow:0 4px 25px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
+.haut{position:fixed;bottom:calc(102px + env(safe-area-inset-bottom));right:calc(33px + env(safe-area-inset-right));z-index:997;width:44px;height:44px;border-radius:50%;border:1px solid var(--or-clair);background:rgba(26,0,0,.85);color:var(--or-clair);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,visibility .3s,background .3s,color .3s}
+.haut.visible{opacity:1;visibility:visible;transform:none}
+.haut:hover{background:var(--or-clair);color:var(--fond-5)}
+.haut svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:640px){.whatsapp-float{width:56px;height:56px;bottom:calc(18px + env(safe-area-inset-bottom));right:calc(18px + env(safe-area-inset-right))}.whatsapp-float svg{width:28px;height:28px}.haut{bottom:calc(86px + env(safe-area-inset-bottom));right:calc(25px + env(safe-area-inset-right))}}
+
+/* Structure */
+.section-pad{padding:clamp(60px,9vw,112px) 5%}
+.section-header{text-align:center;margin-bottom:clamp(36px,6vw,64px)}
+.section-tag{display:inline-flex;align-items:center;gap:12px;font-family:var(--f-serif);font-style:italic;font-size:1.1rem;letter-spacing:.04em;color:var(--or-clair);margin-bottom:var(--sp-2)}
+.section-tag::before,.section-tag::after{content:'';width:28px;height:1px;background:var(--or-clair)}
+.section-title{font-size:clamp(1.7rem,4.2vw,2.9rem);line-height:1.2}
+.section-title span{color:var(--or-clair)}
+.section-line{width:120px;height:12px;margin:20px auto 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='12' viewBox='0 0 120 12'%3E%3Cg fill='none' stroke='%23d4af5a' stroke-width='1'%3E%3Cpath d='M0 6 H48 M72 6 H120' opacity='.6'/%3E%3Cpath d='M60 1 L66 6 L60 11 L54 6 Z' fill='%23d4af5a'/%3E%3C/g%3E%3C/svg%3E") center/contain no-repeat}
+
+.frise-bogolan{width:100%;height:34px;position:relative;overflow:hidden;z-index:2;border-block:1px solid var(--border-or);background:rgba(26,0,0,.6)}
+.frise-bogolan::before{content:'';position:absolute;inset:0;background-image:var(--damier);background-size:68px 68px;opacity:.35;-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-display);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:14px 30px;border-radius:3px;font-weight:700;transition:transform .3s var(--ease),box-shadow .3s,background .3s,color .3s}
+.btn-primary{background:var(--or-clair);color:var(--fond-5);box-shadow:0 4px 20px rgba(212,175,90,.3)}
+.btn-primary:hover{transform:translateY(-3px);background:var(--or-vif);box-shadow:0 12px 35px rgba(212,175,90,.45)}
+.btn-secondary{border:1.5px solid var(--or-clair);color:var(--or-clair)}
+.btn-secondary:hover{transform:translateY(-3px);background:var(--or-clair);color:var(--fond-5)}
+
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.reveal.visible{opacity:1;transform:none}
+@keyframes fade-up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* ===================== HERO AGENDA ===================== */
+#hero-agenda{position:relative;min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:calc(var(--nav-h) + 70px) 5% 80px;text-align:center}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg-img{position:absolute;inset:0;background:url('pha.jpg') center center/cover no-repeat;filter:brightness(.22) saturate(.5) sepia(.3)}
+.hero-bg::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(139,0,0,.45),transparent 70%),radial-gradient(ellipse 60% 40% at 80% 75%,rgba(26,0,0,.7),transparent 60%),linear-gradient(180deg,rgba(61,0,0,.25),var(--fond) 100%)}
+.hero-bordure{position:absolute;top:0;bottom:0;width:22px;z-index:1;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='60' viewBox='0 0 28 60'%3E%3Cg fill='%23d4af5a' opacity='0.35'%3E%3Crect x='0' y='0' width='14' height='15'/%3E%3Crect x='14' y='15' width='14' height='15'/%3E%3Crect x='0' y='30' width='14' height='15'/%3E%3Crect x='14' y='45' width='14' height='15'/%3E%3C/g%3E%3C/svg%3E");background-size:28px 60px}
+.hero-bordure.g{left:0}.hero-bordure.d{right:0}
+@media (max-width:700px){.hero-bordure{width:10px}}
+.particles{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:2px;height:2px;background:var(--or-vif);border-radius:50%;animation:float-particle linear infinite;opacity:0;box-shadow:0 0 6px rgba(232,200,105,.8)}
+@keyframes float-particle{0%{transform:translateY(100vh) translateX(0);opacity:0}10%{opacity:.7}90%{opacity:.3}100%{transform:translateY(-10vh) translateX(var(--dx,30px));opacity:0}}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:820px}
+.hero-tag{display:inline-block;font-family:var(--f-display);font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--or-clair);border:1px solid var(--border-or-fort);padding:7px 18px;border-radius:100px;margin-bottom:24px;background:rgba(26,0,0,.5);opacity:0;animation:fade-up .8s ease .3s forwards}
+.hero-name{font-size:clamp(2rem,7vw,4.5rem);font-weight:900;line-height:1.08;background:linear-gradient(120deg,#fff 30%,var(--or-vif) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:0;animation:fade-up .9s ease .5s forwards}
+.hero-name span{color:var(--or-clair);-webkit-text-fill-color:var(--or-clair)}
+.hero-divider{width:70px;height:1px;background:var(--or-clair);margin:24px auto;opacity:0;animation:fade-up .8s ease .7s forwards}
+.hero-desc{font-size:clamp(.92rem,2vw,1.05rem);color:rgba(255,255,255,.88);max-width:640px;margin:0 auto;font-weight:300;line-height:1.9;opacity:0;animation:fade-up .8s ease .9s forwards}
+.hero-desc strong{color:var(--or-clair);font-weight:700}
+.hero-ctas{margin-top:32px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fade-up .8s ease 1.1s forwards}
+
+/* Stats bandeau */
+.stats-band{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;max-width:900px;margin:clamp(30px,5vw,50px) auto 0;background:linear-gradient(180deg,rgba(86,10,10,.55),rgba(26,0,0,.7));border:1px solid var(--border-or);border-radius:8px;overflow:hidden}
+.stats-band .stat-item{text-align:center;padding:clamp(20px,3vw,28px) 14px;border-right:1px solid var(--border-or)}
+.stats-band .stat-item:last-child{border-right:none}
+.stats-band .stat-num{font-family:var(--f-display);font-size:clamp(1.5rem,3.4vw,2.1rem);color:var(--or-clair);display:block;line-height:1;text-shadow:0 0 20px rgba(212,175,90,.3)}
+.stats-band .stat-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--texte-3);font-weight:700;display:block;margin-top:8px}
+@media (max-width:640px){
+  .stats-band{grid-template-columns:repeat(2,1fr)}
+  .stats-band .stat-item:nth-child(2){border-right:none}
+  .stats-band .stat-item:nth-child(1),.stats-band .stat-item:nth-child(2){border-bottom:1px solid var(--border-or)}
+}
+
+/* ===================== AGENDA ===================== */
+.agenda-wrap{max-width:1180px;margin:0 auto;padding:clamp(50px,8vw,90px) 5%}
+
+/* Tabs années */
+.agenda-tabs{display:flex;gap:0;justify-content:center;border:1px solid var(--border-or);border-radius:6px;overflow:hidden;max-width:520px;margin:0 auto clamp(36px,6vw,56px);background:rgba(26,0,0,.5)}
+.agenda-tab{flex:1;font-family:var(--f-display);font-size:.78rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:14px 10px;color:var(--texte-3);transition:background .3s,color .3s;position:relative;border-right:1px solid var(--border-or)}
+.agenda-tab:last-child{border-right:none}
+.agenda-tab:hover{color:var(--or-clair);background:rgba(212,175,90,.05)}
+.agenda-tab.active{background:var(--or-clair);color:var(--fond-5);box-shadow:inset 0 -2px 0 var(--or-vif)}
+.agenda-tab .nb{display:inline-block;font-family:var(--f-mono);font-size:.6rem;letter-spacing:.06em;margin-left:6px;opacity:.75;font-weight:500}
+
+.agenda-panel{display:none;animation:fondu .5s var(--ease)}
+.agenda-panel.active{display:block}
+@keyframes fondu{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.shows-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.show-card{background:rgba(26,0,0,.55);border:1px solid var(--border-or);border-radius:6px;padding:18px 20px;display:flex;align-items:center;gap:16px;transition:transform .3s var(--ease),border-color .3s,box-shadow .3s,background .3s}
+.show-card:hover{transform:translateY(-3px);border-color:var(--or-clair);background:rgba(86,10,10,.55);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.show-num{font-family:var(--f-mono);font-size:1rem;font-weight:700;color:var(--or-fonce);min-width:34px;line-height:1;letter-spacing:.02em}
+.show-details{flex:1;min-width:0}
+.show-date{font-family:var(--f-display);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--or-clair);margin-bottom:4px}
+.show-city{font-size:.95rem;color:var(--texte);font-weight:600;line-height:1.35}
+.show-venue{font-size:.76rem;color:var(--texte-3);margin-top:2px;line-height:1.4}
+.show-card.vedette{border-color:var(--or-clair);background:linear-gradient(180deg,rgba(86,10,10,.65),rgba(43,0,0,.75));box-shadow:0 0 0 1px rgba(212,175,90,.2)}
+.show-card.vedette .show-date{color:var(--or-vif)}
+
+/* Prestations de prestige */
+.prestige-block{margin-top:clamp(50px,8vw,80px)}
+.prestige-title{text-align:center;margin-bottom:clamp(28px,5vw,44px)}
+.prestige-title h2{font-family:var(--f-display);font-size:clamp(1.4rem,3.4vw,2rem);color:var(--or-clair);margin-bottom:8px}
+.prestige-title h2 span{color:var(--texte)}
+.prestige-title .sous{font-family:var(--f-serif);font-style:italic;font-size:clamp(1rem,2.2vw,1.2rem);color:var(--texte-3)}
+.prestige-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.prestige-item{background:rgba(26,0,0,.55);border-left:3px solid var(--or-clair);padding:18px 22px;border-radius:0 6px 6px 0;transition:transform .3s var(--ease),background .3s,box-shadow .3s}
+.prestige-item:hover{transform:translateX(4px);background:rgba(86,10,10,.55);box-shadow:0 6px 20px rgba(0,0,0,.35)}
+.prestige-item strong{display:block;font-family:var(--f-display);font-size:.9rem;color:var(--texte);margin-bottom:5px;letter-spacing:.02em;line-height:1.3}
+.prestige-item span{font-size:.78rem;color:var(--texte-3);line-height:1.5;display:block}
+
+/* CTA bas */
+.agenda-cta{text-align:center;margin-top:clamp(40px,6vw,60px)}
+.agenda-cta p{font-style:italic;color:var(--texte-3);margin-bottom:18px;font-size:.95rem}
+.agenda-cta .btn-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* Footer */
+footer{background:var(--fond-4);border-top:1px solid var(--border-or);padding:clamp(40px,7vw,64px) 5% calc(34px + env(safe-area-inset-bottom));text-align:center;color:#fff;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;opacity:.08;pointer-events:none;background-image:var(--damier);background-size:80px 80px}
+footer::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--or-fonce),var(--or-vif),var(--or-fonce))}
+footer>*{position:relative;z-index:2}
+.footer-logo{font-family:var(--f-display);font-size:clamp(1rem,3.4vw,1.25rem);font-weight:700;letter-spacing:.1em;color:var(--or-clair);margin-bottom:14px}
+.footer-tagline{font-family:var(--f-serif);font-style:italic;font-size:1rem;color:var(--texte-3);margin:0 auto 28px}
+.footer-nav{display:flex;gap:10px 24px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.footer-nav a{font-family:var(--f-display);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--texte-2);transition:color .3s,transform .3s;display:inline-block}
+.footer-nav a:hover{color:var(--or-clair);transform:translateY(-2px)}
+.footer-credit{font-size:.76rem;color:var(--texte-3);line-height:1.7;margin:0 auto 15px}
+.footer-credit strong{color:var(--or-clair)}
+.footer-novasavoir{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,90,.08);border:1px solid var(--border-or);padding:11px 22px;border-radius:30px;margin-top:10px;font-size:.78rem;color:var(--texte-2);transition:background .2s,color .2s,border-color .2s}
+.footer-novasavoir:hover{background:rgba(212,175,90,.18);border-color:var(--or-vif);color:var(--or-clair)}
+.footer-novasavoir svg{width:18px;height:18px;fill:currentColor}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1!important;transform:none!important}
+  body::before{animation:none}
+  .hero-tag,.hero-name,.hero-divider,.hero-desc,.hero-ctas{opacity:1!important;animation:none!important}
+}
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav id="navbar">
-    <div class="nav-logo">GBÈZÉ JUNIOR</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="biographie.html">Biographie</a></li>
-      <li><a href="lignee.html">Lignée</a></li>
-      <li><a href="musique.html">Musique</a></li>
-      <li><a href="agenda.html" class="active">Agenda</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="actualites.html">Actualités</a></li>
-      <li><a href="contact.html" class="nav-cta">Réserver</a></li>
-    </ul>
-    <button class="hamburger" id="menuBtn" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenu">×</button>
-    <a href="index.html">Accueil</a>
-    <a href="biographie.html">Biographie</a>
-    <a href="lignee.html">Lignée</a>
-    <a href="musique.html">Musique</a>
-    <a href="agenda.html">Agenda</a>
-    <a href="galerie.html">Galerie</a>
-    <a href="actualites.html">Actualités</a>
-    <a href="contact.html">Contact</a>
-  </div>
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-cadre"><div class="loader-cercle"></div><div class="loader-monogramme">GJ</div></div>
+  <div class="loader-titre" id="loaderTitre"></div>
+  <div class="loader-jauge"><div class="loader-jauge-fill"></div></div>
+</div>
+
+<div class="barre-lecture" aria-hidden="true"><div class="barre-lecture-fill" id="barreLecture"></div></div>
+<div class="curseur" id="curseur" aria-hidden="true"></div>
+<div class="curseur-point" id="curseurPoint" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav id="navbar" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo" aria-label="GBÈZÉ JUNIOR — Accueil">
+    <img src="pha.jpg" alt="" class="nav-logo-img" width="42" height="42">
+    <span>GBÈZÉ JUNIOR</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="biographie.html">Biographie</a></li>
+    <li><a href="lignee.html">Lignée</a></li>
+    <li><a href="musique.html">Musique</a></li>
+    <li><a href="agenda.html" class="active" aria-current="page">Agenda</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="actualites.html">Actualités</a></li>
+    <li><a href="contact.html" class="nav-cta">Réserver</a></li>
+  </ul>
+  <button class="hamburger" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close-menu" id="closeMenu" aria-label="Fermer le menu">×</button>
+  <a href="index.html">Accueil</a>
+  <a href="biographie.html">Biographie</a>
+  <a href="lignee.html">Lignée</a>
+  <a href="musique.html">Musique</a>
+  <a href="agenda.html" class="current">Agenda</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="actualites.html">Actualités</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<button type="button" class="haut" id="haut" aria-label="Retour en haut de page">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<main id="contenu">
 
   <!-- Hero -->
-  <section id="page-hero">
-    <div class="hero-tag">Animations</div>
-    <h1 class="hero-title">Agenda & <span>Performances</span></h1>
-    <div class="section-line"></div>
+  <section id="hero-agenda" aria-labelledby="agendaTitre">
+    <div class="hero-bg"><div class="hero-bg-img"></div></div>
+    <div class="hero-bordure g" aria-hidden="true"></div>
+    <div class="hero-bordure d" aria-hidden="true"></div>
+    <div class="particles" id="particles" aria-hidden="true"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Animations</div>
+      <h1 class="hero-name" id="agendaTitre">Agenda &amp; <span>Performances</span></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-desc">
+        Toutes les dates de spectacle de <strong>GBÈZÉ JUNIOR HOUEGNON</strong> au Bénin —
+        <strong>58 animations</strong> enregistrées entre 2024 et 2026, des scènes locales
+        aux <strong>prestations de prestige</strong> (Vodoun Days, Ballet National,
+        Fête de la Musique, Roi Allekpéhanhou, festivals FInAB, AGOGO, FSCUAO).
+      </p>
+      <div class="hero-ctas">
+        <a href="#agenda" class="btn-primary">Voir les dates</a>
+        <a href="contact.html" class="btn-secondary">Réserver une prestation</a>
+      </div>
+      <div class="stats-band">
+        <div class="stat-item"><span class="stat-num" data-target="9">0</span><span class="stat-label">Dates 2026</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="27">0</span><span class="stat-label">Dates 2025</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="22">0</span><span class="stat-label">Dates 2024</span></div>
+        <div class="stat-item"><span class="stat-num" data-target="58">0</span><span class="stat-label">Total prestations</span></div>
+      </div>
+    </div>
   </section>
 
-  <!-- Contenu -->
-  <div class="container">
+  <div class="frise-bogolan" aria-hidden="true"></div>
+
+  <!-- Agenda -->
+  <div class="agenda-wrap" id="agenda">
+
+    <div class="section-header reveal">
+      <span class="section-tag">Toutes les dates</span>
+      <h2 class="section-title">Calendrier des <span>Prestations</span></h2>
+      <div class="section-line"></div>
+    </div>
 
     <!-- Tabs -->
-    <div class="agenda-tabs">
-      <button class="agenda-tab active" onclick="switchTab('2026')">2026</button>
-      <button class="agenda-tab" onclick="switchTab('2025')">2025</button>
-      <button class="agenda-tab" onclick="switchTab('2024')">2024</button>
+    <div class="agenda-tabs reveal" role="tablist" aria-label="Choisir une année">
+      <button class="agenda-tab active" role="tab" aria-selected="true" aria-controls="panel-2026" onclick="switchTab('2026', this)">2026 <span class="nb">(9)</span></button>
+      <button class="agenda-tab" role="tab" aria-selected="false" aria-controls="panel-2025" onclick="switchTab('2025', this)">2025 <span class="nb">(27)</span></button>
+      <button class="agenda-tab" role="tab" aria-selected="false" aria-controls="panel-2024" onclick="switchTab('2024', this)">2024 <span class="nb">(22)</span></button>
     </div>
 
     <!-- 2026 -->
-    <div class="agenda-panel active" id="panel-2026">
+    <div class="agenda-panel active" id="panel-2026" role="tabpanel" aria-labelledby="tab-2026">
       <div class="shows-grid">
         <div class="show-card"><span class="show-num">01</span><div class="show-details"><div class="show-date">02 Jan. 2026</div><div class="show-city">Massi</div></div></div>
         <div class="show-card"><span class="show-num">02</span><div class="show-details"><div class="show-date">03 Jan. 2026</div><div class="show-city">Bonou</div></div></div>
@@ -304,7 +437,7 @@
     </div>
 
     <!-- 2025 -->
-    <div class="agenda-panel" id="panel-2025">
+    <div class="agenda-panel" id="panel-2025" role="tabpanel" aria-labelledby="tab-2025">
       <div class="shows-grid">
         <div class="show-card"><span class="show-num">01</span><div class="show-details"><div class="show-date">12 Jan. 2025</div><div class="show-city">Lokossa</div></div></div>
         <div class="show-card"><span class="show-num">02</span><div class="show-details"><div class="show-date">08 Fév. 2025</div><div class="show-city">Kétou</div><div class="show-venue">Ewè</div></div></div>
@@ -337,9 +470,9 @@
     </div>
 
     <!-- 2024 -->
-    <div class="agenda-panel" id="panel-2024">
+    <div class="agenda-panel" id="panel-2024" role="tabpanel" aria-labelledby="tab-2024">
       <div class="shows-grid">
-        <div class="show-card"><span class="show-num">01</span><div class="show-details"><div class="show-date">19 Juil. 2024 ★</div><div class="show-city">Cana</div><div class="show-venue">Première Animation Officielle</div></div></div>
+        <div class="show-card vedette"><span class="show-num">01</span><div class="show-details"><div class="show-date">19 Juil. 2024 ★</div><div class="show-city">Cana</div><div class="show-venue">Première Animation Officielle</div></div></div>
         <div class="show-card"><span class="show-num">02</span><div class="show-details"><div class="show-date">31 Juil. 2024</div><div class="show-city">Abomey</div></div></div>
         <div class="show-card"><span class="show-num">03</span><div class="show-details"><div class="show-date">4 Août 2024</div><div class="show-city">Kpanwignan</div></div></div>
         <div class="show-card"><span class="show-num">04</span><div class="show-details"><div class="show-date">15 Août 2024</div><div class="show-city">Ouidah</div></div></div>
@@ -365,67 +498,181 @@
     </div>
 
     <!-- Prestations de prestige -->
-    <div class="key-shows">
-      <div class="key-shows-title">✦ Prestations de prestige</div>
-      <div class="key-show-list">
-        <div class="key-show-item"><strong>Étoile du Ballet National</strong><span>Vodoun Days 2024 · Ballet National du Bénin</span></div>
-        <div class="key-show-item"><strong>Scène avec le Roi Allekpéhanhou</strong><span>Événement National · Bénin</span></div>
-        <div class="key-show-item"><strong>Fête de la Musique · Porto-Novo</strong><span>Plateau Traditionnel Gouvernemental</span></div>
-        <div class="key-show-item"><strong>Nuit de l'Indépendance</strong><span>Ouidah · Événement National</span></div>
-        <div class="key-show-item"><strong>FSCUAO Togo</strong><span>Festival Scientifique & Culturel UNESCO · Août 2022</span></div>
-        <div class="key-show-item"><strong>FInAB 2023</strong><span>Festival International des Arts du Bénin</span></div>
-        <div class="key-show-item"><strong>Festival Int. de Danse AGOGO</strong><span>2023 & Janvier 2024</span></div>
-        <div class="key-show-item"><strong>ORTB 5/7 Matin</strong><span>Présentation du 1er single · 2023</span></div>
-        <div class="key-show-item"><strong>FRSCUAO 2024 — UAC Bénin</strong><span>Festival Régional des Clubs UNESCO · Août 2024</span></div>
+    <div class="prestige-block">
+      <div class="prestige-title reveal">
+        <span class="section-tag">Scènes d'exception</span>
+        <h2>Prestations de <span>Prestige</span></h2>
+        <p class="sous">Événements nationaux, festivals et collaborations royales</p>
+      </div>
+      <div class="prestige-list reveal">
+        <div class="prestige-item"><strong>Étoile du Ballet National</strong><span>Vodoun Days 2024 · Ballet National du Bénin</span></div>
+        <div class="prestige-item"><strong>Scène avec le Roi Allekpéhanhou</strong><span>Événement National · Bénin</span></div>
+        <div class="prestige-item"><strong>Fête de la Musique · Porto-Novo</strong><span>Plateau Traditionnel Gouvernemental</span></div>
+        <div class="prestige-item"><strong>Nuit de l'Indépendance</strong><span>Ouidah · Événement National</span></div>
+        <div class="prestige-item"><strong>FSCUAO Togo</strong><span>Festival Scientifique &amp; Culturel UNESCO · Août 2022</span></div>
+        <div class="prestige-item"><strong>FInAB 2023</strong><span>Festival International des Arts du Bénin</span></div>
+        <div class="prestige-item"><strong>Festival Int. de Danse AGOGO</strong><span>2023 &amp; Janvier 2024</span></div>
+        <div class="prestige-item"><strong>ORTB 5/7 Matin</strong><span>Présentation du 1er single · 2023</span></div>
+        <div class="prestige-item"><strong>FRSCUAO 2024 — UAC Bénin</strong><span>Festival Régional des Clubs UNESCO · Août 2024</span></div>
       </div>
     </div>
+
+    <!-- CTA bas -->
+    <div class="agenda-cta reveal">
+      <p>Vous souhaitez faire intervenir GBÈZÉ JUNIOR sur votre événement ?</p>
+      <div class="btn-group">
+        <a href="contact.html" class="btn-primary">Réserver une prestation</a>
+        <a href="actualites.html" class="btn-secondary">Suivre l'actualité</a>
+      </div>
+    </div>
+
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-logo">GBÈZÉ JUNIOR HOUEGNON</div>
-    <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
-    <ul class="footer-nav">
-      <li><a href="index.html">Accueil</a></li>
-      <li><a href="biographie.html">Biographie</a></li>
-      <li><a href="lignee.html">Lignée</a></li>
-      <li><a href="musique.html">Musique</a></li>
-      <li><a href="agenda.html">Agenda</a></li>
-      <li><a href="galerie.html">Galerie</a></li>
-      <li><a href="actualites.html">Actualités</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <p class="footer-credit">
-      © 2026 GBÈZÉ JUNIOR HOUEGNON — Développé par <strong>Novasavoir</strong><br>
-      Directeur : Amoussou Frédy
-    </p>
-    <a href="https://wa.me/2290152552106" target="_blank" class="footer-novasavoir" aria-label="Contacter Novasavoir sur WhatsApp">
-      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Contacter Novasavoir
-    </a>
-  </footer>
+</main>
 
-  <!-- WhatsApp flottant (Client) -->
-  <a href="https://wa.me/2290152557034" target="_blank" class="whatsapp-float" aria-label="Contacter GBÈZÉ JUNIOR sur WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">GBÈZÉ JUNIOR HOUEGNON</div>
+  <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
+  <ul class="footer-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="biographie.html">Biographie</a></li>
+    <li><a href="lignee.html">Lignée</a></li>
+    <li><a href="musique.html">Musique</a></li>
+    <li><a href="agenda.html">Agenda</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="actualites.html">Actualités</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <p class="footer-credit">
+    © 2026 GBÈZÉ JUNIOR HOUEGNON — Développé par <strong>Novasavoir</strong><br>
+    Directeur : Amoussou Frédy
+  </p>
+  <a href="https://wa.me/2290152552106" target="_blank" rel="noopener" class="footer-novasavoir" aria-label="Contacter Novasavoir sur WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Contacter Novasavoir
   </a>
+</footer>
 
-  <script>
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 60); });
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
-    menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-    closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
-    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.remove('open')));
+<!-- WhatsApp flottant (Client) -->
+<a href="https://wa.me/2290152557034" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacter GBÈZÉ JUNIOR sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
-    function switchTab(year) {
-      document.querySelectorAll('.agenda-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.agenda-panel').forEach(p => p.classList.remove('active'));
-      event.target.classList.add('active');
-      document.getElementById('panel-' + year).classList.add('active');
-    }
-  </script>
+<script>
+/* ---------- Loader ---------- */
+(function () {
+  const loader = document.getElementById('loader'), titre = document.getElementById('loaderTitre');
+  if (!loader) return;
+  document.body.style.overflow = 'hidden';
+  'AGENDA'.split('').forEach((l, i) => {
+    const s = document.createElement('span');
+    s.textContent = l;
+    s.style.animationDelay = (0.03 * i + 0.15) + 's';
+    titre.appendChild(s);
+  });
+  let fini = false;
+  const cacher = () => { if (fini) return; fini = true; loader.classList.add('cache'); document.body.style.overflow = ''; };
+  addEventListener('load', () => setTimeout(cacher, 1200));
+  setTimeout(cacher, 2400);
+})();
+
+/* ---------- Barre de lecture, retour en haut, nav ---------- */
+(function () {
+  const barre = document.getElementById('barreLecture'), haut = document.getElementById('haut'), nav = document.getElementById('navbar');
+  let tick = false, dernier = 0;
+  function maj() {
+    const h = document.documentElement.scrollHeight - innerHeight, y = scrollY;
+    barre.style.width = (h > 0 ? y / h * 100 : 0) + '%';
+    haut.classList.toggle('visible', y > 700);
+    nav.classList.toggle('scrolled', y > 60);
+    nav.classList.toggle('cache', y > 250 && y > dernier);
+    dernier = y; tick = false;
+  }
+  addEventListener('scroll', () => { if (!tick) { requestAnimationFrame(maj); tick = true; } }, { passive: true });
+  maj();
+  haut.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+/* ---------- Menu mobile ---------- */
+(function () {
+  const btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu'), fermer = document.getElementById('closeMenu');
+  const ouvrir = () => { menu.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; fermer.focus(); };
+  const clore = () => { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+  btn.addEventListener('click', ouvrir);
+  fermer.addEventListener('click', clore);
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', clore));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) clore(); });
+  addEventListener('resize', () => { if (innerWidth > 1080) clore(); });
+})();
+
+/* ---------- Curseur ---------- */
+(function () {
+  const c = document.getElementById('curseur'), pt = document.getElementById('curseurPoint');
+  if (!c || !pt || matchMedia('(max-width: 1024px)').matches || !matchMedia('(hover: hover)').matches) return;
+  let sx = 0, sy = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', e => { sx = e.clientX; sy = e.clientY; });
+  (function loop() {
+    cx += (sx - cx) * 0.18; cy += (sy - cy) * 0.18;
+    c.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    pt.style.transform = `translate(${sx}px, ${sy}px) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  })();
+  document.querySelectorAll('a, button, .show-card, .prestige-item').forEach(el => {
+    el.addEventListener('mouseenter', () => c.classList.add('hover'));
+    el.addEventListener('mouseleave', () => c.classList.remove('hover'));
+  });
+})();
+
+/* ---------- Particules dorées ---------- */
+(function () {
+  const box = document.getElementById('particles');
+  if (!box || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const n = innerWidth < 700 ? 14 : 26;
+  for (let i = 0; i < n; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.cssText = `left:${Math.random() * 100}%; width:${Math.random() * 3 + 1}px; height:${Math.random() * 3 + 1}px; animation-duration:${Math.random() * 12 + 8}s; animation-delay:${Math.random() * 10}s; --dx:${(Math.random() - 0.5) * 80}px;`;
+    box.appendChild(p);
+  }
+})();
+
+/* ---------- Reveal ---------- */
+(function () {
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  }), { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+})();
+
+/* ---------- Compteurs animés ---------- */
+(function () {
+  const formatNum = n => n >= 1000 ? Math.round(n / 1000) + 'K' : String(n);
+  const reduit = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const obs = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, cible = parseInt(el.dataset.target, 10);
+    obs.unobserve(el);
+    if (reduit) { el.textContent = formatNum(cible); return; }
+    const t0 = performance.now();
+    (function f(t) {
+      const p = Math.min((t - t0) / 1600, 1);
+      el.textContent = formatNum(Math.floor((1 - Math.pow(1 - p, 4)) * cible));
+      if (p < 1) requestAnimationFrame(f); else el.textContent = formatNum(cible);
+    })(t0);
+  }), { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-target]').forEach(c => obs.observe(c));
+})();
+
+/* ---------- Onglets années ---------- */
+function switchTab(year, btn) {
+  document.querySelectorAll('.agenda-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+  document.querySelectorAll('.agenda-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  const panel = document.getElementById('panel-' + year);
+  if (panel) panel.classList.add('active');
+}
+</script>
 </body>
 </html>
