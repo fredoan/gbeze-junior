@@ -1,181 +1,407 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" prefix="og: https://ogp.me/ns#">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Article — GBÈZÉ JUNIOR HOUEGNON</title>
-  <meta name="description" content="Lisez l'article complet de GBÈZÉ JUNIOR HOUEGNON."/>
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" id="canonicalLink" href="https://www.gbezejuniorhouegnon.com/article.html">
-  <meta property="og:title" id="ogTitle" content="Article — GBÈZÉ JUNIOR HOUEGNON">
-  <meta property="og:description" id="ogDescription" content="Découvrez l'actualité de GBÈZÉ JUNIOR HOUEGNON.">
-  <meta property="og:image" id="ogImage" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
-  <meta property="og:url" id="ogUrl" content="https://www.gbezejuniorhouegnon.com/article.html">
-  <meta property="og:type" content="article">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<title>Article — GBÈZÉ JUNIOR HOUEGNON</title>
+<meta name="description" content="Lisez l'article complet de GBÈZÉ JUNIOR HOUEGNON.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<meta name="content-language" content="fr-BJ">
+<meta name="geo.region" content="BJ">
+<meta name="geo.placename" content="Bénin">
 
-  <style>
-    :root {
-      --bleu-fonce: #0B1D3A;
-      --bleu-mid: #1E3A5F;
-      --bleu-clair: #E8F0FE;
-      --marron: #8B5A2B;
-      --marron-clair: #C69C6D;
-      --blanc: #FFFFFF;
-      --blanc-casse: #F5F0E8;
-      --texte: #0B1D3A;
-      --texte-muted: #5A6268;
-      --border: rgba(11,29,58,0.15);
-      --font-display: 'Cinzel Decorative', serif;
-      --font-title: 'Cinzel', serif;
-      --font-body: 'Raleway', sans-serif;
-      --nav-h: 72px;
-    }
-    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
-    html { scroll-behavior:smooth; }
-    body { background:var(--blanc-casse); font-family:var(--font-body); color:var(--texte); overflow-x:hidden; line-height:1.7; }
-    a { text-decoration:none; color:var(--marron); transition:color .2s; }
-    a:hover { color:var(--bleu-mid); }
-    img { max-width:100%; display:block; }
+<link rel="canonical" id="canonicalLink" href="https://www.gbezejuniorhouegnon.com/article.html">
+<link rel="alternate" hreflang="fr" id="altFr" href="https://www.gbezejuniorhouegnon.com/article.html">
 
-    nav {
-      position:fixed; top:0; left:0; right:0; z-index:1000;
-      height:var(--nav-h); padding:0 5%;
-      display:flex; align-items:center; justify-content:space-between;
-      background:var(--bleu-fonce);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-    nav.scrolled { box-shadow:0 4px 30px rgba(0,0,0,.2); }
-    .nav-logo { font-family:var(--font-display); font-size:.95rem; letter-spacing:.12em; color:var(--blanc); white-space:nowrap; }
-    .nav-links { display:flex; gap:28px; list-style:none; }
-    .nav-links a { font-family:var(--font-title); font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,0.8); }
-    .nav-links a:hover, .nav-links a.active { color:var(--marron-clair); }
-    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-    .hamburger span { width:24px; height:2px; background:var(--blanc); border-radius:2px; transition:.3s; }
-    .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity:0; }
-    .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
-    .mobile-menu { display:none; position:fixed; top:var(--nav-h); left:0; right:0; bottom:0; background:rgba(11,29,58,.98); z-index:999; flex-direction:column; align-items:center; justify-content:center; gap:32px; }
-    .mobile-menu.open { display:flex; }
-    .mobile-menu a { font-family:var(--font-title); font-size:1.4rem; letter-spacing:.2em; text-transform:uppercase; color:rgba(255,255,255,0.8); }
-    .mobile-menu a:hover { color:var(--marron-clair); }
+<link rel="icon" type="image/jpeg" href="pha.jpg">
+<link rel="apple-touch-icon" href="pha.jpg">
+<meta name="theme-color" content="#3d0000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="GBÈZÉ JUNIOR">
 
-    #loadingWrap { min-height:80vh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; color:var(--texte-muted); padding-top:var(--nav-h); }
-    .spinner { width:40px; height:40px; border:3px solid var(--border); border-top-color:var(--bleu-fonce); border-radius:50%; animation:spin .8s linear infinite; }
-    @keyframes spin { to{transform:rotate(360deg)} }
-    #articleWrap { display:none; }
+<meta property="og:title" id="ogTitle" content="Article — GBÈZÉ JUNIOR HOUEGNON">
+<meta property="og:description" id="ogDescription" content="Découvrez l'actualité de GBÈZÉ JUNIOR HOUEGNON.">
+<meta property="og:image" id="ogImage" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
+<meta property="og:image:alt" id="ogImageAlt" content="GBÈZÉ JUNIOR HOUEGNON — article">
+<meta property="og:url" id="ogUrl" content="https://www.gbezejuniorhouegnon.com/article.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="GBÈZÉ JUNIOR HOUEGNON">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="twTitle" content="Article — GBÈZÉ JUNIOR HOUEGNON">
+<meta name="twitter:description" id="twDescription" content="Découvrez l'actualité de GBÈZÉ JUNIOR HOUEGNON.">
+<meta name="twitter:image" id="twImage" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
 
-    .art-cover { width:100%; max-height:500px; object-fit:cover; object-position:top; margin-top:var(--nav-h); display:block; }
-    .cover-placeholder { width:100%; height:280px; margin-top:var(--nav-h); background:linear-gradient(135deg,var(--bleu-fonce),var(--bleu-mid)); display:flex; align-items:center; justify-content:center; font-size:4rem; }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="pha.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lato:wght@300;400;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-    .art-header { max-width:820px; margin:0 auto; padding:3rem 5% 1.5rem; }
-    .breadcrumb { font-size:.66rem; letter-spacing:.15em; text-transform:uppercase; color:var(--texte-muted); margin-bottom:1.5rem; display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
-    .breadcrumb a { color:var(--bleu-fonce); transition:color .3s; }
-    .breadcrumb a:hover { color:var(--marron); }
-    .breadcrumb-sep { color:var(--border); }
+<style>
+/* ===================================================================
+   SYSTÈME — Rouge profond + damier bogolan or
+   =================================================================== */
+:root{
+  --fond:#3d0000; --fond-2:#4a0505; --fond-3:#560a0a; --fond-4:#2b0000; --fond-5:#1a0000;
+  --or:#b8922e; --or-clair:#d4af5a; --or-vif:#e8c869; --or-fonce:#8a6a1f;
+  --rouge:#8b0000; --rouge-vif:#c0392b;
+  --texte:#f7f2e9; --texte-2:#e6dccb; --texte-3:#b8a691;
+  --border-or:rgba(212,175,90,.24); --border-or-fort:rgba(212,175,90,.5); --border-subtil:rgba(212,175,90,.10);
+  --damier:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23d4af5a'%3E%3Crect x='0' y='0' width='20' height='20'/%3E%3Crect x='40' y='0' width='20' height='20'/%3E%3Crect x='20' y='20' width='20' height='20'/%3E%3Crect x='60' y='20' width='20' height='20'/%3E%3Crect x='0' y='40' width='20' height='20'/%3E%3Crect x='40' y='40' width='20' height='20'/%3E%3Crect x='20' y='60' width='20' height='20'/%3E%3Crect x='60' y='60' width='20' height='20'/%3E%3C/g%3E%3C/svg%3E");
+  --f-display:'Cinzel',Georgia,serif; --f-serif:'Cormorant Garamond',Georgia,serif; --f-sans:'Lato',system-ui,sans-serif; --f-mono:'JetBrains Mono',monospace;
+  --sp-1:.5rem; --sp-2:1rem; --sp-3:1.5rem; --sp-4:2rem; --sp-5:3rem;
+  --max:1240px; --ease:cubic-bezier(.4,0,.2,1); --ease-out:cubic-bezier(.16,1,.3,1);
+  --nav-h:76px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--nav-h) + 10px)}
+body{
+  background-color:var(--fond);
+  background-image:radial-gradient(ellipse 120% 80% at 50% -10%,#610c0c 0%,var(--fond) 45%,var(--fond-4) 100%);
+  background-attachment:fixed;
+  color:var(--texte-2);font-family:var(--f-sans);font-size:1rem;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul,ol{list-style:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:var(--or-clair);color:var(--fond-5)}
+::-webkit-scrollbar{width:7px}::-webkit-scrollbar-track{background:var(--fond-5)}::-webkit-scrollbar-thumb{background:var(--or-fonce);border-radius:4px}
+:focus-visible{outline:2px solid var(--or-vif);outline-offset:3px;border-radius:2px}
 
-    .art-type-badge {
-      display:inline-block; padding:.25rem .85rem; margin-bottom:1rem;
-      font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--blanc);
-    }
-    .type-prestation { background:var(--bleu-fonce); }
-    .type-video      { background:var(--marron); }
-    .type-annonce    { background:#2a8060; }
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.075;background-image:var(--damier);background-size:80px 80px;animation:derive 120s linear infinite}
+@keyframes derive{to{background-position:160px 80px}}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.045;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E")}
+main,footer,nav{position:relative;z-index:2}
 
-    .art-title { font-family:var(--font-display); font-size:clamp(1.9rem,5vw,3rem); font-weight:700; color:var(--bleu-fonce); line-height:1.2; margin-bottom:1.2rem; }
-    .art-meta  { display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; padding-bottom:1.5rem; border-bottom:2px solid var(--bleu-clair); margin-bottom:2rem; }
-    .art-meta span { font-size:.74rem; color:var(--texte-muted); display:flex; align-items:center; gap:.35rem; }
-    .art-meta .author { color:var(--bleu-fonce); font-weight:700; }
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:700;color:var(--texte);line-height:1.15}
+p{color:var(--texte-2);line-height:1.75}
+strong{color:var(--or-clair)}
 
-    .art-body { max-width:820px; margin:0 auto; padding:0 5% 3rem; }
-    .art-content { font-size:1rem; line-height:1.95; color:var(--texte); }
-    .art-content h2 { font-family:var(--font-display); font-size:1.8rem; color:var(--bleu-fonce); margin:2.2rem 0 .8rem; }
-    .art-content h3 { font-family:var(--font-display); font-size:1.4rem; color:var(--bleu-fonce); margin:1.8rem 0 .6rem; }
-    .art-content p  { margin-bottom:1.3rem; }
-    .art-content img { max-width:100%; height:auto; margin:1.5rem 0; border:1px solid var(--border); border-radius:4px; }
-    .art-content strong { color:var(--bleu-fonce); font-weight:700; }
-    .art-content a { color:var(--marron); text-decoration:underline; }
+.skip-link{position:absolute;top:-100px;left:20px;background:var(--or-clair);color:var(--fond-5);padding:12px 20px;z-index:99999;font-weight:700;font-size:.85rem;transition:top .3s}
+.skip-link:focus{top:20px}
 
-    /* Galerie d'images responsive */
-    .art-gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));
-      gap:0.8rem;
-      margin-top:2rem;
-    }
-    .art-gallery img {
-      width:100%;
-      aspect-ratio:4/3;
-      object-fit:cover;
-      border-radius:4px;
-      border:1px solid var(--border);
-      cursor:pointer;
-      transition:transform .3s;
-    }
-    .art-gallery img:hover {
-      transform:scale(1.03);
-    }
-    @media (max-width:680px) {
-      .art-gallery {
-        grid-template-columns:repeat(2, 1fr);
-      }
-    }
-    @media (max-width:480px) {
-      .art-gallery {
-        grid-template-columns:1fr;
-      }
-    }
+/* Curseur */
+.curseur,.curseur-point{position:fixed;top:0;left:0;pointer-events:none;z-index:99998;border-radius:50%;transform:translate(-50%,-50%)}
+.curseur{width:34px;height:34px;border:1px solid var(--or-clair);transition:width .35s var(--ease),height .35s var(--ease),background .35s var(--ease)}
+.curseur-point{width:4px;height:4px;background:var(--or-clair);z-index:99999}
+.curseur.hover{width:68px;height:68px;background:rgba(212,175,90,.12);border-color:var(--or-vif)}
+@media (max-width:1024px),(hover:none){.curseur,.curseur-point{display:none!important}}
 
-    .share-bar { max-width:820px; margin:0 auto; padding:1.8rem 5%; border-top:1px solid var(--border); display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; }
-    .share-label { font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--texte-muted); }
-    .share-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.5rem 1.1rem; border:1.5px solid var(--border); background:var(--blanc); color:var(--texte); font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; transition:all .25s; cursor:pointer; font-family:var(--font-title); }
-    .share-btn:hover { background:var(--bleu-fonce); color:var(--blanc); border-color:var(--bleu-fonce); }
-    .share-btn.wa:hover { background:#25D366; border-color:#25D366; }
+.barre-lecture{position:fixed;top:0;left:0;right:0;height:3px;z-index:9997;pointer-events:none}
+.barre-lecture-fill{height:100%;width:0;background:linear-gradient(90deg,var(--or),var(--or-vif));box-shadow:0 0 12px rgba(212,175,90,.6)}
 
-    .back-wrap { max-width:820px; margin:0 auto; padding:0 5% 3rem; }
-    .back-btn { display:inline-flex; align-items:center; gap:.6rem; padding:.75rem 1.6rem; background:var(--bleu-fonce); color:var(--blanc); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; transition:all .3s; }
-    .back-btn:hover { background:var(--bleu-mid); transform:translateY(-2px); }
+/* Loader */
+.loader{position:fixed;inset:0;z-index:99999;background:var(--fond-4);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;transition:opacity 1s var(--ease-out),visibility 1s var(--ease-out)}
+.loader.cache{opacity:0;visibility:hidden;pointer-events:none}
+.loader::before{content:'';position:absolute;inset:0;opacity:.08;background-image:var(--damier);background-size:80px 80px}
+.loader-cadre{position:relative;width:180px;height:180px;display:flex;align-items:center;justify-content:center;margin-bottom:var(--sp-3)}
+.loader-monogramme{font-family:var(--f-display);font-weight:900;font-size:76px;color:var(--or-clair);letter-spacing:-.04em;line-height:1;text-shadow:0 0 40px rgba(212,175,90,.5),3px 3px 0 var(--rouge),6px 6px 0 var(--rouge-vif);animation:pulseM 2.4s ease-in-out infinite}
+@keyframes pulseM{0%,100%{transform:scale(.98);opacity:.85}50%{transform:scale(1.04);opacity:1}}
+.loader-cercle{position:absolute;inset:0;border:1.5px solid rgba(212,175,90,.4);border-radius:50%;animation:tourne 8s linear infinite}
+.loader-cercle::before{content:'';position:absolute;width:6px;height:6px;background:var(--or-vif);border-radius:50%;top:-3px;left:50%;transform:translateX(-50%);box-shadow:0 0 12px var(--or-vif)}
+@keyframes tourne{to{transform:rotate(360deg)}}
+.loader-titre{font-family:var(--f-display);font-size:clamp(.7rem,2.6vw,.95rem);color:var(--or-clair);letter-spacing:.3em;text-transform:uppercase;margin-bottom:2rem;text-align:center;min-height:1.4em;padding-inline:14px}
+.loader-titre span{display:inline-block;opacity:0;transform:translateY(12px);animation:lettre .6s var(--ease-out) forwards}
+@keyframes lettre{to{opacity:1;transform:none}}
+.loader-jauge{width:min(200px,60vw);height:1px;background:rgba(212,175,90,.15);position:relative;overflow:hidden}
+.loader-jauge-fill{position:absolute;inset:0;width:0;background:linear-gradient(90deg,var(--rouge-vif),var(--or-clair));animation:charge 1.6s var(--ease-out) forwards}
+@keyframes charge{to{width:100%}}
 
-    footer {
-      background:var(--bleu-fonce); padding:3.5rem 5% 2rem; text-align:center; color:var(--blanc);
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-    .footer-logo { font-family:var(--font-display); font-size:1.9rem; font-weight:700; color:var(--blanc); }
-    .footer-logo span { color:var(--marron-clair); }
-    .footer-tagline { font-size:.75rem; color:rgba(255,255,255,0.7); letter-spacing:.1em; margin-top:.4rem; margin-bottom:1.5rem; }
-    .footer-nav { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; list-style:none; margin-bottom:1.6rem; }
-    .footer-nav a { font-family:var(--font-title); font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:rgba(255,255,255,0.6); transition:color .2s; }
-    .footer-nav a:hover { color:var(--marron-clair); }
-    .footer-credit { font-size:.7rem; color:rgba(255,255,255,0.5); line-height:1.6; margin-bottom:15px; }
-    .footer-credit strong { color:var(--marron-clair); }
-    .footer-novasavoir { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); padding:10px 20px; border-radius:30px; margin-top:10px; font-size:.75rem; color:var(--blanc); transition:background .2s; }
-    .footer-novasavoir:hover { background:rgba(255,255,255,0.2); }
-    .footer-novasavoir svg { width:18px; height:18px; fill:white; }
+/* Navigation */
+nav#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 clamp(16px,4vw,48px);height:var(--nav-h);background:rgba(61,0,0,0);border-bottom:1px solid transparent;transition:transform .4s var(--ease),background .4s var(--ease),border-color .4s var(--ease)}
+nav#navbar.scrolled{background:rgba(26,0,0,.93);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom-color:var(--border-or);box-shadow:0 4px 30px rgba(0,0,0,.5)}
+nav#navbar.cache{transform:translateY(-100%)}
+.nav-logo{display:flex;align-items:center;gap:12px;font-family:var(--f-display);font-size:.9rem;font-weight:700;letter-spacing:.14em;color:var(--or-clair);white-space:nowrap}
+.nav-logo-img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:top center;border:1.5px solid var(--or-clair);box-shadow:0 0 0 3px rgba(212,175,90,.12)}
+.nav-links{display:flex;align-items:center;gap:clamp(8px,1.4vw,22px)}
+.nav-links a{font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--texte-3);padding:8px 4px;position:relative;white-space:nowrap;transition:color .3s var(--ease)}
+.nav-links a:hover,.nav-links a.active{color:var(--or-clair)}
+.nav-links a.active::after{content:'';position:absolute;bottom:2px;left:4px;right:4px;height:2px;background:var(--or-clair)}
+.nav-links a.nav-cta{font-family:var(--f-display);padding:11px 20px;background:var(--or-clair);color:var(--fond-5);border-radius:3px;box-shadow:0 4px 15px rgba(212,175,90,.25);transition:transform .3s var(--ease),background .3s var(--ease),box-shadow .3s var(--ease)}
+.nav-links a.nav-cta:hover{background:var(--or-vif);transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,175,90,.4)}
+.hamburger{display:none;flex-direction:column;gap:5px;width:40px;padding:10px 6px}
+.hamburger span{display:block;height:2px;background:var(--or-clair);border-radius:1px}
+.mobile-menu{display:none;position:fixed;inset:0;z-index:1100;background:rgba(26,0,0,.985);flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,3.4vh,28px);padding:90px 20px 40px;overflow-y:auto}
+.mobile-menu::before{content:'';position:absolute;inset:0;opacity:.07;background-image:var(--damier);background-size:60px 60px;pointer-events:none}
+.mobile-menu.open{display:flex}
+.mobile-menu a{position:relative;font-family:var(--f-display);font-size:clamp(1.05rem,4.6vw,1.4rem);letter-spacing:.2em;text-transform:uppercase;color:var(--texte-2);transition:color .3s}
+.mobile-menu a:hover,.mobile-menu a.current{color:var(--or-clair)}
+.close-menu{position:absolute;top:18px;right:5%;font-size:2.4rem;line-height:1;color:var(--or-clair);width:48px;height:48px;z-index:2}
+@media (max-width:1080px){.nav-links{display:none}.hamburger{display:flex}}
 
-    .whatsapp-float { position:fixed; bottom:22px; right:22px; width:56px; height:56px; border-radius:50%; background:#25D366; color:#fff; display:flex; align-items:center; justify-content:center; z-index:998; box-shadow:0 5px 20px rgba(0,0,0,.22); transition:transform .3s; animation:waPulse 2.5s infinite; }
-    .whatsapp-float:hover { transform:scale(1.1); }
-    @keyframes waPulse { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)} 70%{box-shadow:0 0 0 13px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+/* Boutons flottants */
+.whatsapp-float{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:calc(24px + env(safe-area-inset-right));z-index:998;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 4px rgba(37,211,102,.2);transition:transform .4s var(--ease);animation:pulseWa 2.8s ease-in-out infinite}
+.whatsapp-float:hover{transform:scale(1.08) translateY(-2px)}
+.whatsapp-float svg{width:32px;height:32px;fill:#fff}
+@keyframes pulseWa{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5),0 0 0 4px rgba(37,211,102,.2)}50%{box-shadow:0 4px 25px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.12)}}
+.haut{position:fixed;bottom:calc(102px + env(safe-area-inset-bottom));right:calc(33px + env(safe-area-inset-right));z-index:997;width:44px;height:44px;border-radius:50%;border:1px solid var(--or-clair);background:rgba(26,0,0,.85);color:var(--or-clair);display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,visibility .3s,background .3s,color .3s}
+.haut.visible{opacity:1;visibility:visible;transform:none}
+.haut:hover{background:var(--or-clair);color:var(--fond-5)}
+.haut svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:640px){.whatsapp-float{width:56px;height:56px;bottom:calc(18px + env(safe-area-inset-bottom));right:calc(18px + env(safe-area-inset-right))}.whatsapp-float svg{width:28px;height:28px}.haut{bottom:calc(86px + env(safe-area-inset-bottom));right:calc(25px + env(safe-area-inset-right))}}
 
-    @media (max-width:680px) {
-      :root { --nav-h:62px; }
-      .nav-links { display:none; }
-      .hamburger { display:flex; }
-      .art-header, .art-body, .share-bar, .back-wrap { padding-left:4%; padding-right:4%; }
-    }
-  </style>
+/* Structure */
+.frise-bogolan{width:100%;height:34px;position:relative;overflow:hidden;z-index:2;border-block:1px solid var(--border-or);background:rgba(26,0,0,.6)}
+.frise-bogolan::before{content:'';position:absolute;inset:0;background-image:var(--damier);background-size:68px 68px;opacity:.35;-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--f-display);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;padding:14px 30px;border-radius:3px;font-weight:700;transition:transform .3s var(--ease),box-shadow .3s,background .3s,color .3s}
+.btn-primary{background:var(--or-clair);color:var(--fond-5);box-shadow:0 4px 20px rgba(212,175,90,.3)}
+.btn-primary:hover{transform:translateY(-3px);background:var(--or-vif);box-shadow:0 12px 35px rgba(212,175,90,.45)}
+.btn-secondary{border:1.5px solid var(--or-clair);color:var(--or-clair)}
+.btn-secondary:hover{transform:translateY(-3px);background:var(--or-clair);color:var(--fond-5)}
+
+/* ===================== LOADING ===================== */
+#loadingWrap{
+  min-height:80vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;
+  padding-top:calc(var(--nav-h) + 40px);
+  color:var(--texte-3);
+  text-align:center;
+}
+#loadingWrap p{font-family:var(--f-serif);font-style:italic;font-size:1.1rem;color:var(--or-clair)}
+.spinner{width:44px;height:44px;border:3px solid var(--border-or);border-top-color:var(--or-clair);border-radius:50%;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+#articleWrap{display:none}
+
+/* ===================== COVER / HEADER ===================== */
+.art-cover{
+  width:100%;max-height:520px;object-fit:cover;object-position:top center;
+  margin-top:var(--nav-h);display:block;
+  filter:brightness(.9) saturate(1.02);
+}
+.cover-placeholder{
+  width:100%;height:320px;margin-top:var(--nav-h);
+  background:linear-gradient(135deg,var(--fond-3),var(--fond-5));
+  display:flex;align-items:center;justify-content:center;font-size:5rem;
+  color:var(--or-fonce);
+}
+
+.art-header{max-width:900px;margin:0 auto;padding:clamp(2rem,5vw,3.5rem) 5% 1.5rem}
+
+/* Breadcrumb */
+.breadcrumb{
+  display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--texte-3);
+  margin-bottom:1.6rem;
+  padding:.6rem 1rem;
+  background:rgba(26,0,0,.5);
+  border:1px solid var(--border-or);
+  border-radius:3px;
+  width:fit-content;
+}
+.breadcrumb a{color:var(--or-clair);transition:color .3s}
+.breadcrumb a:hover{color:var(--or-vif)}
+.breadcrumb-sep{color:var(--or-fonce)}
+.breadcrumb span:last-child{color:var(--texte-2);font-weight:700}
+
+/* Badge type */
+.art-type-badge{
+  display:inline-block;padding:.35rem .9rem;margin-bottom:1.2rem;
+  font-family:var(--f-mono);font-size:.62rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--fond-5);border-radius:2px;
+  backdrop-filter:blur(4px);
+}
+.type-prestation{background:var(--or-clair)}
+.type-video{background:var(--or-vif)}
+.type-annonce{background:#fff;color:var(--fond-5)}
+
+/* Titre */
+.art-title{
+  font-family:var(--f-display);
+  font-size:clamp(1.9rem,5vw,3rem);
+  font-weight:900;color:var(--texte);
+  line-height:1.2;margin-bottom:1.4rem;
+  background:linear-gradient(120deg,#fff 30%,var(--or-vif) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* Meta */
+.art-meta{
+  display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;
+  padding-bottom:1.5rem;
+  border-bottom:1px solid var(--border-or);
+  margin-bottom:2.2rem;
+}
+.art-meta span{
+  display:flex;align-items:center;gap:.4rem;
+  font-family:var(--f-mono);font-size:.72rem;
+  letter-spacing:.06em;color:var(--texte-3);
+}
+.art-meta .author{color:var(--or-clair);font-weight:700}
+
+/* ===================== BODY ===================== */
+.art-body{max-width:900px;margin:0 auto;padding:0 5% 3rem}
+.art-content{
+  font-size:1.02rem;line-height:1.9;color:var(--texte-2);
+}
+.art-content h2{
+  font-family:var(--f-display);font-size:1.75rem;
+  color:var(--or-clair);margin:2.4rem 0 .9rem;
+  padding-left:14px;border-left:3px solid var(--or-clair);
+  line-height:1.3;
+}
+.art-content h3{
+  font-family:var(--f-display);font-size:1.35rem;
+  color:var(--or-clair);margin:2rem 0 .7rem;line-height:1.3;
+}
+.art-content h4{
+  font-family:var(--f-display);font-size:1.1rem;
+  color:var(--texte);margin:1.6rem 0 .5rem;
+}
+.art-content p{margin-bottom:1.3rem;line-height:1.85;color:var(--texte-2)}
+.art-content ul,.art-content ol{margin:1rem 0 1.3rem 1.4rem}
+.art-content ul li,.art-content ol li{margin-bottom:.4rem;line-height:1.75;color:var(--texte-2)}
+.art-content ul{list-style:disc}
+.art-content ol{list-style:decimal}
+.art-content li::marker{color:var(--or-clair)}
+.art-content img{
+  max-width:100%;height:auto;margin:1.6rem 0;
+  border:1px solid var(--border-or);border-radius:6px;
+  box-shadow:0 12px 40px rgba(0,0,0,.45);
+}
+.art-content strong{color:var(--or-clair);font-weight:700}
+.art-content em{color:var(--or-vif);font-style:italic}
+.art-content a{color:var(--or-clair);text-decoration:underline;text-decoration-color:var(--border-or-fort);transition:color .3s,text-decoration-color .3s}
+.art-content a:hover{color:var(--or-vif);text-decoration-color:var(--or-vif)}
+.art-content blockquote{
+  margin:1.8rem 0;padding:1rem 1.4rem;
+  border-left:3px solid var(--or-clair);
+  background:rgba(26,0,0,.5);
+  border-radius:0 4px 4px 0;
+  font-family:var(--f-serif);font-style:italic;font-size:1.15rem;
+  color:var(--or-clair);
+}
+.art-content iframe{
+  width:100%;max-width:100%;height:auto;aspect-ratio:16/9;
+  border:1px solid var(--border-or);border-radius:6px;
+  margin:1.4rem 0;box-shadow:0 12px 40px rgba(0,0,0,.45);
+}
+.art-content hr{border:none;border-top:1px solid var(--border-or);margin:2rem 0}
+
+/* Galerie dynamique */
+.art-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:.9rem;margin-top:2rem;
+}
+.art-gallery img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border-radius:4px;border:1px solid var(--border-or);
+  cursor:pointer;
+  transition:transform .3s var(--ease),border-color .3s,box-shadow .3s;
+  filter:brightness(.92) saturate(.98);
+}
+.art-gallery img:hover{
+  transform:scale(1.03);
+  border-color:var(--or-clair);
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
+  filter:none;
+}
+@media (max-width:680px){.art-gallery{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:480px){.art-gallery{grid-template-columns:1fr}}
+
+/* ===================== PARTAGE ===================== */
+.share-bar{
+  max-width:900px;margin:0 auto;
+  padding:1.8rem 5%;
+  border-top:1px solid var(--border-or);
+  display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;
+}
+.share-label{
+  font-family:var(--f-mono);font-size:.68rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--or-clair);
+}
+.share-btn{
+  display:inline-flex;align-items:center;gap:.45rem;
+  padding:.6rem 1.1rem;
+  border:1.5px solid var(--border-or-fort);
+  background:rgba(26,0,0,.55);
+  color:var(--texte-2);
+  font-family:var(--f-display);font-size:.68rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  border-radius:3px;cursor:pointer;
+  transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease);
+}
+.share-btn:hover{
+  background:var(--or-clair);color:var(--fond-5);
+  border-color:var(--or-clair);transform:translateY(-2px);
+}
+.share-btn.wa:hover{background:#25D366;border-color:#25D366;color:#fff}
+.share-btn.fb:hover{background:#1877f2;border-color:#1877f2;color:#fff}
+
+/* ===================== RETOUR ===================== */
+.back-wrap{max-width:900px;margin:0 auto;padding:0 5% 3.5rem;text-align:center}
+.back-btn{
+  display:inline-flex;align-items:center;gap:.6rem;
+  padding:.85rem 1.8rem;
+  background:var(--or-clair);color:var(--fond-5);
+  font-family:var(--f-display);font-size:.72rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  border-radius:3px;
+  box-shadow:0 4px 20px rgba(212,175,90,.3);
+  transition:transform .3s var(--ease),background .3s,box-shadow .3s;
+}
+.back-btn:hover{
+  background:var(--or-vif);transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(212,175,90,.45);
+}
+
+/* Footer */
+footer{background:var(--fond-4);border-top:1px solid var(--border-or);padding:clamp(40px,7vw,64px) 5% calc(34px + env(safe-area-inset-bottom));text-align:center;color:#fff;position:relative;overflow:hidden}
+footer::before{content:'';position:absolute;inset:0;opacity:.08;pointer-events:none;background-image:var(--damier);background-size:80px 80px}
+footer::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--or-fonce),var(--or-vif),var(--or-fonce))}
+footer>*{position:relative;z-index:2}
+.footer-logo{font-family:var(--f-display);font-size:clamp(1rem,3.4vw,1.25rem);font-weight:700;letter-spacing:.1em;color:var(--or-clair);margin-bottom:14px}
+.footer-tagline{font-family:var(--f-serif);font-style:italic;font-size:1rem;color:var(--texte-3);margin:0 auto 28px}
+.footer-nav{display:flex;gap:10px 24px;justify-content:center;flex-wrap:wrap;margin-bottom:28px}
+.footer-nav a{font-family:var(--f-display);font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:var(--texte-2);transition:color .3s,transform .3s;display:inline-block}
+.footer-nav a:hover{color:var(--or-clair);transform:translateY(-2px)}
+.footer-credit{font-size:.76rem;color:var(--texte-3);line-height:1.7;margin:0 auto 15px}
+.footer-credit strong{color:var(--or-clair)}
+.footer-novasavoir{display:inline-flex;align-items:center;gap:8px;background:rgba(212,175,90,.08);border:1px solid var(--border-or);padding:11px 22px;border-radius:30px;margin-top:10px;font-size:.78rem;color:var(--texte-2);transition:background .2s,color .2s,border-color .2s}
+.footer-novasavoir:hover{background:rgba(212,175,90,.18);border-color:var(--or-vif);color:var(--or-clair)}
+.footer-novasavoir svg{width:18px;height:18px;fill:currentColor}
+
+@media (max-width:680px){
+  .art-header,.art-body,.share-bar,.back-wrap{padding-left:4%;padding-right:4%}
+  .breadcrumb{font-size:.6rem;padding:.5rem .8rem}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  body::before{animation:none}
+}
+</style>
 </head>
 <body>
 
-<a class="whatsapp-float" href="https://wa.me/2290152557034" target="_blank" aria-label="WhatsApp">
-  <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
+<a href="#contenu" class="skip-link">Aller au contenu principal</a>
 
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">GBÈZÉ JUNIOR</a>
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-cadre"><div class="loader-cercle"></div><div class="loader-monogramme">GJ</div></div>
+  <div class="loader-titre" id="loaderTitre"></div>
+  <div class="loader-jauge"><div class="loader-jauge-fill"></div></div>
+</div>
+
+<div class="barre-lecture" aria-hidden="true"><div class="barre-lecture-fill" id="barreLecture"></div></div>
+<div class="curseur" id="curseur" aria-hidden="true"></div>
+<div class="curseur-point" id="curseurPoint" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<nav id="navbar" aria-label="Navigation principale">
+  <a href="index.html" class="nav-logo" aria-label="GBÈZÉ JUNIOR — Accueil">
+    <img src="pha.jpg" alt="" class="nav-logo-img" width="42" height="42">
+    <span>GBÈZÉ JUNIOR</span>
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Accueil</a></li>
     <li><a href="biographie.html">Biographie</a></li>
@@ -183,64 +409,82 @@
     <li><a href="musique.html">Musique</a></li>
     <li><a href="agenda.html">Agenda</a></li>
     <li><a href="galerie.html">Galerie</a></li>
-    <li><a href="actualites.html" class="active">Actualités</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a href="actualites.html" class="active" aria-current="page">Actualités</a></li>
+    <li><a href="contact.html" class="nav-cta">Réserver</a></li>
   </ul>
-  <div class="hamburger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <button class="hamburger" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html" onclick="closeMenu()">Accueil</a>
-  <a href="biographie.html" onclick="closeMenu()">Biographie</a>
-  <a href="lignee.html" onclick="closeMenu()">Lignée</a>
-  <a href="musique.html" onclick="closeMenu()">Musique</a>
-  <a href="agenda.html" onclick="closeMenu()">Agenda</a>
-  <a href="galerie.html" onclick="closeMenu()">Galerie</a>
-  <a href="actualites.html" onclick="closeMenu()">Actualités</a>
-  <a href="contact.html" onclick="closeMenu()">Contact</a>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close-menu" id="closeMenu" aria-label="Fermer le menu">×</button>
+  <a href="index.html">Accueil</a>
+  <a href="biographie.html">Biographie</a>
+  <a href="lignee.html">Lignée</a>
+  <a href="musique.html">Musique</a>
+  <a href="agenda.html">Agenda</a>
+  <a href="galerie.html">Galerie</a>
+  <a href="actualites.html" class="current">Actualités</a>
+  <a href="contact.html">Contact</a>
 </div>
 
-<div id="loadingWrap">
-  <div class="spinner"></div>
-  <p>Chargement de l'article…</p>
-</div>
+<button type="button" class="haut" id="haut" aria-label="Retour en haut de page">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
 
-<div id="articleWrap">
-  <div id="coverWrap"></div>
+<main id="contenu">
 
-  <div class="art-header">
-    <div class="breadcrumb">
-      <a href="index.html">Accueil</a>
-      <span class="breadcrumb-sep">›</span>
-      <a href="actualites.html">Actualités</a>
-      <span class="breadcrumb-sep">›</span>
-      <span id="breadType"></span>
+  <div id="loadingWrap">
+    <div class="spinner" aria-hidden="true"></div>
+    <p>Chargement de l'article…</p>
+  </div>
+
+  <div id="articleWrap">
+    <div id="coverWrap"></div>
+
+    <div class="art-header">
+      <div class="breadcrumb" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <a href="actualites.html">Actualités</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span id="breadType">Article</span>
+      </div>
+      <span id="artTypeBadge" class="art-type-badge"></span>
+      <h1 id="artTitle" class="art-title"></h1>
+      <div class="art-meta">
+        <span>📅 <span id="artDate"></span></span>
+        <span>✍️ <span class="author">GBÈZÉ JUNIOR HOUEGNON</span></span>
+      </div>
     </div>
-    <span id="artTypeBadge" class="art-type-badge"></span>
-    <h1 id="artTitle" class="art-title"></h1>
-    <div class="art-meta">
-      <span>📅 <span id="artDate"></span></span>
-      <span>✍️ <span class="author">GBÈZÉ JUNIOR HOUEGNON</span></span>
+
+    <div class="art-body">
+      <div class="art-content" id="artContent"></div>
+    </div>
+
+    <div class="share-bar">
+      <span class="share-label">Partager :</span>
+      <a id="shareWA" class="share-btn wa" target="_blank" rel="noopener" aria-label="Partager sur WhatsApp">
+        💬 WhatsApp
+      </a>
+      <a id="shareFB" class="share-btn fb" target="_blank" rel="noopener" aria-label="Partager sur Facebook">
+        📘 Facebook
+      </a>
+      <button type="button" class="share-btn" onclick="copyLink()" aria-label="Copier le lien">
+        🔗 Copier le lien
+      </button>
+    </div>
+
+    <div class="back-wrap">
+      <a href="actualites.html" class="back-btn">← Retour aux actualités</a>
     </div>
   </div>
 
-  <div class="art-body">
-    <div class="art-content" id="artContent"></div>
-  </div>
+</main>
 
-  <div class="share-bar">
-    <span class="share-label">Partager :</span>
-    <a id="shareWA" class="share-btn wa" target="_blank">💬 WhatsApp</a>
-    <a id="shareFB" class="share-btn" target="_blank">📘 Facebook</a>
-    <button class="share-btn" onclick="copyLink()">🔗 Copier le lien</button>
-  </div>
-
-  <div class="back-wrap">
-    <a href="actualites.html" class="back-btn">← Retour aux actualités</a>
-  </div>
-</div>
-
+<!-- Footer -->
 <footer>
-  <div class="footer-logo">GBÈZÉ <span>JUNIOR</span></div>
+  <div class="footer-logo">GBÈZÉ JUNIOR HOUEGNON</div>
   <p class="footer-tagline">L'héritier vivant d'une tradition millénaire · Bénin 🇧🇯</p>
   <ul class="footer-nav">
     <li><a href="index.html">Accueil</a></li>
@@ -256,12 +500,20 @@
     © 2026 GBÈZÉ JUNIOR HOUEGNON — Développé par <strong>Novasavoir</strong><br>
     Directeur : Amoussou Frédy
   </p>
-  <a href="https://wa.me/2290152552106" target="_blank" class="footer-novasavoir">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <a href="https://wa.me/2290152552106" target="_blank" rel="noopener" class="footer-novasavoir" aria-label="Contacter Novasavoir sur WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     Contacter Novasavoir
   </a>
 </footer>
 
+<!-- WhatsApp flottant (Client) -->
+<a href="https://wa.me/2290152557034" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Contacter GBÈZÉ JUNIOR sur WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ============================================================
+     FIREBASE — logique conservée à l'identique
+     ============================================================ -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
@@ -287,7 +539,7 @@
     return d.toLocaleDateString('fr-FR',{day:'2-digit',month:'long',year:'numeric'});
   }
 
-  // ✅ Corrige les URLs commençant par //
+  // Corrige les URLs commençant par //
   function fixUrl(url) {
     if (!url) return url;
     return url.startsWith('//') ? 'https:' + url : url;
@@ -309,7 +561,7 @@
       render(art);
     } catch(e) {
       document.getElementById('loadingWrap').innerHTML =
-        '<span style="font-size:2rem">⚠️</span><p>Erreur de chargement. <a href="actualites.html">Retour aux actualités</a></p>';
+        '<span style="font-size:2rem">⚠️</span><p style="color:var(--or-clair)">Erreur de chargement. <a href="actualites.html" style="color:var(--or-clair);text-decoration:underline">Retour aux actualités</a></p>';
       console.error(e);
     }
   }
@@ -322,28 +574,40 @@
     const allVideos = art.videos || [];
     const imageUrl = coverImage || 'https://www.gbezejuniorhouegnon.com/pha.jpg';
 
+    // SEO dynamique
     document.title = `${art.titre} — GBÈZÉ JUNIOR HOUEGNON`;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', excerpt);
     document.getElementById('canonicalLink').setAttribute('href', articleUrl);
+    document.getElementById('altFr').setAttribute('href', articleUrl);
     document.getElementById('ogTitle').setAttribute('content', `${art.titre} — GBÈZÉ JUNIOR HOUEGNON`);
     document.getElementById('ogDescription').setAttribute('content', excerpt);
     document.getElementById('ogImage').setAttribute('content', fixUrl(imageUrl));
+    document.getElementById('ogImageAlt').setAttribute('content', art.titre);
     document.getElementById('ogUrl').setAttribute('content', articleUrl);
+    document.getElementById('twTitle').setAttribute('content', `${art.titre} — GBÈZÉ JUNIOR HOUEGNON`);
+    document.getElementById('twDescription').setAttribute('content', excerpt);
+    document.getElementById('twImage').setAttribute('content', fixUrl(imageUrl));
 
+    // Cover
     const cw = document.getElementById('coverWrap');
     cw.innerHTML = coverImage
-      ? `<img class="art-cover" src="${fixUrl(coverImage)}" alt="${art.titre}" loading="lazy"/>`
-      : `<div class="cover-placeholder">📰</div>`;
+      ? `<img class="art-cover" src="${fixUrl(coverImage)}" alt="${art.titre}" fetchpriority="high" decoding="async"/>`
+      : `<div class="cover-placeholder" aria-hidden="true">📰</div>`;
 
+    // Breadcrumb
     document.getElementById('breadType').textContent = art.type || 'Actualité';
+
+    // Badge
     const badge = document.getElementById('artTypeBadge');
     badge.textContent = art.type || 'Annonce';
     badge.className = 'art-type-badge ' + typeClass(art.type);
 
+    // Titre & date
     document.getElementById('artTitle').textContent = art.titre;
     document.getElementById('artDate').textContent = fmtDate(art.date);
 
+    // Contenu
     const contentDiv = document.getElementById('artContent');
     let inner = '';
 
@@ -351,12 +615,12 @@
       inner += allVideos.map((url, i) => {
         if (url.includes('youtube.com/watch')) {
           const videoId = new URL(url).searchParams.get('v');
-          return `<iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen style="margin-bottom:1.5rem;"></iframe>`;
+          return `<iframe src="https://www.youtube.com/embed/${videoId}" title="Vidéo ${i+1} — ${art.titre}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
         } else if (url.includes('youtu.be')) {
           const videoId = url.split('/').pop();
-          return `<iframe width="100%" height="400" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen style="margin-bottom:1.5rem;"></iframe>`;
+          return `<iframe src="https://www.youtube.com/embed/${videoId}" title="Vidéo ${i+1} — ${art.titre}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
         } else {
-          return `<p><a href="${url}" target="_blank">🎬 Voir la vidéo ${i+1}</a></p>`;
+          return `<p><a href="${url}" target="_blank" rel="noopener">🎬 Voir la vidéo ${i+1}</a></p>`;
         }
       }).join('');
     }
@@ -365,32 +629,111 @@
 
     if (allImages.length > 1) {
       inner += `<div class="art-gallery">
-        ${allImages.slice(1).map(img => `<img src="${fixUrl(img)}" alt="${art.titre}" loading="lazy"/>`).join('')}
+        ${allImages.slice(1).map(img => `<img src="${fixUrl(img)}" alt="${art.titre}" loading="lazy" decoding="async"/>`).join('')}
       </div>`;
     }
 
     contentDiv.innerHTML = inner;
 
+    // Partage
     const whatsappUrl = `https://wa.me/2290152557034?text=${encodeURIComponent(art.titre + ' — ' + articleUrl)}`;
     document.getElementById('shareWA').href = whatsappUrl;
     document.getElementById('shareFB').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(articleUrl)}`;
 
+    // Affichage
     document.getElementById('loadingWrap').style.display = 'none';
     document.getElementById('articleWrap').style.display = 'block';
+
+    // Relance l'observation du curseur sur les nouveaux éléments
+    if (window.__bindHover) window.__bindHover();
   }
 
   window.copyLink = () => {
     navigator.clipboard.writeText(window.location.href)
-      .then(()=>{ const b=document.querySelector('.share-btn:last-child'); b.textContent='✅ Lien copié !'; setTimeout(()=>b.textContent='🔗 Copier le lien',2000); })
+      .then(()=>{ 
+        const b=document.querySelector('.share-btn:last-child'); 
+        const orig=b.textContent;
+        b.textContent='✅ Lien copié !'; 
+        setTimeout(()=>b.textContent=orig,2000); 
+      })
       .catch(()=>{});
   };
 </script>
 
+<!-- ============================================================
+     UI — loader, curseur, ticker, mobile menu, scroll
+     ============================================================ -->
 <script>
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll',()=>{ navbar.classList.toggle('scrolled',window.scrollY>60); },{passive:true});
-  function toggleMenu(){document.getElementById('burger').classList.toggle('open');document.getElementById('mobileMenu').classList.toggle('open');document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';}
-  function closeMenu(){document.getElementById('burger').classList.remove('open');document.getElementById('mobileMenu').classList.remove('open');document.body.style.overflow='';}
+/* ---------- Loader ---------- */
+(function () {
+  const loader = document.getElementById('loader'), titre = document.getElementById('loaderTitre');
+  if (!loader) return;
+  document.body.style.overflow = 'hidden';
+  'ARTICLE'.split('').forEach((l, i) => {
+    const s = document.createElement('span');
+    s.textContent = l;
+    s.style.animationDelay = (0.03 * i + 0.15) + 's';
+    titre.appendChild(s);
+  });
+  let fini = false;
+  const cacher = () => { if (fini) return; fini = true; loader.classList.add('cache'); document.body.style.overflow = ''; };
+  addEventListener('load', () => setTimeout(cacher, 1000));
+  setTimeout(cacher, 2200);
+})();
+
+/* ---------- Barre lecture, retour en haut, nav ---------- */
+(function () {
+  const barre = document.getElementById('barreLecture'), haut = document.getElementById('haut'), nav = document.getElementById('navbar');
+  let tick = false, dernier = 0;
+  function maj() {
+    const h = document.documentElement.scrollHeight - innerHeight, y = scrollY;
+    barre.style.width = (h > 0 ? y / h * 100 : 0) + '%';
+    haut.classList.toggle('visible', y > 700);
+    nav.classList.toggle('scrolled', y > 60);
+    nav.classList.toggle('cache', y > 250 && y > dernier);
+    dernier = y; tick = false;
+  }
+  addEventListener('scroll', () => { if (!tick) { requestAnimationFrame(maj); tick = true; } }, { passive: true });
+  maj();
+  haut.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+})();
+
+/* ---------- Menu mobile ---------- */
+(function () {
+  const btn = document.getElementById('menuBtn'), menu = document.getElementById('mobileMenu'), fermer = document.getElementById('closeMenu');
+  const ouvrir = () => { menu.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; fermer.focus(); };
+  const clore = () => { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+  btn.addEventListener('click', ouvrir);
+  fermer.addEventListener('click', clore);
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', clore));
+  addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) clore(); });
+  addEventListener('resize', () => { if (innerWidth > 1080) clore(); });
+})();
+
+/* ---------- Curseur ---------- */
+window.__bindHover = (function () {
+  const c = document.getElementById('curseur'), pt = document.getElementById('curseurPoint');
+  if (!c || !pt || matchMedia('(max-width: 1024px)').matches || !matchMedia('(hover: hover)').matches) return function(){};
+
+  let sx = 0, sy = 0, cx = 0, cy = 0;
+  document.addEventListener('mousemove', e => { sx = e.clientX; sy = e.clientY; });
+  (function loop() {
+    cx += (sx - cx) * 0.18; cy += (sy - cy) * 0.18;
+    c.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+    pt.style.transform = `translate(${sx}px, ${sy}px) translate(-50%, -50%)`;
+    requestAnimationFrame(loop);
+  })();
+
+  return function bindHover() {
+    document.querySelectorAll('a, button, .share-btn, .back-btn, .art-gallery img').forEach(el => {
+      if (el.dataset.hoverBound) return;
+      el.dataset.hoverBound = '1';
+      el.addEventListener('mouseenter', () => c.classList.add('hover'));
+      el.addEventListener('mouseleave', () => c.classList.remove('hover'));
+    });
+  };
+})();
+window.__bindHover();
 </script>
 </body>
 </html>
