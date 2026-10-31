@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <title>Actualités – GBÈZÉ JUNIOR HOUEGNON | Prestations, vidéos et annonces officielles</title>
-<meta name="description" content="Toute l'actualité de GBÈZÉ JUNIOR HOUEGNON : prochaines prestations, nouveaux clips, annonces officielles, prochain clip avec KALAMOULAÏ. Artiste traditionnel béninois — 26 titres, 14 clips, ≈593 000 abonnés.">
-<meta name="keywords" content="actualités GBÈZÉ JUNIOR, news Gbezé Junior, prestations Bénin, prochain clip KALAMOULAÏ, 26 titres, 14 clips, Tchingounmin, Tôba Hanyé, artiste traditionnel béninois, annonces officielles">
+<meta name="description" content="Toute l'actualité de GBÈZÉ JUNIOR HOUEGNON : prochaines prestations, nouveaux clips, annonces officielles. Artiste traditionnel béninois — 26 titres, 14 clips, ≈593 000 abonnés.">
+<meta name="keywords" content="actualités GBÈZÉ JUNIOR, news Gbezé Junior, prestations Bénin, 26 titres, 14 clips, Tchingounmin, Tôba Hanyé, artiste traditionnel béninois, annonces officielles">
 <meta name="author" content="GBÈZÉ JUNIOR HOUEGNON">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="content-language" content="fr-BJ">
@@ -25,7 +25,7 @@
 <meta name="apple-mobile-web-app-title" content="GBÈZÉ JUNIOR">
 
 <meta property="og:title" content="Actualités – GBÈZÉ JUNIOR HOUEGNON">
-<meta property="og:description" content="Prestations, vidéos et annonces officielles. Prochain clip avec KALAMOULAÏ.">
+<meta property="og:description" content="Prestations, vidéos et annonces officielles.">
 <meta property="og:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
 <meta property="og:image:alt" content="GBÈZÉ JUNIOR HOUEGNON — actualités">
 <meta property="og:type" content="website">
@@ -34,7 +34,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Actualités – GBÈZÉ JUNIOR HOUEGNON">
-<meta name="twitter:description" content="Prestations, vidéos et annonces. Prochain clip avec KALAMOULAÏ.">
+<meta name="twitter:description" content="Prestations, vidéos et annonces.">
 <meta name="twitter:image" content="https://www.gbezejuniorhouegnon.com/pha.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -245,16 +245,6 @@ nav#navbar.cache{transform:translateY(-100%)}
 .hero-desc{font-size:clamp(.92rem,2vw,1.05rem);color:rgba(255,255,255,.88);max-width:640px;margin:0 auto;font-weight:300;line-height:1.9;opacity:0;animation:fade-up .8s ease .9s forwards}
 .hero-desc strong{color:var(--or-clair);font-weight:700}
 
-/* Bandeau prochain clip */
-.actu-banner{max-width:900px;margin:0 auto clamp(30px,5vw,50px);padding:0 5%}
-.actu-banner-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:16px 24px;border:1px solid var(--or-clair);border-radius:100px;background:rgba(26,0,0,.7);backdrop-filter:blur(8px)}
-.actu-banner-inner .pulse{width:10px;height:10px;border-radius:50%;background:var(--rouge-vif);box-shadow:0 0 0 0 rgba(192,57,43,.7);animation:ping 1.8s infinite;flex-shrink:0}
-@keyframes ping{70%{box-shadow:0 0 0 10px rgba(192,57,43,0)}100%{box-shadow:0 0 0 0 rgba(192,57,43,0)}}
-.actu-banner-inner .label{font-family:var(--f-display);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or-vif);font-weight:700;flex:1;min-width:200px;text-align:center}
-.actu-banner-inner a{font-family:var(--f-display);font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--or-clair);border-bottom:1px solid var(--or-clair);padding-bottom:2px;white-space:nowrap;transition:color .3s}
-.actu-banner-inner a:hover{color:var(--or-vif)}
-@media (max-width:600px){.actu-banner-inner{flex-direction:column;border-radius:14px;padding:18px;text-align:center}}
-
 /* Ticker */
 .ticker{background:var(--fond-4);padding:13px 0;overflow:hidden;border-block:1px solid var(--border-or);position:relative;z-index:2}
 .ticker-inner{display:flex;width:max-content;animation:defile 45s linear infinite;white-space:nowrap}
@@ -408,21 +398,12 @@ footer>*{position:relative;z-index:2}
       <p class="hero-desc">
         Prestations, vidéos et annonces de <strong>GBÈZÉ JUNIOR HOUEGNON</strong>.
         <strong>26 titres</strong>, <strong>14 clips</strong>, ≈<strong>593 000 abonnés</strong> —
-        et toujours plus à venir, dont le <strong>prochain clip avec KALAMOULAÏ</strong>.
+        et toujours plus à venir.
       </p>
     </div>
   </section>
 
   <div class="ticker" aria-hidden="true"><div class="ticker-inner" id="tickerPiste"></div></div>
-
-  <!-- Bandeau prochain clip -->
-  <div class="actu-banner reveal">
-    <div class="actu-banner-inner">
-      <span class="pulse" aria-hidden="true"></span>
-      <span class="label">Prochainement · Nouveau clip avec KALAMOULAÏ, le phénomène de septentrion</span>
-      <a href="index.html#prochain-clip">Voir l'annonce →</a>
-    </div>
-  </div>
 
   <!-- Filtres -->
   <div class="filters-bar" role="tablist" aria-label="Filtrer les articles">
@@ -620,7 +601,7 @@ footer>*{position:relative;z-index:2}
 
 /* ---------- Ticker ---------- */
 (function () {
-  const mots = ['26 titres', '14 clips', 'Gbèzé Junior Houègnon', 'KALAMOULAÏ', 'Prochain clip', 'Tchingounmin', 'Tôba Hanyé', 'Bénin'];
+  const mots = ['26 titres', '14 clips', 'Gbèzé Junior Houègnon', 'KALAMOULAÏ', 'Tchingounmin', 'Tôba Hanyé', 'Bénin'];
   const html = mots.map(m => '<span class="ticker-item">' + m + ' <span class="ticker-sep">◆</span></span>').join('');
   document.getElementById('tickerPiste').innerHTML = html + html + html + html;
 })();
